@@ -1,3 +1,55 @@
+import turtle
+#import math
+
+
+def ex1():
+    turtle.done()
+
+
+def ex2():
+    turtle.done()
+
+
+def ex3():
+    turtle.done()
+
+
+def ex4():
+    turtle.done()
+
+
+def ex5():
+    turtle.done()
+
+
+def ex6():
+    turtle.done()
+
+
+def ex7():
+    turtle.done()
+
+
+def ex8():
+    turtle.done()
+
+
+def ex9():
+    turtle.done()
+
+
+def ex10():
+    turtle.done()
+
+
+def ex11():
+    turtle.done()
+
+
+def ex12():
+    turtle.done()
+
+
 def control(ex):
     turtle.hideturtle()
     turtle.speed(0)
