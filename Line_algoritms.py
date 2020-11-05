@@ -202,6 +202,38 @@ def ex8():
     turtle.done()
 
 
+def ex9():
+    pen = 1
+    size = 2
+
+    turtle.pensize(pen)
+    turtle.left(90)
+    for i in range(180):
+        turtle.forward(size)
+        turtle.left(1)
+    turtle.done()
+
+
+def ex10():
+    pen = 1
+    size = 2
+
+    turtle.pensize(pen)
+    turtle.left(-90)
+
+    def duga(r, n=1):
+        for i in range(180):
+            turtle.forward(r)
+            turtle.left(1 * n)
+
+    duga(size, -1)
+    duga(size / 2, -1)
+    duga(size / 2)
+    duga(size)
+
+    turtle.done()
+
+
 def ex11():
     pen = 1
     size = 100
@@ -264,6 +296,10 @@ def control(ex):
         ex7()
     elif ex == 8:
         ex8()
+    elif ex == 9:
+        ex9()
+    elif ex == 10:
+        ex10()
     elif ex == 11:
         ex11()
     elif ex == 12:
