@@ -3,6 +3,15 @@ import turtle
 
 
 def ex1():
+    a = 20
+    b = a / 4
+    steps = 25
+
+    for i in range(steps):
+        turtle.forward(a)
+        turtle.left(90)
+        turtle.forward(b)
+        turtle.right(90)
     turtle.done()
 
 
