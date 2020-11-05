@@ -1,4 +1,5 @@
 import turtle
+import math
 
 
 def ex1():
@@ -207,7 +208,7 @@ def ex11():
 
     turtle.pensize(pen)
 
-    def kv(a, n = 1):
+    def kv(a, n=1):
         for i in range(5):
             turtle.forward(a)
             turtle.left(90 * n)
@@ -217,6 +218,31 @@ def ex11():
     kv(size / 2 ** 0.5, -1)
     turtle.left(180)
     kv(size / 2 ** 0.5, -1)
+    turtle.done()
+
+
+def ex12():
+    pen = 1
+    base_size = 200
+    angle = 45
+
+    turtle.pensize(pen)
+
+    def kv(a, n=1):
+        for i in range(5):
+            turtle.forward(a)
+            turtle.left(90 * n)
+
+    kv(base_size)
+
+    turtle.right(90 - angle)
+
+    kv(base_size * math.sin(math.pi * angle / 180), -1)
+
+    turtle.left(180)
+
+    kv(base_size * math.cos(math.pi * angle / 180), -1)
+
     turtle.done()
 
 
@@ -240,6 +266,8 @@ def control(ex):
         ex8()
     elif ex == 11:
         ex11()
+    elif ex == 12:
+        ex12()
 
 
 if __name__ == "__main__":
