@@ -180,7 +180,28 @@ def ex7():
     turtle.done()
 
 
+def ex8():
+    pen = 1
+    size = 300
+
+    turtle.pensize(pen)
+    turtle.forward(size)
+    turtle.left(120)
+    turtle.forward(size)
+    turtle.left(120)
+    turtle.forward(size)
+    turtle.left(120)
+    turtle.forward(size / 2)
+    turtle.left(60)
+    turtle.forward(size / 2)
+    turtle.left(120)
+    turtle.forward(size / 2)
+    turtle.left(120)
+    turtle.forward(size / 2)
+    turtle.done()
+
 def control(ex):
+    turtle.hideturtle()
     if ex == 1:
         ex1()
     elif ex == 2:
@@ -195,6 +216,8 @@ def control(ex):
         ex6()
     elif ex == 7:
         ex7()
+    elif ex == 8:
+        ex8()
 
 
 if __name__ == "__main__":
