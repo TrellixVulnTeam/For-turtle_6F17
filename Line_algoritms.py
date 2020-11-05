@@ -200,6 +200,26 @@ def ex8():
     turtle.forward(size / 2)
     turtle.done()
 
+
+def ex11():
+    pen = 1
+    size = 100
+
+    turtle.pensize(pen)
+
+    def kv(a, n = 1):
+        for i in range(5):
+            turtle.forward(a)
+            turtle.left(90 * n)
+
+    kv(size)
+    turtle.right(45)
+    kv(size / 2 ** 0.5, -1)
+    turtle.left(180)
+    kv(size / 2 ** 0.5, -1)
+    turtle.done()
+
+
 def control(ex):
     turtle.hideturtle()
     if ex == 1:
@@ -218,6 +238,8 @@ def control(ex):
         ex7()
     elif ex == 8:
         ex8()
+    elif ex == 11:
+        ex11()
 
 
 if __name__ == "__main__":
