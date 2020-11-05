@@ -280,6 +280,7 @@ def ex12():
 
 def control(ex):
     turtle.hideturtle()
+    turtle.speed(0)
     if ex == 1:
         ex1()
     elif ex == 2:
@@ -307,7 +308,6 @@ def control(ex):
 
 
 if __name__ == "__main__":
-    turtle.speed(0)
     quiz = int(input("""Выберите задание:
      1. Кривая
      2. Окно
