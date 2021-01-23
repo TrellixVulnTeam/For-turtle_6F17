@@ -220,14 +220,44 @@ def ex12():
 
 
 def ex13():
+    a = 150
+    n = 5
+    turtle.left(90)
+
+    for i in range(n):
+        for i in range(3):
+            turtle.forward(a)
+            turtle.right(120)
+        turtle.left(360 / n)
+
     turtle.done()
 
 
 def ex14():
+    a = 300
+    n = 720
+    k = 7
+    delta = 150 / n * (k - 2)
+    turtle.left(90)
+
+    for j in range(n // k):
+        for i in range(3):
+            turtle.forward(a)
+            turtle.right(120)
+        turtle.right(360 / n * k)
+        a -= delta
+
     turtle.done()
 
 
 def ex15():
+    r = 100
+    n = 8
+
+    for i in range(n):
+        turtle.circle(r)
+        turtle.left(360 / n)
+
     turtle.done()
 
 
@@ -308,6 +338,8 @@ def control(ex):
         ex20()
     elif ex == 21:
         ex21()
+    else:
+        print("Такого задания нет")
 
 
 if __name__ == "__main__":
