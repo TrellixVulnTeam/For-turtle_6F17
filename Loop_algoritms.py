@@ -2,6 +2,12 @@ import turtle
 #import math
 
 
+def begining():
+    turtle.penup()
+    turtle.setx(-450)
+    turtle.pendown()
+
+
 def ex1():
     a = 20
     b = a / 4
@@ -16,26 +22,122 @@ def ex1():
 
 
 def ex2():
+    a = 30
+    b = a * 1
+    steps = 20
+
+    for i in range(steps):
+        turtle.left(90)
+        turtle.forward(a)
+        turtle.backward(a)
+        turtle.right(90)
+        turtle.forward(b)
     turtle.done()
 
 
 def ex3():
+    a = 20
+    b = a * 1
+    steps = 12
+
+    def tr(ar, br):
+        turtle.left(90)
+        turtle.forward(ar)
+        turtle.right(90)
+        turtle.forward(br)
+
+    def tl(al, bl):
+        turtle.right(90)
+        turtle.forward(al)
+        turtle.left(90)
+        turtle.forward(bl)
+
+    for i in range(steps):
+        tr(a, b)
+        tl(a, b)
+
     turtle.done()
 
 
 def ex4():
+    a = 20
+    b = 2 ** (1/2) * a
+    steps = 12
+
+    def tr(ar, br):
+        turtle.left(90)
+        turtle.forward(ar)
+        turtle.right(135)
+        turtle.forward(br)
+        turtle.left(90)
+        turtle.forward(br)
+        turtle.right(45)
+
+    def tl(al):
+        bl = al
+        turtle.right(90)
+        turtle.forward(al)
+        turtle.left(90)
+        turtle.forward(bl)
+
+    for i in range(steps):
+        tr(a, b / 2)
+        tl(a)
+
     turtle.done()
 
 
 def ex5():
+    a = 30
+    steps = 12
+
+    add_angle = 0
+    turtle.left(45 + add_angle / 2)
+
+    for i in range(steps):
+        turtle.forward(a)
+        turtle.right(90 + add_angle)
+        turtle.forward(a)
+        turtle.left(90 + add_angle)
+
     turtle.done()
 
 
 def ex6():
+    a = 30
+    steps = 12
+
+    add_angle = 0
+    turtle.left(60 + add_angle)
+
+    def tr(ar, angle):
+        turtle.forward(ar)
+        turtle.right(60 + angle)
+        turtle.forward(ar)
+        turtle.right(60 + angle)
+
+    def tl(al, angle):
+        turtle.forward(al)
+        turtle.left(60 + angle)
+        turtle.forward(al)
+        turtle.left(60 + angle)
+
+    for i in range(steps):
+        tr(a, add_angle)
+        tl(a, add_angle)
+
     turtle.done()
 
 
 def ex7():
+    r = 30
+    steps = 12
+    turtle.left(90)
+
+    for i in range(steps):
+        turtle.circle(-r, 180)
+        turtle.left(180)
+
     turtle.done()
 
 
@@ -60,6 +162,7 @@ def ex12():
 
 
 def control(ex):
+    begining()
     turtle.hideturtle()
     turtle.speed(0)
     if ex == 1:
