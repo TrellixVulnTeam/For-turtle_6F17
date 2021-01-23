@@ -18,6 +18,7 @@ def ex1():
         turtle.left(90)
         turtle.forward(b)
         turtle.right(90)
+
     turtle.done()
 
 
@@ -32,6 +33,7 @@ def ex2():
         turtle.backward(a)
         turtle.right(90)
         turtle.forward(b)
+
     turtle.done()
 
 
@@ -153,6 +155,7 @@ def ex8():
         turtle.penup()
         turtle.setx(turtle.xcor() + a * i / 2)
         turtle.pendown()
+
     turtle.done()
 
 
@@ -172,6 +175,14 @@ def ex9():
 
 
 def ex10():
+    a = 50
+    turtle.left(90)
+
+    for i in range(4):
+        for j in range(5):
+            turtle.forward(a)
+            turtle.left(90)
+        turtle.right(180)
 
     turtle.done()
 
