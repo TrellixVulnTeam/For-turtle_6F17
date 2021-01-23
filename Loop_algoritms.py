@@ -172,6 +172,7 @@ def ex9():
 
 
 def ex10():
+
     turtle.done()
 
 
