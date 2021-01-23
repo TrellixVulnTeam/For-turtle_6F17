@@ -157,6 +157,17 @@ def ex8():
 
 
 def ex9():
+    a = 100
+    turtle.left(90)
+
+    for i in range(4):
+        turtle.forward(a)
+        turtle.right(90)
+        turtle.forward(a)
+        turtle.left(90)
+        turtle.forward(a)
+        turtle.left(90)
+
     turtle.done()
 
 
@@ -172,25 +183,67 @@ def ex12():
     turtle.done()
 
 
+def ex13():
+    turtle.done()
+
+
+def ex14():
+    turtle.done()
+
+
+def ex15():
+    turtle.done()
+
+
+def ex16():
+    turtle.done()
+
+
+def ex17():
+    turtle.done()
+
+
+def ex18():
+    turtle.done()
+
+
+def ex19():
+    turtle.done()
+
+
+def ex20():
+    turtle.done()
+
+
+def ex21():
+    turtle.done()
+
 def control(ex):
-    begining()
     turtle.hideturtle()
     turtle.speed(0)
     if ex == 1:
+        begining()
         ex1()
     elif ex == 2:
+        begining()
         ex2()
     elif ex == 3:
+        begining()
         ex3()
     elif ex == 4:
+        begining()
         ex4()
     elif ex == 5:
+        begining()
         ex5()
     elif ex == 6:
+        begining()
         ex6()
     elif ex == 7:
+        begining()
         ex7()
     elif ex == 8:
+        begining()
         ex8()
     elif ex == 9:
         ex9()
@@ -200,6 +253,24 @@ def control(ex):
         ex11()
     elif ex == 12:
         ex12()
+    elif ex == 13:
+        ex13()
+    elif ex == 14:
+        ex14()
+    elif ex == 15:
+        ex15()
+    elif ex == 16:
+        ex16()
+    elif ex == 17:
+        ex17()
+    elif ex == 18:
+        ex18()
+    elif ex == 19:
+        ex19()
+    elif ex == 20:
+        ex20()
+    elif ex == 21:
+        ex21()
 
 
 if __name__ == "__main__":
