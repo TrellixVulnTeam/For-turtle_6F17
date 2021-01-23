@@ -142,6 +142,17 @@ def ex7():
 
 
 def ex8():
+    a = 30
+    steps = 10
+    turtle.left(90)
+    
+    for i in range(3, steps):
+        for j in range(i):
+            turtle.forward(a)
+            turtle.right(360 / i)
+        turtle.penup()
+        turtle.setx(turtle.xcor() + a * i / 2)
+        turtle.pendown()
     turtle.done()
 
 
