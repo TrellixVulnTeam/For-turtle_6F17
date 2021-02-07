@@ -1,9 +1,11 @@
 import turtle
+import math
 
 
-def begining():
+def begin():
     turtle.penup()
     turtle.setx(-450)
+    turtle.sety(-300)
     turtle.pendown()
 
 
@@ -233,7 +235,7 @@ def ex13():
 
 def ex14():
     a = 300
-    nober_of_loops = 2
+    number_of_loops = 2
     step = 1
     delta = a / 360 * step
     turtle.left(90)
@@ -242,7 +244,7 @@ def ex14():
         for i in range(3):
             turtle.forward(a - delta * j)
             turtle.right(120)
-        turtle.right(nober_of_loops * step)
+        turtle.right(number_of_loops * step)
 
     turtle.done()
 
@@ -283,18 +285,60 @@ def ex17():
 
 
 def ex18():
+    side = 60
+    layers = 8
+
+    for i in range(layers):
+        for k in range(i + 1):
+            for j in range(3):
+                turtle.pendown()
+                turtle.forward(side)
+                turtle.left(120)
+                turtle.penup()
+
+            turtle.forward(side)
+
+        turtle.backward(side * (i + 1))
+        turtle.left(60)
+        turtle.backward(side)
+        turtle.right(60)
+
     turtle.done()
 
 
 def ex19():
+    begin()
+    r = 100
+    for i in range(4):
+        turtle.circle(r, 180)
+        turtle.left(90)
     turtle.done()
 
 
 def ex20():
+    r = 100
+    for i in range(4):
+        turtle.circle(-r, 180)
+        turtle.left(90)
+
     turtle.done()
 
 
 def ex21():
+    r = 200
+    turtle.penup()
+    turtle.sety(200)
+    turtle.pendown()
+    turtle.circle(-r)
+
+    n = 7
+    r_list = math.sin((360 / 2 / n) * math.pi / 180) * r
+
+    turtle.right(360 - (180 - 360 / n) / 2)
+    for i in range(n):
+        turtle.circle(-r_list, 180)
+        turtle.left(180 - 360 / n)
+
     turtle.done()
 
 
@@ -302,28 +346,28 @@ def control(ex):
     turtle.hideturtle()
     turtle.speed(0)
     if ex == 1:
-        begining()
+        begin()
         ex1()
     elif ex == 2:
-        begining()
+        begin()
         ex2()
     elif ex == 3:
-        begining()
+        begin()
         ex3()
     elif ex == 4:
-        begining()
+        begin()
         ex4()
     elif ex == 5:
-        begining()
+        begin()
         ex5()
     elif ex == 6:
-        begining()
+        begin()
         ex6()
     elif ex == 7:
-        begining()
+        begin()
         ex7()
     elif ex == 8:
-        begining()
+        begin()
         ex8()
     elif ex == 9:
         ex9()
