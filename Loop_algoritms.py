@@ -259,10 +259,26 @@ def ex15():
 
 
 def ex16():
+    n = 20
+    r = step = 5
+    k = 4
+
+    for i in range(n * k):
+        turtle.circle(r, 360 / k)
+        r += step
+
     turtle.done()
 
 
 def ex17():
+    side = 300
+    n = 5
+
+    for i in range(n):
+        for j in (side / n, side, side / n, side):
+            turtle.forward(j)
+            turtle.left(90)
+        turtle.forward(side / n)
     turtle.done()
 
 
@@ -355,7 +371,7 @@ if __name__ == "__main__":
     12. Платочки
     13. Цветок из треугольников
     14. Наутилус из треугольников
-    15. Чветок circle()
+    15. Цветок circle()
     16. Спираль с постоянным шагом
     17. Прямоугольный забор
     18. Пирамида треугольников
