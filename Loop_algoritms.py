@@ -1,5 +1,4 @@
 import turtle
-#import math
 
 
 def begining():
@@ -234,17 +233,16 @@ def ex13():
 
 def ex14():
     a = 300
-    n = 720
-    k = 7
-    delta = 150 / n * (k - 2)
+    nober_of_loops = 2
+    step = 1
+    delta = a / 360 * step
     turtle.left(90)
 
-    for j in range(n // k):
+    for j in range(360 // step):
         for i in range(3):
-            turtle.forward(a)
+            turtle.forward(a - delta * j)
             turtle.right(120)
-        turtle.right(360 / n * k)
-        a -= delta
+        turtle.right(nober_of_loops * step)
 
     turtle.done()
 
