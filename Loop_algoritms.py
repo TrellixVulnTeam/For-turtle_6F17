@@ -1,9 +1,11 @@
 import turtle
+import math
 
 
 def begin():
     turtle.penup()
     turtle.setx(-450)
+    turtle.sety(-300)
     turtle.pendown()
 
 
@@ -62,7 +64,7 @@ def ex3():
 
 def ex4():
     a = 20
-    b = 2 ** (1/2) * a
+    b = 2 ** (1 / 2) * a
     steps = 12
 
     def tr(ar, br):
@@ -146,7 +148,7 @@ def ex8():
     a = 30
     steps = 10
     turtle.left(90)
-    
+
     for i in range(3, steps):
         for j in range(i):
             turtle.forward(a)
@@ -203,16 +205,15 @@ def ex11():
 
 def ex12():
     a = 150
-    n = 2
+    n = 3
     angle = 90 / n
     turtle.left(angle)
 
-    for i in range(n):
-        for j in range(4):
-            for y in range(4):
-                turtle.forward(a)
-                turtle.right(90)
+    for j in range(4 * n):
+        for y in range(4):
+            turtle.forward(a)
             turtle.right(90)
+
         turtle.right(angle)
 
     turtle.done()
@@ -234,17 +235,16 @@ def ex13():
 
 def ex14():
     a = 300
-    n = 720
-    k = 7
-    delta = 150 / n * (k - 2)
+    number_of_loops = 2
+    step = 1
+    delta = a / 360 * step
     turtle.left(90)
 
-    for j in range(n // k):
+    for j in range(360 // step):
         for i in range(3):
-            turtle.forward(a)
+            turtle.forward(a - delta * j)
             turtle.right(120)
-        turtle.right(360 / n * k)
-        a -= delta
+        turtle.right(number_of_loops * step)
 
     turtle.done()
 
@@ -261,26 +261,84 @@ def ex15():
 
 
 def ex16():
+    n = 20
+    r = step = 5
+    k = 4
+
+    for i in range(n * k):
+        turtle.circle(r, 360 / k)
+        r += step
+
     turtle.done()
 
 
 def ex17():
+    side = 300
+    n = 5
+
+    for i in range(n):
+        for j in (side / n, side, side / n, side):
+            turtle.forward(j)
+            turtle.left(90)
+        turtle.forward(side / n)
     turtle.done()
 
 
 def ex18():
+    side = 60
+    layers = 8
+
+    for i in range(layers):
+        for k in range(i + 1):
+            for j in range(3):
+                turtle.pendown()
+                turtle.forward(side)
+                turtle.left(120)
+                turtle.penup()
+
+            turtle.forward(side)
+
+        turtle.backward(side * (i + 1))
+        turtle.left(60)
+        turtle.backward(side)
+        turtle.right(60)
+
     turtle.done()
 
 
 def ex19():
+    begin()
+    r = 100
+    for i in range(4):
+        turtle.circle(r, 180)
+        turtle.left(90)
     turtle.done()
 
 
 def ex20():
+    r = 100
+    for i in range(4):
+        turtle.circle(-r, 180)
+        turtle.left(90)
+
     turtle.done()
 
 
 def ex21():
+    r = 200
+    turtle.penup()
+    turtle.sety(200)
+    turtle.pendown()
+    turtle.circle(-r)
+
+    n = 7
+    r_list = math.sin((360 / 2 / n) * math.pi / 180) * r
+
+    turtle.right(360 - (180 - 360 / n) / 2)
+    for i in range(n):
+        turtle.circle(-r_list, 180)
+        turtle.left(180 - 360 / n)
+
     turtle.done()
 
 
@@ -357,7 +415,7 @@ if __name__ == "__main__":
     12. Платочки
     13. Цветок из треугольников
     14. Наутилус из треугольников
-    15. Чветок circle()
+    15. Цветок circle()
     16. Спираль с постоянным шагом
     17. Прямоугольный забор
     18. Пирамида треугольников
