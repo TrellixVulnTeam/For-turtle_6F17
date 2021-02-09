@@ -1,8 +1,7 @@
 import turtle
-#import math
 
 
-def begining():
+def begin():
     turtle.penup()
     turtle.setx(-450)
     turtle.pendown()
@@ -225,7 +224,7 @@ def ex13():
     turtle.left(90)
 
     for i in range(n):
-        for i in range(3):
+        for j in range(3):
             turtle.forward(a)
             turtle.right(120)
         turtle.left(360 / n)
@@ -289,28 +288,28 @@ def control(ex):
     turtle.hideturtle()
     turtle.speed(0)
     if ex == 1:
-        begining()
+        begin()
         ex1()
     elif ex == 2:
-        begining()
+        begin()
         ex2()
     elif ex == 3:
-        begining()
+        begin()
         ex3()
     elif ex == 4:
-        begining()
+        begin()
         ex4()
     elif ex == 5:
-        begining()
+        begin()
         ex5()
     elif ex == 6:
-        begining()
+        begin()
         ex6()
     elif ex == 7:
-        begining()
+        begin()
         ex7()
     elif ex == 8:
-        begining()
+        begin()
         ex8()
     elif ex == 9:
         ex9()
