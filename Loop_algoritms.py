@@ -204,13 +204,15 @@ def ex11():
 
 def ex12():
     a = 150
-    n = 8
-    angle = 360 / n
+    n = 2
+    angle = 90 / n
     turtle.left(angle)
 
     for i in range(n):
-        for y in range(4):
-            turtle.forward(a)
+        for j in range(4):
+            for y in range(4):
+                turtle.forward(a)
+                turtle.right(90)
             turtle.right(90)
         turtle.right(angle)
 
