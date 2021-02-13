@@ -332,9 +332,9 @@ def ex21():
     turtle.circle(-r)
 
     n = 7
-    r_list = math.sin((360 / 2 / n) * math.pi / 180) * r
+    r_list = math.sin(math.pi / n) * r
 
-    turtle.right(360 - (180 - 360 / n) / 2)
+    turtle.right(270 + 180 / n)
     for i in range(n):
         turtle.circle(-r_list, 180)
         turtle.left(180 - 360 / n)
