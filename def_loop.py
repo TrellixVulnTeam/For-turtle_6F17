@@ -46,10 +46,10 @@ def ex3():
     turtle.setx(-300)
     n = 20
     size = 50
-    angle1 = math.atan(1 / 2) * 180 / math.pi
-    dig1 = (size ** 2 + (size / 2) ** 2) ** 0.5
-    dig2 = size * 2**0.5
-    angle2 = math.atan(size / 2 / dig2) * 180 / math.pi
+    angle1 = math.atan(1 / 2) * 180 / math.pi  # угол поворота для поска точки начала отрисовки ромба
+    dig1 = (size ** 2 + (size / 2) ** 2) ** 0.5  # расстояние до точки начала отрисовки ромба
+    dig2 = size * 2**0.5  # угол поворота для поска точки начала отрисовки квадрата на исходной линии рисунка
+    angle2 = math.atan(size / 2 / dig2) * 180 / math.pi  # расстояние для перехода отрисовки квадрата на исходной линии
 
     def square(side):
         turtle.pendown()
@@ -74,13 +74,14 @@ def ex3():
 
 def ex4():
     n = 10
-    base = 20
+    base = 20  # базовый размер элемента орнамента
     turtle.setx(-300)
 
     def ornament_left(size):
         turtle.pendown()
         small = size
         big = size * 3 / 2
+
         for angle, step in ((90, big), (90, small), (-90, small), (-90, small), (0, big)):
             turtle.forward(step)
             turtle.left(angle)
@@ -104,40 +105,93 @@ def ex4():
 
 def ex5():
     n = 10
-    base = 20
+    base = 50  # базовый размер элемента орнамента
     turtle.setx(-300)
-
-    def ornament_left(size):
-        turtle.pendown()
-        small = size
-        big = size * 3 / 2
-        for angle, step in ((90, big), (90, small), (-90, small), (-90, small), (0, big)):
-            turtle.forward(step)
-            turtle.left(angle)
-        turtle.penup()
 
     def ornament_right(size):
         turtle.pendown()
+
         small = size
-        big = size * 3 / 2
-        for angle, step in ((-90, big), (-90, small), (+90, small), (+90, small), (0, big)):
-            turtle.forward(step)
-            turtle.left(angle)
+        for j in range(6):
+            turtle.forward(small)
+            small = size - size / 5 * j
+            turtle.right(90)
         turtle.penup()
 
+    def ornament_left(size):
+        turtle.pendown()
+        small = size / 5
+
+        for j in range(5):
+            turtle.forward(small)
+            small += size / 5
+            turtle.left(90)
+        turtle.penup()
+
+    turtle.left(90)
     for i in range(n):
-        ornament_left(base)
         ornament_right(base)
+        turtle.pendown()
+        turtle.forward(base / 5)
+        turtle.left(90)
+        ornament_left(base)
 
     turtle.done()
 
 
 def ex6():
+    n = 10
+    base = 30  # базовый размер элемента орнамента
+    turtle.setx(-300)
+
+    def ornament_right(size):
+        turtle.pendown()
+
+        for j in range(2):
+            turtle.circle(-size, 180)
+            size /= 3
+        turtle.penup()
+
+    def ornament_left(size):
+        turtle.pendown()
+        small = size / 3
+        for j in range(2):
+            turtle.circle(small, 180)
+            small = size
+        turtle.penup()
+
+    turtle.left(90)
+    for i in range(n):
+        ornament_right(base)
+        ornament_left(base)
 
     turtle.done()
 
 
 def ex7():
+    n = 10
+    base = 50
+    turtle.setx(-300)
+
+    def zig_zag(size):
+        turtle.pendown()
+        turtle.forward(size / 2)
+        turtle.left(90)
+        turtle.forward(size)
+        turtle.left(-90)
+        turtle.forward(size)
+        turtle.left(-90)
+        turtle.forward(size / 2)
+        turtle.left(-90)
+        turtle.forward(size / 2)
+        turtle.left(90)
+        turtle.forward(size / 2)
+        turtle.left(90)
+        turtle.forward(size / 2)
+        turtle.penup()
+
+    for i in range(n):
+        zig_zag(base)
 
     turtle.done()
 
