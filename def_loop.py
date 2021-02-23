@@ -3,16 +3,72 @@ import math
 
 
 def ex1():
+    turtle.penup()
+    turtle.setx(-300)
+    n = 10
+    size = 30
+
+    def square(side):
+        turtle.pendown()
+        for j in range(4):
+            turtle.forward(side)
+            turtle.left(90)
+        turtle.penup()
+
+    for i in range(n):
+        square(size)
+        turtle.forward(2 * size)
 
     turtle.done()
 
 
 def ex2():
+    turtle.penup()
+    turtle.setx(-300)
+    n = 20
+    size = 40
+
+    def square(side):
+        turtle.pendown()
+        for j in range(4):
+            turtle.forward(side)
+            turtle.left(90)
+        turtle.penup()
+
+    for i in range(n):
+        square(size * (-1)**i)
+        turtle.forward(0 if i % 2 == 0 else 2 * size)
 
     turtle.done()
 
 
 def ex3():
+    turtle.penup()
+    turtle.setx(-300)
+    n = 20
+    size = 30
+    angle1 = math.atan(1 / 2) * 180 / math.pi
+    dig1 = (size ** 2 + (size / 2) ** 2) ** 0.5
+
+    def square(side):
+        turtle.pendown()
+        for j in range(4):
+            turtle.forward(side)
+            turtle.left(90)
+        turtle.penup()
+
+    for i in range(n):
+        square(size)
+        if i % 2 == 0:
+            turtle.left(angle1)
+            turtle.forward(dig1)
+            turtle.left(-45 - angle1)
+        else:
+            turtle.left(45)
+            turtle.forward(math.sqrt(2) * size)
+            turtle.left(90)
+            turtle.backward(size / 2)
+            turtle.left(-90)
 
     turtle.done()
 
