@@ -197,6 +197,31 @@ def ex7():
 
 
 def ex8():
+    x = 9
+    y = 6
+    base = 20
+
+    def element(size):
+        turtle.pendown()
+        aux = size
+
+        for a in (aux, aux, aux - size / 3, aux - size / 3 * 2):
+            turtle.forward(a)
+            turtle.right(90)
+
+        aux = size / 3
+        for a in (aux, aux, aux * 2, aux * 3):
+            turtle.forward(a)
+            turtle.left(90)
+
+        turtle.penup()
+
+
+    turtle.left(90)
+    for i in (x, y, x, y):
+        for j in range(i):
+            element(base)
+        turtle.right(90)
 
     turtle.done()
 
