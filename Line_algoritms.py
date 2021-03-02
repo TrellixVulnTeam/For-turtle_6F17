@@ -120,7 +120,6 @@ def ex6():
     angle = 35
 
     def box(a, b, c, ang):
-        turtle.pensize(pen)
         turtle.left(ang)
         turtle.forward(a)
         turtle.left(90 - ang)
@@ -144,6 +143,7 @@ def ex6():
     box(size_a, size_b, size_c, angle)
 
     turtle.penup()
+    turtle.width(pen)
     turtle.goto(size_b * 1.5, 0)
     turtle.left(-turtle.heading())
     angle -= 20
@@ -221,15 +221,15 @@ def ex10():
     turtle.pensize(pen)
     turtle.left(-90)
 
-    def duga(r, n=1):
+    def arc(r, n=1):
         for i in range(180):
             turtle.forward(r)
             turtle.left(1 * n)
 
-    duga(size, -1)
-    duga(size / 2, -1)
-    duga(size / 2)
-    duga(size)
+    arc(size, -1)
+    arc(size / 2, -1)
+    arc(size / 2)
+    arc(size)
 
     turtle.done()
 
