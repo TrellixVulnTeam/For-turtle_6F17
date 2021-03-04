@@ -1,6 +1,6 @@
 def Quvest3(age_Anton, age_Boris, age_Victor):
     if (age_Anton > age_Boris) and (age_Anton > age_Victor):
-        return 'Антон старше всех'
+        print('Антон старше всех')
     if (age_Boris > age_Anton) and (age_Boris > age_Victor):
         print('Борис старше всех')
     if (age_Victor > age_Anton) and (age_Victor > age_Boris):
@@ -17,5 +17,4 @@ def Quvest3(age_Anton, age_Boris, age_Victor):
 tests = ((1, 2, 3),(3, 2, 1),(1, 3, 1),(2, 2, 1),(2, 1, 2),(1, 2, 2),(3, 3, 3))
 
 for i in tests:
-    if "Антон старше всех" == Quvest3(*i):
-        print(True)
+    Quvest3(*i)
