@@ -1,21 +1,21 @@
-def quvest3(age_Anton, age_Boris, age_Victor):
-    if (age_Anton > age_Boris) and (age_Anton > age_Victor):
+def ext23_3(age_anton, age_boris, age_victor):
+    if (age_anton > age_boris) and (age_anton > age_victor):
         print('Антон старше всех')
-    elif (age_Boris > age_Anton) and (age_Boris > age_Victor):
+    elif (age_boris > age_anton) and (age_boris > age_victor):
         print('Борис старше всех')
-    elif (age_Victor > age_Anton) and (age_Victor > age_Boris):
+    elif (age_victor > age_anton) and (age_victor > age_boris):
         print('Виктор старше всех')
-    elif (age_Anton > age_Victor) and (age_Anton == age_Boris):
+    elif (age_anton > age_victor) and (age_anton == age_boris):
         print('Антон и Борис старше Виктора.')
-    elif (age_Anton > age_Boris) and (age_Anton == age_Victor):
+    elif (age_anton > age_boris) and (age_anton == age_victor):
         print('Антон и Виктор старше Бориса.')
-    elif (age_Victor > age_Anton) and (age_Victor == age_Boris):
+    elif (age_victor > age_anton) and (age_victor == age_boris):
         print('Виктор и Борис старше Антона.')
-    elif age_Anton == age_Boris == age_Boris == age_Victor:
+    elif age_anton == age_boris == age_boris == age_victor:
         print('Виктор, Борис и Антон одного возраста.')
 
 
 tests = ((3, 2, 1), (2, 3, 2), (1, 1, 2), (2, 2, 1), (1, 2, 2), (2, 1, 2), (3, 3, 3))
 
 for q in tests:
-    quvest3(50, 20, 10)
+    ext23_3(50, 20, 10)
