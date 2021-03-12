@@ -1,12 +1,13 @@
-old = int(input("Введи возраст человека: "))
-if 10 < old % 100 < 20:
-    print(f"Возрвст {old} лет")
-elif old % 10 == 1:
-    print(f"Возрвст {old} год")
-elif 1 < old % 10 < 5:
-    print(f"Возрвст {old} года")
-else:
-    print(f"Возрвст {old} лет")
+a = b = 0
+while not (0 < a < b):
+    a, b = map(int, input("Введи числа а и b, которые "
+                      "удовлетворяют условию 0 < a < b ").split())
 
 
+while a <= b:
+    print(f'{a} * {a} = {a * a}')
+    a += 1
 
+
+for i in range(a, b + 1):
+    print(f'{i} * {i} = {i * i}')
