@@ -6,8 +6,9 @@ def enter():
             flag = False
     return a, b
 
-def sqr(a, b):
-    for i in range(a, b + 1):
+
+def sqr(x, y):
+    for i in range(x, y + 1):
         print(f'{i} * {i} = {i * i}')
 
 
