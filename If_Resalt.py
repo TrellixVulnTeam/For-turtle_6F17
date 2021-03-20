@@ -1,22 +1,27 @@
 import random
 import math
-from z_ifs import _deduhin as temp
+from z_ifs import _begaev1 as temp1
+from z_ifs import _begaev2 as temp2
 
 
-def r_number(min = -10, max = 10):
-    return random.randrange(min, max)
+def r_number(mins=-10, maxs=10):
+    return random.randrange(mins, maxs)
+
 
 def if_r1(a):
     if a > 0:
         a -= 8
     return a
-def if_r2(a):
 
+
+def if_r2(a):
     if a > 0:
         a -= 8
     else:
         a += 6
     return a
+
+
 def if_r3(a):
     if a > 0:
         a -= 8
@@ -25,6 +30,8 @@ def if_r3(a):
     else:
         a = 10
     return a
+
+
 def if_r4(a, b, c):
     x = 0
     if a > 0:
@@ -34,6 +41,8 @@ def if_r4(a, b, c):
     if c > 0:
         x += 1
     return x
+
+
 def if_r5(a, b, c):
     x = 0
     if a > 0:
@@ -50,39 +59,53 @@ def if_r5(a, b, c):
     if c < 0:
         y += 1
     return x, y
+
+
 def if_r6(a, b):
     if a > b:
         _max = a
     else:
         _max = b
     return _max
+
+
 def if_r7(a, b):
     if a < b:
         _min = 1
     else:
         _min = 2
     return _min
+
+
 def if_r8(a, b):
     if a > b:
         return a, b
     else:
         return b, a
+
+
 def if_r9(a, b):
     if a > b:
         a, b = b, a
     return a, b
+
+
 def if_r10(a, b):
     if a != b:
         a = b = a + b
     else:
         a = b = 0
     return a, b
+
+
 def if_r11(a, b):
     if a != b:
         a = b = max(a, b)
     else:
         a = b = 0
     return a, b
+
+
 def if_r12(a, b, c):
     if a < b:
         mn = a
@@ -91,6 +114,8 @@ def if_r12(a, b, c):
     if mn > c:
         mn = c
     return mn
+
+
 def if_r13(a, b, c):
     m = False
     if (a <= b <= c) or (c <= b <= a):
@@ -100,6 +125,8 @@ def if_r13(a, b, c):
     elif (a <= c <= b) or (b <= c <= a):
         m = c
     return m
+
+
 def if_r14(a, b, c):
     if a < b:
         mn = a
@@ -113,6 +140,8 @@ def if_r14(a, b, c):
         mn = c
 
     return mn, mx
+
+
 def if_r15(a, b, c):
     m = False
     if (c <= a <= b) or (c <= b <= a):
@@ -124,169 +153,84 @@ def if_r15(a, b, c):
 
     return m
 
-def if_r16():
-    A = random.randrange(-30, 30)
-    B = random.randrange(-30, 30)
-    C = random.randrange(-30, 30)
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
-    if (A < B and B < C):
+
+def if_r16(a, b, c):
+    if a < b < c:
         k = 2
     else:
         k = -1
-    A *= k
-    B *= k
-    C *= k
+    a *= k
+    b *= k
+    c *= k
 
-    print()
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
+    return a, b, c
 
 
-def if_r17():
-    A = random.randrange(-30, 30)
-    B = random.randrange(-30, 30)
-    C = random.randrange(-30, 30)
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
-    if (A < B and B < C) or (A > B and B > C):
+def if_r17(a, b, c):
+    if (a < b < c) or (a > b > c):
         k = 2
     else:
         k = -1
-    A *= k
-    B *= k
-    C *= k
+    a *= k
+    b *= k
+    c *= k
 
-    print()
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
+    return a, b, c
 
 
-def if_r18():
-    def RandNum():
-        l = []
-        x1, x2 = random.sample(range(-10, 10), 2)
-        N = random.randrange(1, 4)
-        if N == 1:
-            l.append(x1)
-            l.append(x1)
-            l.append(x2)
-        elif N == 2:
-            l.append(x1)
-            l.append(x2)
-            l.append(x2)
-        else:
-            l.append(x2)
-            l.append(x1)
-            l.append(x2)
-        return l
-
-    A, B, C = RandNum()
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
-    if A == B:
-        print("C")
-    elif A == C:
-        print("B")
+def if_r18(a, b, c):
+    if a == b:
+        return 3
+    elif a == c:
+        return 2
     else:
-        print("A")
+        return 1
 
 
-def if_r19():
-    def RandNum():
-        l = []
-        x1, x2 = random.sample(range(-10, 10), 2)
-        N = random.randrange(1, 5)
-        if N == 1:
-            l.append(x2)
-            l.append(x1)
-            l.append(x1)
-            l.append(x1)
-        elif N == 2:
-            l.append(x1)
-            l.append(x2)
-            l.append(x1)
-            l.append(x1)
-        elif N == 3:
-            l.append(x1)
-            l.append(x1)
-            l.append(x2)
-            l.append(x1)
+def if_r19(a, b, c, d):
+    if a == b:
+        if a == d:
+            return 3
         else:
-            l.append(x1)
-            l.append(x1)
-            l.append(x1)
-            l.append(x2)
-        return l
-
-    A, B, C, D = RandNum()
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
-    print("Число D:", D)
-    if A == B:
-        if A == D:
-            print("C")
-        else:
-            print("D")
+            return 4
     else:
-        if A == C:
-            print("B")
+        if a == c:
+            return 2
         else:
-            print("A")
+            return 1
 
 
-def if_r120():
-    A, B, C = random.sample(range(-10, 10), 3)
-    print("Число A:", A)
-    print("Число B:", B)
-    print("Число C:", C)
-    AB = abs(A - B)
-    AC = abs(A - C)
-    print("Расстояние от A до B:", AB)
-    print("Расстояние от A до C:", AC)
-    if AB < AC:
-        print("В ближе к A")
-    elif AB > AC:
-        print("C ближе к A")
+def if_r20(a, b, c):
+    ab = abs(a - b)
+    ac = abs(a - c)
+    if ab < ac:
+        return b, ab
+    elif ab > ac:
+        return c, ac
     else:
-        print("B и C равноудалены от A")
+        return b, c, ab
 
 
-def if_r21():
-    for i in range(0, 5):
-        x, y = [random.randrange(-3, 4) for i in range(0, 2)]
-        print("\nТочка (x,y): ({0},{1})".format(x, y))
-        if x == 0 and y == 0:
-            print("0. Совпадает с началом координат")
-        elif y == 0:
-            print("1. Лежит на оси OX")
-        elif x == 0:
-            print("2. Лежит на оси OY")
-        else:
-            print("3. Не лежит на координатных осях")
+def if_r21(x, y):
+    if x == 0 and y == 0:
+        return 0
+    elif y == 0:
+        return 1
+    elif x == 0:
+        return 2
+    else:
+        return 3
 
 
-def if_r22():
-    lst = [i for i in list(range(-10, 11)) if i != 0]
-    for i in range(0, 5):
-        x = random.choice(lst)
-        y = random.choice(lst)
-        print("\nТочка (x, y): ({0},{1})".format(x, y))
-        print("Координатная четверть: ", end="")
-        if x > 0 and y > 0:
-            print("I")
-        elif x < 0 and y > 0:
-            print("II")
-        elif x < 0 and y < 0:
-            print("III")
-        else:
-            print("IV")
+def if_r22(x, y):
+    if x > 0 and y > 0:
+        return 1
+    elif x < 0 and y > 0:
+        return 2
+    elif x < 0 and y < 0:
+        return 3
+    else:
+        return 4
 
 
 def if_r23():
@@ -410,22 +354,25 @@ def test():
     flag = True
     for i in range(10):
         a = r_number()
-        if if_r1(a) != temp.if1(a):
+        if if_r1(a) != temp1.if1(a):
             flag = False
+            print(a)
     print("Test 1 - Ok" if flag == True else "Test 1 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
-        if if_r2(a) != temp.if2(a):
+        if if_r2(a) != temp1.if2(a):
             flag = False
+            print(a)
     print("Test 2 - Ok" if flag == True else "Test 2 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
-        if if_r3(a) != temp.if3(a):
+        if if_r3(a) != temp1.if3(a):
             flag = False
+            print(a)
     print("Test 3 - Ok" if flag == True else "Test 3 - Fail")
 
     flag = True
@@ -433,8 +380,9 @@ def test():
         a = r_number()
         b = r_number()
         c = r_number()
-        if if_r4(a, b, c) != temp.if4(a, b, c):
+        if if_r4(a, b, c) != temp1.if4(a, b, c):
             flag = False
+            print(a, b, c)
     print("Test 4 - Ok" if flag == True else "Test 4 - Fail")
 
     flag = True
@@ -442,56 +390,63 @@ def test():
         a = r_number()
         b = r_number()
         c = r_number()
-        if if_r5(a, b, c) != temp.if5(a, b, c):
+        if if_r5(a, b, c) != temp1.if5(a, b, c):
             flag = False
+            print(a, b, c)
     print("Test 5 - Ok" if flag == True else "Test 5 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if if_r6(a, b) != temp.if6(a, b):
+        if if_r6(a, b) != temp1.if6(a, b):
             flag = False
+            print(a, b)
     print("Test 6 - Ok" if flag == True else "Test 6 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if if_r7(a, b) != temp.if7(a, b):
+        if if_r7(a, b) != temp1.if7(a, b):
             flag = False
+            print(a, b)
     print("Test 7 - Ok" if flag == True else "Test 7 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if if_r8(a, b) != temp.if8(a, b):
+        if if_r8(a, b) != temp1.if8(a, b):
             flag = False
+            print(a, b)
     print("Test 8 - Ok" if flag == True else "Test 8 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if if_r9(a, b) != temp.if9(a, b):
+        if if_r9(a, b) != temp1.if9(a, b):
             flag = False
+            print(a, b)
     print("Test 9 - Ok" if flag == True else "Test 9 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if if_r10(a, b) != temp.if10(a, b):
+        if if_r10(a, b) != temp1.if10(a, b):
             flag = False
+            print(a, b)
     print("Test 10 - Ok" if flag == True else "Test 10 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if if_r11(a, b) != temp.if11(a, b):
+        if if_r11(a, b) != temp1.if11(a, b):
             flag = False
+            print(a, b)
     print("Test 11 - Ok" if flag == True else "Test 11 - Fail")
 
     flag = True
@@ -499,8 +454,9 @@ def test():
         a = r_number()
         b = r_number()
         c = r_number()
-        if if_r12(a, b, c) != temp.if12(a, b, c):
+        if if_r12(a, b, c) != temp1.if12(a, b, c):
             flag = False
+            print(a, b, c)
     print("Test 12 - Ok" if flag == True else "Test 12 - Fail")
 
     flag = True
@@ -508,8 +464,9 @@ def test():
         a = r_number()
         b = r_number()
         c = r_number()
-        if if_r13(a, b, c) != temp.if13(a, b, c):
+        if if_r13(a, b, c) != temp1.if13(a, b, c):
             flag = False
+            print(a, b, c)
     print("Test 13 - Ok" if flag == True else "Test 13 - Fail")
 
     flag = True
@@ -517,8 +474,9 @@ def test():
         a = r_number()
         b = r_number()
         c = r_number()
-        if if_r14(a, b, c) != temp.if14(a, b, c):
+        if if_r14(a, b, c) != temp1.if14(a, b, c):
             flag = False
+            print(a, b, c)
     print("Test 14 - Ok" if flag == True else "Test 14 - Fail")
 
     flag = True
@@ -526,21 +484,97 @@ def test():
         a = r_number()
         b = r_number()
         c = r_number()
-        if if_r15(a, b, c) != temp.if15(a, b, c):
+        if if_r15(a, b, c) != temp1.if15(a, b, c):
             flag = False
+            print(a, b, c)
     print("Test 15 - Ok" if flag == True else "Test 15 - Fail")
 
-
-def fined():
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
         c = r_number()
-        print((a, b, c) if if_r5(a, b, c) != temp.if5(a, b, c) else "Ok")
-        if if_r5(a, b, c) != temp.if5(a, b, c):
+        if if_r16(a, b, c) != temp2.if16(a, b, c):
             flag = False
-    print("Test 13- Ok" if flag == True else "Test 13 - Fail")
+            print(a, b, c)
+    print("Test 16 - Ok" if flag == True else "Test 16 - Fail")
 
-#test()
-fined()
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        c = r_number()
+        if if_r17(a, b, c) != temp2.if17(a, b, c):
+            flag = False
+            print(a, b, c)
+    print("Test 17 - Ok" if flag == True else "Test 17 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if a == b:
+            a += 1
+        x = random.randrange(1, 4)
+        if x == 1:
+            aux = (a, a, b)
+        elif x == 2:
+            aux = (a, b, a)
+        else:
+            aux = (b, a, a)
+        if if_r18(*aux) != temp2.if18(*aux):
+            flag = False
+            print(*aux)
+    print("Test 18 - Ok" if flag == True else "Test 18 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if a == b:
+            a += 1
+        x = random.randrange(1, 4)
+        if x == 1:
+            aux = (a, a, a, b)
+        elif x == 2:
+            aux = (a, a, b, a)
+        elif x == 3:
+            aux = (a, b, a, a)
+        else:
+            aux = (b, a, a, a)
+        if if_r19(*aux) != temp2.if19(*aux):
+            flag = False
+            print(*aux)
+    print("Test 19 - Ok" if flag == True else "Test 19 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        c = r_number()
+        if if_r20(a, b, c) != temp2.if20(a, b, c):
+            flag = False
+            print(a, b, c)
+    print("Test 20 - Ok" if flag == True else "Test 20 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if if_r21(a, b) != temp2.if21(a, b):
+            flag = False
+            print(a, b)
+    print("Test 21 - Ok" if flag == True else "Test 21 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if a == 0: a +=1
+        if b == 0: b +=1
+        if if_r22(a, b) != temp2.if22(a, b):
+            flag = False
+            print(a, b)
+    print("Test 22 - Ok" if flag == True else "Test 22 - Fail")
+
+test()
