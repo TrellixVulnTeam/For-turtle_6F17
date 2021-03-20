@@ -4,8 +4,8 @@ from z_ifs import _begaev1 as temp1
 from z_ifs import _begaev2 as temp2
 
 
-def r_number(mins=-10, maxs=10):
-    return random.randrange(mins, maxs)
+def r_number(minis=-10, maxis=10):
+    return random.randrange(minis, maxis)
 
 
 def if_r1(a):
@@ -233,122 +233,94 @@ def if_r22(x, y):
         return 4
 
 
-def if_r23():
-    x1, x2 = sorted(random.sample(range(-10, 11), 2))
-    y2, y1 = sorted(random.sample(range(-10, 11), 2))
-    L = [[x1, y1], [x1, y2], [x2, y1], [x2, y2]]
-    print(L)
-    random.shuffle(L)
-    print(L)
-    M = L[:3]
-    print(M)
-    print("Вершина 1: ({0},{1})".format(M[0][0], M[0][1]))
-    print("Вершина 2: ({0},{1})".format(M[1][0], M[1][1]))
-    print("Вершина 3: ({0},{1})".format(M[2][0], M[2][1]))
-    print()
-    min_x = min(M[0][0], M[1][0], M[2][0])
-    min_y = min(M[0][1], M[1][1], M[2][1])
-    max_x = max(M[0][0], M[1][0], M[2][0])
-    max_y = max(M[0][1], M[1][1], M[2][1])
-    L = [[min_x, min_y], [min_x, max_y], [max_x, min_y], [max_x, max_y]]
-    for i in L:
-        if i not in M:
-            print("Вершина 4: ({0},{1})".format(i[0], i[1]))
+def if_r23(m):
+    min_x = min(m[0], m[2], m[4])
+    min_y = min(m[1], m[3], m[5])
+    max_x = max(m[0], m[2], m[4])
+    max_y = max(m[1], m[3], m[5])
+    aux = ((m[0], m[1]), (m[2], m[3]), (m[4], m[5]))
+    ll = ((min_x, min_y), (min_x, max_y), (max_x, min_y), (max_x, max_y))
+    for i in ll:
+        if i not in aux:
+            return i
 
 
-def if_r24():
-    for i in range(-5, 6):
-        h = i / 2
-        x = math.pi * h
-        if x > 0:
-            y = 2 * math.sin(x)
-        else:
-            y = 6 - x
-        print("h = {0} : x = {1:.4f} : f(x) = {2:.4f}".format(h, x, y))
+def if_r24(x):
+    if x > 0:
+        y = 2 * math.sin(x)
+    else:
+        y = 6 - x
+    return y
 
 
-def if_r25():
-    for x in range(-4, 5):
-        if x < -2 or x > 2:
-            y = 2 * x
-        else:
-            y = -3 * x
-        print("x = {0} : f(x) = {1}".format(x, y))
+def if_r25(x):
+    if x < -2 or x > 2:
+        y = 2 * x
+    else:
+        y = -3 * x
+    return y
 
 
-def if_r26():
-    for i in range(-2, 7):
-        x = i / 2
-        if x <= 0:
-            y = -x
-        elif x < 2:
-            y = x * x
-        else:
-            y = 4
-        print("x = {0} : f(x) = {1}".format(x, y))
+def if_r26(x):
+    if x <= 0:
+        y = -x
+    elif x < 2:
+        y = x * x
+    else:
+        y = 4
+    return y
 
 
-def if_r27():
-    x = -1
-    while x < 11:
-        x_floor = math.floor(x)
-        if x < 0:
-            y = 0
-        elif x_floor % 2 == 0:
-            y = 1
-        else:
-            y = -1
-        print("x = {0} : f(x) = {1}".format(x, y))
-        x += .5
+def if_r27(x):
+    x_floor = math.floor(x)
+    if x < 0:
+        y = 0
+    elif x_floor % 2 == 0:
+        y = 1
+    else:
+        y = -1
+    return y
 
 
-def if_r28():
-    L = [2016, 300, 1300, 1900, 1200, 2000]
-    for i in L:
-        s = "не високосный"
-        if (i % 4 == 0) and not (i % 100 == 0 and i % 400 != 0):
-            s = "високосный"
-        print(i, " : ", s)
-        if (i % 4 == 0) and (i % 100 != 0 or i % 400 == 0):
-            s = "високосный"
-        print(i, " : ", s)
+def if_r28(i):
+    s = 365
+    if (i % 4 == 0) and not (i % 100 == 0 and i % 400 != 0):
+        s = 366
+    return s
 
 
-def if_r29():
-    for i in range(-4, 5):
-        if i == 0:
-            s = "нулевое "
-        elif i > 0:
-            s = "положительное "
-        else:
-            s = "отрицательное "
-        if i != 0:
-            if i % 2 == 0:
-                s += "четное "
-            else:
-                s += "нечетное "
-        s += "число"
-        print(i, " : ", s)
-
-
-def if_r30():
-    L = [1, 21, 80, 99, 100, 101, 800, 901, 999]
-    for i in L:
+def if_r29(i):
+    if i == 0:
+        s = "нулевое "
+    elif i > 0:
+        s = "положительное "
+    else:
+        s = "отрицательное "
+    if i != 0:
         if i % 2 == 0:
-            s = "четное "
+            s += "четное "
         else:
-            s = "нечетное "
-        i_str = str(i)
-        n = len(i_str)
-        if n == 1:
-            s += "однозначное "
-        elif n == 2:
-            s += "двузначное "
-        elif n == 3:
-            s += "трехзначное "
+            s += "нечетное "
+    s += "число"
+    return s
 
-        s += "число"
-        print(i, " : ", s)
+
+def if_r30(i):
+    if i % 2 == 0:
+        s = "четное "
+    else:
+        s = "нечетное "
+    i_str = str(i)
+    n = len(i_str)
+    if n == 1:
+        s += "однозначное "
+    elif n == 2:
+        s += "двузначное "
+    elif n == 3:
+        s += "трехзначное "
+    s += "число"
+    return s
+
 
 def test():
     flag = True
@@ -356,24 +328,27 @@ def test():
         a = r_number()
         if if_r1(a) != temp1.if1(a):
             flag = False
-            print(a)
-    print("Test 1 - Ok" if flag == True else "Test 1 - Fail")
+            if 1 in printing:
+                print(a)
+    print("Test 1 - Ok" if flag else "Test 1 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         if if_r2(a) != temp1.if2(a):
             flag = False
-            print(a)
-    print("Test 2 - Ok" if flag == True else "Test 2 - Fail")
+            if 2 in printing:
+                print(a)
+    print("Test 2 - Ok" if flag else "Test 2 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         if if_r3(a) != temp1.if3(a):
             flag = False
-            print(a)
-    print("Test 3 - Ok" if flag == True else "Test 3 - Fail")
+            if 3 in printing:
+                print(a)
+    print("Test 3 - Ok" if flag else "Test 3 - Fail")
 
     flag = True
     for i in range(200):
@@ -382,8 +357,9 @@ def test():
         c = r_number()
         if if_r4(a, b, c) != temp1.if4(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 4 - Ok" if flag == True else "Test 4 - Fail")
+            if 4 in printing:
+                print(a, b, c)
+    print("Test 4 - Ok" if flag else "Test 4 - Fail")
 
     flag = True
     for i in range(200):
@@ -392,8 +368,9 @@ def test():
         c = r_number()
         if if_r5(a, b, c) != temp1.if5(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 5 - Ok" if flag == True else "Test 5 - Fail")
+            if 5 in printing:
+                print(a, b, c)
+    print("Test 5 - Ok" if flag else "Test 5 - Fail")
 
     flag = True
     for i in range(200):
@@ -401,8 +378,9 @@ def test():
         b = r_number()
         if if_r6(a, b) != temp1.if6(a, b):
             flag = False
-            print(a, b)
-    print("Test 6 - Ok" if flag == True else "Test 6 - Fail")
+            if 6 in printing:
+                print(a, b)
+    print("Test 6 - Ok" if flag else "Test 6 - Fail")
 
     flag = True
     for i in range(200):
@@ -410,8 +388,9 @@ def test():
         b = r_number()
         if if_r7(a, b) != temp1.if7(a, b):
             flag = False
-            print(a, b)
-    print("Test 7 - Ok" if flag == True else "Test 7 - Fail")
+            if 7 in printing:
+                print(a, b)
+    print("Test 7 - Ok" if flag else "Test 7 - Fail")
 
     flag = True
     for i in range(200):
@@ -419,8 +398,9 @@ def test():
         b = r_number()
         if if_r8(a, b) != temp1.if8(a, b):
             flag = False
-            print(a, b)
-    print("Test 8 - Ok" if flag == True else "Test 8 - Fail")
+            if 8 in printing:
+                print(a, b)
+    print("Test 8 - Ok" if flag else "Test 8 - Fail")
 
     flag = True
     for i in range(200):
@@ -428,8 +408,9 @@ def test():
         b = r_number()
         if if_r9(a, b) != temp1.if9(a, b):
             flag = False
-            print(a, b)
-    print("Test 9 - Ok" if flag == True else "Test 9 - Fail")
+            if 9 in printing:
+                print(a, b)
+    print("Test 9 - Ok" if flag else "Test 9 - Fail")
 
     flag = True
     for i in range(200):
@@ -437,8 +418,9 @@ def test():
         b = r_number()
         if if_r10(a, b) != temp1.if10(a, b):
             flag = False
-            print(a, b)
-    print("Test 10 - Ok" if flag == True else "Test 10 - Fail")
+            if 10 in printing:
+                print(a, b)
+    print("Test 10 - Ok" if flag else "Test 10 - Fail")
 
     flag = True
     for i in range(200):
@@ -446,8 +428,9 @@ def test():
         b = r_number()
         if if_r11(a, b) != temp1.if11(a, b):
             flag = False
-            print(a, b)
-    print("Test 11 - Ok" if flag == True else "Test 11 - Fail")
+            if 11 in printing:
+                print(a, b)
+    print("Test 11 - Ok" if flag else "Test 11 - Fail")
 
     flag = True
     for i in range(200):
@@ -456,8 +439,9 @@ def test():
         c = r_number()
         if if_r12(a, b, c) != temp1.if12(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 12 - Ok" if flag == True else "Test 12 - Fail")
+            if 12 in printing:
+                print(a, b, c)
+    print("Test 12 - Ok" if flag else "Test 12 - Fail")
 
     flag = True
     for i in range(200):
@@ -466,8 +450,9 @@ def test():
         c = r_number()
         if if_r13(a, b, c) != temp1.if13(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 13 - Ok" if flag == True else "Test 13 - Fail")
+            if 13 in printing:
+                print(a, b, c)
+    print("Test 13 - Ok" if flag else "Test 13 - Fail")
 
     flag = True
     for i in range(200):
@@ -476,8 +461,9 @@ def test():
         c = r_number()
         if if_r14(a, b, c) != temp1.if14(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 14 - Ok" if flag == True else "Test 14 - Fail")
+            if 14 in printing:
+                print(a, b, c)
+    print("Test 14 - Ok" if flag else "Test 14 - Fail")
 
     flag = True
     for i in range(200):
@@ -486,8 +472,9 @@ def test():
         c = r_number()
         if if_r15(a, b, c) != temp1.if15(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 15 - Ok" if flag == True else "Test 15 - Fail")
+            if 15 in printing:
+                print(a, b, c)
+    print("Test 15 - Ok" if flag else "Test 15 - Fail")
 
     flag = True
     for i in range(200):
@@ -496,8 +483,9 @@ def test():
         c = r_number()
         if if_r16(a, b, c) != temp2.if16(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 16 - Ok" if flag == True else "Test 16 - Fail")
+            if 16 in printing:
+                print(a, b, c)
+    print("Test 16 - Ok" if flag else "Test 16 - Fail")
 
     flag = True
     for i in range(200):
@@ -506,8 +494,9 @@ def test():
         c = r_number()
         if if_r17(a, b, c) != temp2.if17(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 17 - Ok" if flag == True else "Test 17 - Fail")
+            if 17 in printing:
+                print(a, b, c)
+    print("Test 17 - Ok" if flag else "Test 17 - Fail")
 
     flag = True
     for i in range(200):
@@ -524,8 +513,9 @@ def test():
             aux = (b, a, a)
         if if_r18(*aux) != temp2.if18(*aux):
             flag = False
-            print(*aux)
-    print("Test 18 - Ok" if flag == True else "Test 18 - Fail")
+            if 18 in printing:
+                print(*aux)
+    print("Test 18 - Ok" if flag else "Test 18 - Fail")
 
     flag = True
     for i in range(200):
@@ -544,8 +534,9 @@ def test():
             aux = (b, a, a, a)
         if if_r19(*aux) != temp2.if19(*aux):
             flag = False
-            print(*aux)
-    print("Test 19 - Ok" if flag == True else "Test 19 - Fail")
+            if 19 in printing:
+                print(*aux)
+    print("Test 19 - Ok" if flag else "Test 19 - Fail")
 
     flag = True
     for i in range(200):
@@ -554,8 +545,9 @@ def test():
         c = r_number()
         if if_r20(a, b, c) != temp2.if20(a, b, c):
             flag = False
-            print(a, b, c)
-    print("Test 20 - Ok" if flag == True else "Test 20 - Fail")
+            if 20 in printing:
+                print(a, b, c)
+    print("Test 20 - Ok" if flag else "Test 20 - Fail")
 
     flag = True
     for i in range(200):
@@ -563,18 +555,97 @@ def test():
         b = r_number()
         if if_r21(a, b) != temp2.if21(a, b):
             flag = False
-            print(a, b)
-    print("Test 21 - Ok" if flag == True else "Test 21 - Fail")
+            if 21 in printing:
+                print(a, b)
+    print("Test 21 - Ok" if flag else "Test 21 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number()
         b = r_number()
-        if a == 0: a +=1
-        if b == 0: b +=1
+        if a == 0:
+            a += 1
+        if b == 0:
+            b += 1
         if if_r22(a, b) != temp2.if22(a, b):
             flag = False
-            print(a, b)
-    print("Test 22 - Ok" if flag == True else "Test 22 - Fail")
+            if 22 in printing:
+                print(a, b)
+    print("Test 22 - Ok" if flag else "Test 22 - Fail")
+
+    flag = True
+    for i in range(200):
+        temp = random.sample(range(-10, 10), 4)
+        aux = (temp[0], temp[1], temp[0], temp[3], temp[2], temp[1])
+        if if_r23(aux) != temp2.if23(*aux):
+            flag = False
+            if 23 in printing:
+                print(aux)
+    print("Test 23 - Ok" if flag else "Test 23 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if if_r24(a) != temp2.if24(a):
+            flag = False
+            if 24 in printing:
+                print(a)
+    print("Test 24 - Ok" if flag else "Test 24 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if if_r25(a) != temp2.if25(a):
+            flag = False
+            if 25 in printing:
+                print(a)
+    print("Test 25 - Ok" if flag else "Test 25 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if if_r26(a) != temp2.if26(a):
+            flag = False
+            if 26 in printing:
+                print(a)
+    print("Test 26 - Ok" if flag else "Test 26 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if if_r27(a) != temp2.if27(a):
+            flag = False
+            if 27 in printing:
+                print(a)
+    print("Test 27 - Ok" if flag else "Test 27 - Fail")
+
+    flag = True
+    for i in range(1000):
+        a = r_number(0, 3000)
+        if if_r28(a) != temp2.if28(a):
+            flag = False
+            if 28 in printing:
+                print(a)
+    print("Test 28 - Ok" if flag else "Test 28 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number(-100, 100)
+        if if_r29(a) != temp2.if29(a):
+            flag = False
+            if 29 in printing:
+                print(a, if_r29(a),temp2.if29(a))
+    print("Test 29 - Ok" if flag else "Test 29 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number(1, 1000)
+        if if_r30(a) != temp2.if30(a):
+            flag = False
+            if 30 in printing:
+                print(a)
+    print("Test 30 - Ok" if flag else "Test 30 - Fail")
+
+printing = (0, 20, 21)
 
 test()
