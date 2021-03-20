@@ -1,6 +1,6 @@
 import random
 import math
-import _kulinuk as temp
+from z_ifs import _deduhin as temp
 
 
 def r_number(min = -10, max = 10):
@@ -537,8 +537,8 @@ def fined():
         a = r_number()
         b = r_number()
         c = r_number()
-        print((a, b) if if_r9(a, b) != temp.if9(a, b) else "Ok")
-        if if_r9(a, b) != temp.if9(a, b):
+        print((a, b, c) if if_r5(a, b, c) != temp.if5(a, b, c) else "Ok")
+        if if_r5(a, b, c) != temp.if5(a, b, c):
             flag = False
     print("Test 13- Ok" if flag == True else "Test 13 - Fail")
 
