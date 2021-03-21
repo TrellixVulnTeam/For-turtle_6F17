@@ -460,7 +460,7 @@ def elif_r20(day, month):
 def test():
     flag = True
     for i in range(10):
-        a = r_number()
+        a = r_number(1, 8)
         if elif_r1(a) != temp1.if1(a):
             flag = False
             if 1 in printing:
@@ -468,8 +468,8 @@ def test():
     print("Test 1 - Ok" if flag else "Test 1 - Fail")
 
     flag = True
-    for i in range(200):
-        a = r_number()
+    for i in range(10):
+        a = r_number(1, 6)
         if elif_r2(a) != temp1.if2(a):
             flag = False
             if 2 in printing:
@@ -477,8 +477,8 @@ def test():
     print("Test 2 - Ok" if flag else "Test 2 - Fail")
 
     flag = True
-    for i in range(200):
-        a = r_number()
+    for i in range(30):
+        a = r_number(1, 13)
         if elif_r3(a) != temp1.if3(a):
             flag = False
             if 3 in printing:
@@ -486,8 +486,8 @@ def test():
     print("Test 3 - Ok" if flag else "Test 3 - Fail")
 
     flag = True
-    for i in range(200):
-        a = r_number()
+    for i in range(30):
+        a = r_number(1, 13)
         if elif_r4(a) != temp1.if4(a):
             flag = False
             if 4 in printing:
@@ -496,9 +496,11 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
+        a = r_number(1, 5)
         b = r_number()
         c = r_number()
+        if c == 0:
+            c += 1
         if elif_r5(a, b, c) != temp1.if5(a, b, c):
             flag = False
             if 5 in printing:
@@ -507,8 +509,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 6)
+        b = r_number(0, 10000)
         if elif_r6(a, b) != temp1.if6(a, b):
             flag = False
             if 6 in printing:
@@ -517,8 +519,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 6)
+        b = r_number(0, 10000)
         if elif_r7(a, b) != temp1.if7(a, b):
             flag = False
             if 7 in printing:
@@ -527,8 +529,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 32)
+        b = r_number(1, 13)
         if elif_r8(a, b) != temp1.if8(a, b):
             flag = False
             if 8 in printing:
@@ -537,8 +539,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 31)
+        b = r_number(1, 13)
         if elif_r9(a, b) != temp1.if9(a, b):
             flag = False
             if 9 in printing:
@@ -547,8 +549,10 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        wegas = ('С', 'Ю', 'З', 'В')
+        logos = (-1, 0, 1)
+        a = random.choice(wegas)
+        b = random.choice(logos)
         if elif_r10(a, b) != temp1.if10(a, b):
             flag = False
             if 10 in printing:
@@ -557,9 +561,11 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
-        c = r_number()
+        wegas = ('С', 'Ю', 'З', 'В')
+        logos = (-1, 2, 1)
+        a = random.choice(wegas)
+        b = random.choice(logos)
+        c = random.choice(logos)
         if elif_r11(a, b, c) != temp1.if11(a, b, c):
             flag = False
             if 11 in printing:
@@ -568,8 +574,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 5)
+        b = r_number(0, 100)
         if elif_r12(a, b) != temp1.if12(a, b):
             flag = False
             if 12 in printing:
@@ -578,8 +584,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 5)
+        b = r_number(0, 100)
         if elif_r13(a, b) != temp1.if13(a, b):
             flag = False
             if 13 in printing:
@@ -588,8 +594,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(1, 5)
+        b = r_number(0, 100)
         if elif_r14(a, b) != temp1.if14(a, b):
             flag = False
             if 14 in printing:
@@ -598,8 +604,8 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
+        a = r_number(6, 15)
+        b = r_number(1, 5)
         if elif_r15(a, b) != temp1.if15(a, b):
             flag = False
             if 15 in printing:
@@ -608,7 +614,7 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
+        a = r_number(20, 70)
         if elif_r16(a) != temp2.if16(a):
             flag = False
             if 16 in printing:
@@ -617,7 +623,7 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
+        a = r_number(10, 41)
         if elif_r17(a) != temp2.if17(a):
             flag = False
             if 17 in printing:
@@ -626,49 +632,26 @@ def test():
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
-        if a == b:
-            a += 1
-        x = random.randrange(1, 4)
-        if x == 1:
-            aux = (a, a, b)
-        elif x == 2:
-            aux = (a, b, a)
-        else:
-            aux = (b, a, a)
-        if elif_r18(*aux) != temp2.if18(*aux):
+        a = r_number(100, 1000)
+        if elif_r18(a) != temp2.if18(a):
             flag = False
             if 18 in printing:
-                print(*aux)
+                print(a)
     print("Test 18 - Ok" if flag else "Test 18 - Fail")
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
-        if a == b:
-            a += 1
-        x = random.randrange(1, 4)
-        if x == 1:
-            aux = (a, a, a, b)
-        elif x == 2:
-            aux = (a, a, b, a)
-        elif x == 3:
-            aux = (a, b, a, a)
-        else:
-            aux = (b, a, a, a)
-        if elif_r19(*aux) != temp2.if19(*aux):
+        a = r_number(0, 3000)
+        if elif_r19(a) != temp2.if19(a):
             flag = False
             if 19 in printing:
-                print(*aux)
+                print(a)
     print("Test 19 - Ok" if flag else "Test 19 - Fail")
 
     flag = True
     for i in range(200):
-        a = r_number()
-        b = r_number()
-        c = r_number()
+        a = r_number(1, 32)
+        b = r_number(1, 13)
         if elif_r20(a, b) != temp2.if20(a, b):
             flag = False
             if 20 in printing:
