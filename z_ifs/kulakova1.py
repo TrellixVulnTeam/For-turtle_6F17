@@ -153,11 +153,11 @@ def if11(a, b):
   
 
 
-def if12(int1, int2):
+def if12(int1, int2, int3):
     """
     If12. Даны три числа. Найти наименьшее из них.
     """
-    return(min(int1, int2))
+    return(min(int1, int2, int3))
   
 
 

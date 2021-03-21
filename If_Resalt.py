@@ -1,7 +1,7 @@
 import random
 import math
-from z_ifs import sotnikov1 as temp1
-from z_ifs import sotnikov2 as temp2
+from z_ifs import atenyaeva1 as temp1
+from z_ifs import atenyaeva2 as temp2
 
 
 def r_number(minis=-10, maxis=10):
@@ -580,7 +580,7 @@ def test():
         if if_r23(aux) != temp2.if23(*aux):
             flag = False
             if 23 in printing:
-                print(aux)
+                print(aux,  if_r23(aux), temp2.if23(*aux))
     print("Test 23 - Ok" if flag else "Test 23 - Fail")
 
     flag = True
