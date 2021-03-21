@@ -1,8 +1,13 @@
 import random
-import math
+from z_elifs import atenyaeva1 as temp1
+from z_elifs import atenyaeva2 as temp2
 
 
-def elif1(int_number):
+def r_number(minis=-10, maxis=10):
+    return random.randrange(minis, maxis)
+
+
+def elif_r1(int_number):
     """
     Elif1. Дано целое число в диапазоне 1–7. Вывести строку - название дня недели,
     соответствующее данному числу (1 - «понедельник», 2 - «вторник» и т. д.), иначе
@@ -15,7 +20,7 @@ def elif1(int_number):
         return 0
 
 
-def elif2(k):
+def elif_r2(k):
     """
     Elif2. Дано целое число k. Вывести строку-описание оценки, соответствующей числу k
     (1 - «плохо», 2 - «неудовлетворительно», 3 - «удовлетворительно», 4 - «хорошо», 5 - «отлично»).
@@ -28,7 +33,7 @@ def elif2(k):
         return 'ошибка'
 
 
-def elif3(month):
+def elif_r3(month):
     """
     Elif3. Дан номер месяца - целое число в диапазоне 1–12 (1 - январь, 2 - февраль и т. д.).
     Вывести название соответствующего времени года («зима», «весна», «лето», «осень»).
@@ -50,7 +55,7 @@ def elif3(month):
         return 0
 
 
-def elif4(month):
+def elif_r4(month):
     """
     Elif4. Дан номер месяца - целое число в диапазоне 1–12 (1 - январь, 2 - февраль и т. д.).
     Определить количество дней в этом месяце для невисокосного года.
@@ -67,7 +72,7 @@ def elif4(month):
         return 0
 
 
-def elif5(n, a, b):
+def elif_r5(n, a, b):
     """
     Elif5. Арифметические действия над числами пронумерованы следующим образом:
     1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление.
@@ -87,7 +92,7 @@ def elif5(n, a, b):
             return a / b
 
 
-def elif6(number, length):
+def elif_r6(number, length):
     """
     Elif6. Единицы длины пронумерованы следующим образом:
     1 - дециметр, 2 - километр, 3 - метр, 4 - миллиметр, 5 - сантиметр.
@@ -108,7 +113,7 @@ def elif6(number, length):
     return res
 
 
-def elif7(number, mass):
+def elif_r7(number, mass):
     """
     Elif7. Единицы массы пронумерованы следующим образом:
     1 - килограмм, 2 - миллиграмм, 3 - грамм, 4 - тонна, 5 - центнер.
@@ -129,7 +134,7 @@ def elif7(number, mass):
     return m
 
 
-def elif8(day, month):
+def elif_r8(day, month):
     """
     Elif8. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, предшествующей указанной.
@@ -141,17 +146,17 @@ def elif8(day, month):
             month = 12
         else:
             month -= 1
-            day = elif4(month)
+            day = elif_r4(month)
 
     return day, month
 
 
-def elif9(day, month):
+def elif_r9(day, month):
     """
     Elif9. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, следующей за указанной.
     """
-    max_day = elif4(month)
+    max_day = elif_r4(month)
     if day < max_day:
         day += 1
     else:
@@ -163,7 +168,7 @@ def elif9(day, month):
     return day, month
 
 
-def elif10(symbol, int_number):
+def elif_r10(symbol, int_number):
     """
     Elif10. Робот может перемещаться в четырех направлениях («С» - север, «З» - запад, «Ю» - юг, «В» - восток)
     и принимать три цифровые команды: 0 - продолжать движение, 1 - поворот налево, −1 - поворот направо.
@@ -186,7 +191,7 @@ def elif10(symbol, int_number):
     return symbol
 
 
-def elif11(symbol, int1, int2):
+def elif_r11(symbol, int1, int2):
     """
     Elif11. Локатор ориентирован на одну из сторон света («С» - север, «З» - запад, «Ю» - юг, «В» - восток)
     и может принимать три цифровые команды поворота: 1 - поворот налево, −1 - поворот направо, 2 - поворот на 180.
@@ -206,7 +211,7 @@ def elif11(symbol, int1, int2):
     return direction[radar_direction]
 
 
-def elif12(element, number):
+def elif_r12(element, number):
     """
     Elif12. Элементы окружности пронумерованы следующим образом:
     1 - радиус r, 2 - диаметр d = 2 * r, 3 - длина l = 2 * pi * r, 4 - площадь круга s = pi * r**2 .
@@ -238,7 +243,7 @@ def elif12(element, number):
     return r, length, d, s
 
 
-def elif13(element, number):
+def elif_r13(element, number):
     """
     Elif13. Элементы равнобедренного прямоугольного треугольника пронумерованы следующим образом:
     1 - катет a, 2 - гипотенуза c = a * 2**0.5, 3 - высота h, опущенная на гипотенузу (h = c / 2),
@@ -270,7 +275,7 @@ def elif13(element, number):
     return a, c, h, s
 
 
-def elif14(element, number):
+def elif_r14(element, number):
     """
     Elif14. Элементы равностороннего треугольника пронумерованы следующим образом:
     1 - сторона a, 2 - радиус r1 вписанной окружности (r1 = a * 3**0.5 / 6),
@@ -303,7 +308,7 @@ def elif14(element, number):
     return a, r1, r2, s
 
 
-def elif15(n, m):
+def elif_r15(n, m):
     """
     Elif15. Мастям игральных карт присвоены порядковые номера: 1 - пики, 2 - трефы, 3 - бубны, 4 - червы.
     Достоинству карт, старших десятки, присвоены номера: 11 - валет, 12 - дама, 13 - король, 14 - туз.
@@ -319,7 +324,7 @@ def elif15(n, m):
         return 0
 
 
-def elif16(years_olds):
+def elif_r16(years_olds):
     """
     Elif16. Дано целое число в диапазоне 20–69, определяющее возраст (в годах).
     Вывести строку-описание указанного возраста, обеспечив правильное согласование числа со словом «год»,
@@ -339,7 +344,7 @@ def elif16(years_olds):
         return 0
 
 
-def elif17(int_number):
+def elif_r17(int_number):
     """
     Elif17. Дано целое число в диапазоне 10–40, определяющее количество учебных заданий по некоторой теме.
     Вывести строку-описание указанного количества заданий, обеспечив правильное согласование числа со словами
@@ -364,7 +369,7 @@ def elif17(int_number):
             return tens[ten - 1] + ones[one - 1]
 
 
-def elif18(int_number):
+def elif_r18(int_number):
     """
     Elif18. Дано целое число в диапазоне 1–999. Вывести строку-описание данного числа,
     например: 256 - «двести пятьдесят шесть», 814 - «восемьсот четырнадцать».
@@ -393,7 +398,7 @@ def elif18(int_number):
     return res
 
 
-def elif19(year):
+def elif_r19(year):
     """
     Elif19. В восточном календаре принят 60-летний цикл, состоящий из 12-летних под-циклов,
     обозначаемых названиями цвета: зеленый, красный, желтый, белый и черный. В каждом подцикле годы носят
@@ -415,14 +420,14 @@ def elif19(year):
     return res
 
 
-def elif20(day, month):
+def elif_r20(day, month):
     """
     Elif20. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату.
     Вывести знак Зодиака, соответствующий этой дате: «Водолей» (20.1–18.2), «Рыбы» (19.2–20.3), «Овен» (21.3–19.4),
     «Телец» (20.4–20.5), «Близнецы» (21.5–21.6), «Рак» (22.6–22.7), «Лев» (23.7–22.8), «Дева» (23.8–22.9),
     «Весы» (23.9–22.10), «Скорпион» (23.10–22.11), «Стрелец» (23.11–21.12), «Козерог» (22.12–19.1)
     """
-    if month in range(1, 13) and day <= elif4(month):
+    if month in range(1, 13) and day <= elif_r4(month):
         x = month * 100 + day
         if x in range(101, 119):
             return 'Козерог'
@@ -450,3 +455,226 @@ def elif20(day, month):
             return 'Стрелец'
         elif x in range(1222, 1231):
             return 'Козерог'
+
+
+def test():
+    flag = True
+    for i in range(10):
+        a = r_number()
+        if elif_r1(a) != temp1.if1(a):
+            flag = False
+            if 1 in printing:
+                print(a)
+    print("Test 1 - Ok" if flag else "Test 1 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if elif_r2(a) != temp1.if2(a):
+            flag = False
+            if 2 in printing:
+                print(a)
+    print("Test 2 - Ok" if flag else "Test 2 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if elif_r3(a) != temp1.if3(a):
+            flag = False
+            if 3 in printing:
+                print(a)
+    print("Test 3 - Ok" if flag else "Test 3 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if elif_r4(a) != temp1.if4(a):
+            flag = False
+            if 4 in printing:
+                print(a)
+    print("Test 4 - Ok" if flag else "Test 4 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        c = r_number()
+        if elif_r5(a, b, c) != temp1.if5(a, b, c):
+            flag = False
+            if 5 in printing:
+                print(a, b, c)
+    print("Test 5 - Ok" if flag else "Test 5 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r6(a, b) != temp1.if6(a, b):
+            flag = False
+            if 6 in printing:
+                print(a, b)
+    print("Test 6 - Ok" if flag else "Test 6 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r7(a, b) != temp1.if7(a, b):
+            flag = False
+            if 7 in printing:
+                print(a, b)
+    print("Test 7 - Ok" if flag else "Test 7 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r8(a, b) != temp1.if8(a, b):
+            flag = False
+            if 8 in printing:
+                print(a, b)
+    print("Test 8 - Ok" if flag else "Test 8 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r9(a, b) != temp1.if9(a, b):
+            flag = False
+            if 9 in printing:
+                print(a, b)
+    print("Test 9 - Ok" if flag else "Test 9 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r10(a, b) != temp1.if10(a, b):
+            flag = False
+            if 10 in printing:
+                print(a, b)
+    print("Test 10 - Ok" if flag else "Test 10 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        c = r_number()
+        if elif_r11(a, b, c) != temp1.if11(a, b, c):
+            flag = False
+            if 11 in printing:
+                print(a, b, c)
+    print("Test 11 - Ok" if flag else "Test 11 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r12(a, b) != temp1.if12(a, b):
+            flag = False
+            if 12 in printing:
+                print(a, b)
+    print("Test 12 - Ok" if flag else "Test 12 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r13(a, b) != temp1.if13(a, b):
+            flag = False
+            if 13 in printing:
+                print(a, b)
+    print("Test 13 - Ok" if flag else "Test 13 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r14(a, b) != temp1.if14(a, b):
+            flag = False
+            if 14 in printing:
+                print(a, b)
+    print("Test 14 - Ok" if flag else "Test 14 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if elif_r15(a, b) != temp1.if15(a, b):
+            flag = False
+            if 15 in printing:
+                print(a, b)
+    print("Test 15 - Ok" if flag else "Test 15 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if elif_r16(a) != temp2.if16(a):
+            flag = False
+            if 16 in printing:
+                print(a)
+    print("Test 16 - Ok" if flag else "Test 16 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        if elif_r17(a) != temp2.if17(a):
+            flag = False
+            if 17 in printing:
+                print(a)
+    print("Test 17 - Ok" if flag else "Test 17 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if a == b:
+            a += 1
+        x = random.randrange(1, 4)
+        if x == 1:
+            aux = (a, a, b)
+        elif x == 2:
+            aux = (a, b, a)
+        else:
+            aux = (b, a, a)
+        if elif_r18(*aux) != temp2.if18(*aux):
+            flag = False
+            if 18 in printing:
+                print(*aux)
+    print("Test 18 - Ok" if flag else "Test 18 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        if a == b:
+            a += 1
+        x = random.randrange(1, 4)
+        if x == 1:
+            aux = (a, a, a, b)
+        elif x == 2:
+            aux = (a, a, b, a)
+        elif x == 3:
+            aux = (a, b, a, a)
+        else:
+            aux = (b, a, a, a)
+        if elif_r19(*aux) != temp2.if19(*aux):
+            flag = False
+            if 19 in printing:
+                print(*aux)
+    print("Test 19 - Ok" if flag else "Test 19 - Fail")
+
+    flag = True
+    for i in range(200):
+        a = r_number()
+        b = r_number()
+        c = r_number()
+        if elif_r20(a, b) != temp2.if20(a, b):
+            flag = False
+            if 20 in printing:
+                print(a, b)
+    print("Test 20 - Ok" if flag else "Test 20 - Fail")
+
+
+printing = (0, )
+test()
