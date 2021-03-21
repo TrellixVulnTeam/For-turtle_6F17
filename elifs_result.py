@@ -1,3 +1,7 @@
+import random
+import math
+
+
 def elif1(int_number):
     """
     Elif1. Дано целое число в диапазоне 1–7. Вывести строку - название дня недели,
@@ -166,10 +170,10 @@ def elif10(symbol, int_number):
     Дан символ symbol - исходное направление робота и целое число int_number - посланная ему команда.
     Вывести направление робота после выполнения полученной команды.
     """
-    direction = ('С','З','Ю','В')
+    direction = ('С', 'З', 'Ю', 'В')
     robot_direction = direction.index(symbol)
     if int_number == 1:
-        if 0 <= robot_direction <= 2 :
+        if 0 <= robot_direction <= 2:
             symbol = direction[robot_direction + 1]
         else:
             symbol = direction[0]
@@ -190,39 +194,83 @@ def elif11(symbol, int1, int2):
     Вывести ориентацию локатора после выполнения этих команд.
     """
     direction = ('С', 'З', 'Ю', 'В')
+    radar_direction = direction.index(symbol)
     for i in int1, int2:
-        radar_direction = direction.index(symbol)
         if i == 1:
-            symbol = direction[(radar_direction + 1) % 4]
+            radar_direction = (radar_direction + 1) % 4
         elif i == -1:
-            symbol = direction[(radar_direction - 1) % 4]
+            radar_direction = (radar_direction - 1) % 4
         elif i == 2:
-            symbol = direction[(radar_direction + 2) % 4]
+            radar_direction = (radar_direction + 2) % 4
 
-    return symbol
+    return direction[radar_direction]
 
 
-def elif12(number, element):
+def elif12(element, number):
     """
     Elif12. Элементы окружности пронумерованы следующим образом:
     1 - радиус r, 2 - диаметр d = 2 * r, 3 - длина l = 2 * pi * r, 4 - площадь круга s = pi * r**2 .
     Дан номер одного из этих элементов и его значение.
     Вывести значения остальных элементов данной окружности (в том же порядке). В качестве значения π использовать 3.14.
     """
-    pass
+    if element == 1:
+        r = number
+        d = 2 * r
+        length = 2 * 3.14 * r
+        s = 3.14 * r ** 2
+    elif element == 2:
+        d = number
+        r = d / 2
+        length = 2 * 3.14 * r
+        s = 3.14 * r ** 2
+    elif element == 3:
+        length = number
+        r = length / 2 / 3.14
+        d = 2 * r
+        s = 3.14 * r ** 2
+    elif element == 4:
+        s = number
+        r = (s / 3.14)**0.5
+        d = 2 * r
+        length = 2 * 3.14 * r
+    else:
+        r = length = d = s = 0
+    return r, length, d, s
 
 
-def elif13(number, element):
+def elif13(element, number):
     """
     Elif13. Элементы равнобедренного прямоугольного треугольника пронумерованы следующим образом:
     1 - катет a, 2 - гипотенуза c = a * 2**0.5, 3 - высота h, опущенная на гипотенузу (h = c / 2),
     4 - площадь s = c * h / 2. Дан номер одного из этих элементов и его значение.
     Вывести значения остальных элементов данного треугольника (в том же порядке).
     """
-    pass
+    if element == 1:
+        a = number
+        c = a * 2**0.5
+        h = c / 2
+        s = c * h / 2
+    elif element == 2:
+        c = number
+        a = c / 2**0.5
+        h = c / 2
+        s = c * h / 2
+    elif element == 3:
+        h = number
+        c = 2 * h
+        a = c / 2**0.5
+        s = c * h / 2
+    elif element == 4:
+        s = number
+        c = (s * 4)**0.5
+        a = c / 2**0.5
+        h = c / 2
+    else:
+        s = c = a = h = 0
+    return a, c, h, s
 
 
-def elif14(number, element):
+def elif14(element, number):
     """
     Elif14. Элементы равностороннего треугольника пронумерованы следующим образом:
     1 - сторона a, 2 - радиус r1 вписанной окружности (r1 = a * 3**0.5 / 6),
@@ -230,7 +278,29 @@ def elif14(number, element):
     Дан номер одного из этих элементов и его значение.
     Вывести значения остальных элементов данного треугольника (в том же порядке).
     """
-    pass
+    if element == 1:
+        a = number
+        r1 = a * 3**0.5 / 6
+        r2 = r1 * 2
+        s = a**2 * 3**0.5 / 4
+    elif element == 2:
+        r1 = number
+        a = r1 * 6 / 3**0.5
+        r2 = r1 * 2
+        s = a**2 * 3**0.5 / 4
+    elif element == 3:
+        r2 = number
+        r1 = r2 / 2
+        a = r1 * 6 / 3**0.5
+        s = a**2 * 3**0.5 / 4
+    elif element == 4:
+        s = number
+        a = (s * 4 / 3**0.5)**2
+        r1 = a * 3**0.5 / 6
+        r2 = r1 * 2
+    else:
+        a = r1 = r2 = s = 0
+    return a, r1, r2, s
 
 
 def elif15(n, m):
@@ -240,7 +310,13 @@ def elif15(n, m):
     Даны два целых числа: n - достоинство (6 ≤ N ≤ 14) и m - масть карты (1 ≤ M ≤ 4).
     Вывести название соответствующей карты вида «шестерка бубен», «дама червей», «туз треф» и т. п.
     """
-    pass
+    suit = ('пики', 'треф', 'бубен', 'червей')
+    value = ('шестерка ', 'семерка ', 'восьмерка ', 'девятка ', 'десятка ', 'валет ', 'дама ', 'король ', 'туз ')
+
+    if 6 <= n <= 14 and 1 <= m <= 4:
+        return value[n - 1] + suit[m - 1]
+    else:
+        return 0
 
 
 def elif16(years_olds):
@@ -249,7 +325,18 @@ def elif16(years_olds):
     Вывести строку-описание указанного возраста, обеспечив правильное согласование числа со словом «год»,
     например: 20 - «двадцать лет», 32 - «тридцать два года», 41 - «сорок один год».
     """
-    pass
+    tens = ('двадцать ', 'тридцать ', 'сорок ', 'пятьдесят ', 'шестьдесят ')
+    ones = ('один год', 'два года', 'три года', 'четыре года', 'пять лет', 'шесть лет',
+            'семь лет', 'восемь лет', 'девять лет')
+    ten = years_olds // 10
+    one = years_olds % 10
+    if 20 <= years_olds <= 69:
+        if one == 0:
+            return tens[ten - 2] + 'лет'
+        else:
+            return tens[ten - 2] + ones[one - 1]
+    else:
+        return 0
 
 
 def elif17(int_number):
@@ -259,15 +346,52 @@ def elif17(int_number):
     «учебное задание», например: 18 - «восемнадцать учебных заданий», 23 - «двадцать три учебных задания»,
     31 - «тридцать одно учебное задание».
    """
-    pass
+
+    teens = ('одиннадцать ', 'двенадцать ', 'тринадцать ', 'четырнадцать ', 'пятнадцать ', 'шестнадцать ',
+             'семнадцать ', 'восемнадцать ', 'девятнадцать ')
+    tens = ('десять ', 'двадцать ', 'тридцать ', 'сорок ')
+    ones = ('одно учебное задание', 'два учебных задания', 'три учебных задания', 'четыре учебных задания',
+            'пять учебных заданий', 'шесть учебных заданий', 'семь учебных заданий', 'восемь учебных заданий',
+            'девять учебных заданий')
+    ten = int_number // 10
+    one = int_number % 10
+    if 10 < int_number < 20:
+        return teens[int_number - 11] + 'учебных заданий'
+    else:
+        if one == 0:
+            return tens[ten - 1] + 'учебных заданий'
+        else:
+            return tens[ten - 1] + ones[one - 1]
 
 
 def elif18(int_number):
     """
-    Elif18. Дано целое число в диапазоне 100–999. Вывести строку-описание данного числа,
+    Elif18. Дано целое число в диапазоне 1–999. Вывести строку-описание данного числа,
     например: 256 - «двести пятьдесят шесть», 814 - «восемьсот четырнадцать».
     """
-    pass
+    ones = ('один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять')
+    teens = ('одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать',
+             'восемнадцать', 'девятнадцать')
+    tens = ('десять ', 'двадцать ', 'тридцать ', 'сорок ', 'пятьдесят ', 'шестьдесят ', 'семьдесят ', 'восемьдесят ',
+            'девяносто ')
+    hundreds = ('сто ', 'двести ', 'триста ', 'четыреста ', 'пятьсот ', 'шестьсот ', 'семьсот ', 'восемьсот ',
+                'девятьсот ')
+    hundred = int_number // 100
+    teen = int_number % 100
+    ten = (int_number % 100) // 10
+    one = int_number % 10
+    res = ''
+    if 1 <= hundred <= 9:
+        res += hundreds[hundred - 1]
+    if 10 < teen < 20:
+        res += teens[teen - 11]
+    else:
+        if 1 <= ten <= 9:
+            res += tens[ten - 1]
+    if 1 <= one <= 9:
+        res += ones[one - 1]
+    return res
+
 
 def elif19(year):
     """
@@ -276,7 +400,19 @@ def elif19(year):
     названия животных: крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы, обезьяны, курицы, собаки и свиньи.
     По номеру года определить его название, если 1984 год - начало цикла: «год зеленой крысы».
     """
-    pass
+    res = 'год '
+    zoos = ('крысы', 'коровы', 'тигра', 'зайца', 'дракона', 'змеи', 'лошади', 'овцы', 'обезьяны', 'курицы', 'собаки',
+            'свиньи')
+    color_oy = ('зеленой ', 'красной ', 'желтой ', 'белой ', 'черной ')
+    color_ogo = ('зеленого ', 'красного ', 'желтого ', 'белого ', 'черного ')
+    zoo = (year % 12 - 4) % 12
+    color = (year % 5 - 4) % 5
+    if zoo in [3, 4, 5]:
+        res += color_ogo[color]
+    else:
+        res += color_oy[color]
+    res += zoos[zoo]
+    return res
 
 
 def elif20(day, month):
@@ -286,4 +422,31 @@ def elif20(day, month):
     «Телец» (20.4–20.5), «Близнецы» (21.5–21.6), «Рак» (22.6–22.7), «Лев» (23.7–22.8), «Дева» (23.8–22.9),
     «Весы» (23.9–22.10), «Скорпион» (23.10–22.11), «Стрелец» (23.11–21.12), «Козерог» (22.12–19.1)
     """
-    pass
+    if month in range(1, 13) and day <= elif4(month):
+        x = month * 100 + day
+        if x in range(101, 119):
+            return 'Козерог'
+        elif x in range(120, 218):
+            return 'Водолей'
+        elif x in range(219, 320):
+            return 'Рыбы'
+        elif x in range(321, 419):
+            return 'Овен'
+        elif x in range(420, 520):
+            return 'Телец'
+        elif x in range(521, 621):
+            return 'Близнецы'
+        elif x in range(622, 722):
+            return 'Рак'
+        elif x in range(723, 822):
+            return 'Лев'
+        elif x in range(823, 922):
+            return 'Дева'
+        elif x in range(923, 1022):
+            return 'Весы'
+        elif x in range(1023, 1122):
+            return 'Скорпион'
+        elif x in range(1123, 1221):
+            return 'Стрелец'
+        elif x in range(1222, 1231):
+            return 'Козерог'
