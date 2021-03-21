@@ -1,7 +1,7 @@
 import random
 import math
-from z_ifs import _begaev1 as temp1
-from z_ifs import _begaev2 as temp2
+from z_ifs import sotnikov1 as temp1
+from z_ifs import sotnikov2 as temp2
 
 
 def r_number(minis=-10, maxis=10):
@@ -631,21 +631,26 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(-100, 100)
-        if if_r29(a) != temp2.if29(a):
-            flag = False
-            if 29 in printing:
-                print(a, if_r29(a),temp2.if29(a))
+        aux = if_r29(a).split()
+        for j in aux:
+            if j not in temp2.if29(a):
+                flag = False
+                if 29 in printing:
+                    print(a, aux, temp2.if29(a))
     print("Test 29 - Ok" if flag else "Test 29 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(1, 1000)
-        if if_r30(a) != temp2.if30(a):
-            flag = False
-            if 30 in printing:
-                print(a)
+        aux = if_r30(a).split()
+        for j in aux:
+            if j not in temp2.if30(a):
+                flag = False
+                if 30 in printing:
+                    print(a, temp2.if30(a))
+
     print("Test 30 - Ok" if flag else "Test 30 - Fail")
 
-printing = (0, 20, 21)
 
+printing = (0, )
 test()

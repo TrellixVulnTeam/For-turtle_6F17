@@ -9,12 +9,12 @@ def if16(a, b, c):
         a*=2
         b*=2
         c*=2
-        print(a,b,c)
+        return(a,b,c)
     else:
         a=-a
         b=-b
         c=-c
-        print(a,b,c)
+        return(a,b,c)
 
 
 def if17(a, b, c):
@@ -28,12 +28,12 @@ def if17(a, b, c):
         a*=2
         b*=2
         c*=2
-        print(a,b,c)
+        return(a,b,c)
     else:
         a=-a
         b=-b
         c=-c
-        print(a,b,c)
+        return(a,b,c)
 
 
 def if18(int1, int2, int3):
@@ -42,13 +42,13 @@ def if18(int1, int2, int3):
     Определить порядковый номер числа, отличного от остальных.
     """
     if int1==int2 and int1!=int3:
-        print('порядковый номер-', 3)
+        return(3)
     elif int2==int3 and int2!=int1:
-        print('порядковый номер-', 1)
+        return(1)
     elif int1==int3 and int1!=int2:
-        print('порядковый номер-', 2)
+        return(2)
     else:
-        print('не соблюдено условие')
+        return('не соблюдено условие')
 
 
 def if19(int1, int2, int3, int4):
@@ -57,15 +57,15 @@ def if19(int1, int2, int3, int4):
     Определить порядковый номер числа, отличного от остальных.
     """
     if int1!=int2 and int2==int3 and int3==int4 :
-        print('порядковый номер-', 1)
+        return(1)
     elif int2!=int1 and int1==int3 and int3==int4:
-        print('порядковый номер-', 2)
+        return(2)
     elif int3!=int2 and int1==int2 and int2==int4:
-        print('порядковый номер-', 3)
+        return(3)
     elif int4!=int2 and int1==int2 and int2==int3:
-        print('порядковый номер-', 4)
+        return(4)
     else:
-        print('не соблюдено условие')
+        return('не соблюдено условие')
 
 
 def if20(a, b, c):
@@ -75,11 +75,9 @@ def if20(a, b, c):
     и вывести эту точку и ее расстояние от точки a.
     """
     if abs(a-b)<abs(a-c):
-        print('к а расположена ближе точка-', 'b' )
-        print('расстояние между а и ближайшей к ней точки-', abs(a-b))
+        return b , abs(a-b)
     if abs(a-c)<abs(a-b):
-        print('к а расположена ближе точка-', 'c' )
-        print('расстояние между а и ближайшей к ней точки-', abs(a-c))
+        return c, abs(a-c)
 
 
 def if21(int1, int2):
@@ -90,13 +88,13 @@ def if21(int1, int2):
     Если точка не лежит на координатных осях, то вывести 3.
     """
     if int1==0 and int2==0:
-        print(0)
+        return(0)
     elif int1!=0 and int2==0:
-        print(1)
+        return(1)
     elif int2!=0 and int1==0:
-        print(2)
+        return(2)
     else:
-        print(3)
+        return(3)
 
 
 def if22(float1, float2):
@@ -106,13 +104,13 @@ def if22(float1, float2):
     """
 
     if float1>0 and float2>0:
-        print('первая четверть')
+        return(1)
     elif float1<0 and float2>0:
-        print('вторая четверть')
+        return(2)
     elif float1<0 and float2<0:
-        print('третья четверть')
+        return(3)
     elif float1>0 and float2<0:
-        print('четвертая четверть')
+        return(4)
 
 
 def if23(int1, int2, int3, int4, int5, int6):
@@ -120,6 +118,7 @@ def if23(int1, int2, int3, int4, int5, int6):
     If23. Даны целочисленные координаты трех вершин прямоугольника,
     стороны которого параллельны координатным осям. Найти координаты его четвертой вершины.
     """
+    int7 = int8 = None
     if int1==int3:
         int7=int5
         if int4==int6:
@@ -144,7 +143,7 @@ def if23(int1, int2, int3, int4, int5, int6):
             int8=int4
         elif int4==int2:
             int8=int6
-    print('коодниты четвертой точки-', 'X-', int7, ' Y-', int8, sep='')
+    return int7, int8
 
 def if24(x):
     """
@@ -153,9 +152,9 @@ def if24(x):
     """
     import math
     if x>0:
-        print('f(x)=', 2*math.sin(x), sep='')
-    elif x<=0:
-        print('f(x)=', x-6, sep='')
+        return 2*math.sin(x)
+    elif x <= 0:
+        return x-6
 
 
 def if25(x):
@@ -164,9 +163,9 @@ def if25(x):
     принимающей значения целого типа:f(x)=2∙x ,если x<-2 или x>2, и -3∙x,в противном случае
     """
     if x<-2 or x>2:
-        print('f(x)=', 2*x, sep='')
+        return 2*x
     else:
-        print('f(x)=', -3*x, sep='')
+        return -3*x
 
 
 def if26(x):
@@ -175,11 +174,11 @@ def if26(x):
     принимающей вещественные значения:f(x)=-x,если x ≤0, и x^2,если 0<x<2 и 4,если x ≥2
     """
     if x<=0:
-        print('f(x)=', -x, sep='')
+        return -x
     elif 0<x<2:
-        print('f(x)=', x**2, sep='')
+        return x**2
     elif x>=2:
-        print('f(x)=', 4, sep='')
+        return 4
 
 
 def if27(x):
@@ -190,11 +189,11 @@ def if27(x):
     """
     import math
     if x<0:
-        print('f(x)=', 0, sep='')
+        return 0
     elif math.trunc(x)%2==0:
-        print('f(x)=', 1, sep='')
+        return 1
     elif math.trunc(x)%2==1:
-        print('f(x)=', -1, sep='')
+        return -1
         
 
 def if28(int):
@@ -207,11 +206,11 @@ def if28(int):
     """
     if int%4==0:
         if int%100==0 and int%400!=0:
-            print('количество дней-', 365)
+            return 365
         else:
-            print('количество дней-', 366)
+            return( 366)
     else:
-        print('количество дней-', 365) 
+        return( 365)
 
 
 def if29(int):
@@ -220,17 +219,17 @@ def if29(int):
     «нулевое число», «положительное нечетное число» и т. д.
     """
     if int==0:
-        print(int,'нулевое число')
+        return('нулевое число')
     elif int>0:
         if int%2==0:
-            print(int,'положительное четное число')
+            return('положительное четное число')
         elif int%2==1:
-            print(int,'положительное нечетное число')
+            return('положительное нечетное число')
     elif int<0:
         if int%2==0:
-            print(int,'отрицательное четное число')
+            return('отрицательное четное число')
         elif int%2==1:
-            print(int,'отрицательное нечетное число')
+            return('отрицательное нечетное число')
 
 
 def if30(int):
@@ -240,18 +239,18 @@ def if30(int):
     """
     if int in range(1,999,1) and int%2==0:
         if int//10==0:
-            print(int,'четное однозначное число')
+            return('четное однозначное число')
         elif int//100==0:
-            print(int,'четное двухзначное число')
+            return('четное двузначное число')
         else:
-            print(int,'четное трехзначное число')
+            return('четное трехзначное число')
     elif int in range(1,999) and int%2==1:
         if int//10==0:
-            print(int,'нечетное однозначное число')
+            return('нечетное однозначное число')
         elif int//100==0:
-            print(int,'нечетное двухзначное число')
+            return('нечетное двузначное число')
         else:
-            print(int,'нечетное трехзначное число')
+            return('нечетное трехзначное число')
 
 
 '''
