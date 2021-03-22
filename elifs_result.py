@@ -1,10 +1,37 @@
 import random
-from z_elifs import atenyaeva1 as temp1
-from z_elifs import atenyaeva2 as temp2
+from z_elifs import deduhin1 as temp1
+from z_elifs import multiple_choice_operator_2 as temp2
 
 
 def r_number(minis=-10, maxis=10):
     return random.randrange(minis, maxis)
+
+
+def search_answer(teacher_answer, students_answer):
+    """
+    Проверят, есть ли нужное значение в строке студента.
+    :param teacher_answer: то, что возвращает эталонный алгоритм. Если не тим не строка, то преобразуем встроку
+    :param students_answer: то, что возвращает программа студента. Возращает лист текстовых переменных
+    :return: True если есть значения эталонного алгоритма в ответе студента и False во всех остальных случаях
+    """
+    students_answer = str(students_answer).lower()
+    teacher_answer = str(teacher_answer).lower()
+    flag = True
+    for i in teacher_answer:
+        if i not in students_answer:
+            flag = False
+    return flag
+
+
+def search_answer_conveyor(teacher_answer, students_answer):
+    students_answer = str(students_answer)
+    teacher_answer = list(map(str, teacher_answer))
+
+    flag = True
+    for i in teacher_answer:
+        if i not in students_answer:
+            flag = False
+    return flag
 
 
 def elif_r1(int_number):
@@ -139,16 +166,20 @@ def elif_r8(day, month):
     Elif8. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, предшествующей указанной.
     """
-    if day > 1:
-        day -= 1
+    max_day = elif_r4(month)
+    if day > max_day:
+        return 0, 0
     else:
-        if month == 1:
-            month = 12
+        if day > 1:
+            day -= 1
         else:
-            month -= 1
-            day = elif_r4(month)
+            if month == 1:
+                month = 12
+            else:
+                month -= 1
+                day = elif_r4(month)
 
-    return day, month
+        return day, month
 
 
 def elif_r9(day, month):
@@ -157,15 +188,18 @@ def elif_r9(day, month):
     Вывести значения day и month для даты, следующей за указанной.
     """
     max_day = elif_r4(month)
-    if day < max_day:
-        day += 1
+    if day > max_day:
+        return 0, 0
     else:
-        day = 1
-        if month == 12:
-            month = 1
+        if day < max_day:
+            day += 1
         else:
-            month += 1
-    return day, month
+            day = 1
+            if month == 12:
+                month = 1
+            else:
+                month += 1
+        return day, month
 
 
 def elif_r10(symbol, int_number):
@@ -319,7 +353,7 @@ def elif_r15(n, m):
     value = ('шестерка ', 'семерка ', 'восьмерка ', 'девятка ', 'десятка ', 'валет ', 'дама ', 'король ', 'туз ')
 
     if 6 <= n <= 14 and 1 <= m <= 4:
-        return value[n - 1] + suit[m - 1]
+        return value[n - 6] + suit[m - 1]
     else:
         return 0
 
@@ -461,7 +495,7 @@ def test():
     flag = True
     for i in range(10):
         a = r_number(1, 8)
-        if elif_r1(a) != temp1.if1(a):
+        if not search_answer(elif_r1(a), temp1.elif1(a)):
             flag = False
             if 1 in printing:
                 print(a)
@@ -470,7 +504,7 @@ def test():
     flag = True
     for i in range(10):
         a = r_number(1, 6)
-        if elif_r2(a) != temp1.if2(a):
+        if not search_answer(elif_r2(a), temp1.elif2(a)):
             flag = False
             if 2 in printing:
                 print(a)
@@ -479,7 +513,7 @@ def test():
     flag = True
     for i in range(30):
         a = r_number(1, 13)
-        if elif_r3(a) != temp1.if3(a):
+        if not search_answer(elif_r3(a), temp1.elif3(a)):
             flag = False
             if 3 in printing:
                 print(a)
@@ -488,10 +522,10 @@ def test():
     flag = True
     for i in range(30):
         a = r_number(1, 13)
-        if elif_r4(a) != temp1.if4(a):
+        if not search_answer(elif_r4(a), temp1.elif4(a)):
             flag = False
             if 4 in printing:
-                print(a)
+                print(a, elif_r4(a), temp1.elif4(a))
     print("Test 4 - Ok" if flag else "Test 4 - Fail")
 
     flag = True
@@ -501,17 +535,17 @@ def test():
         c = r_number()
         if c == 0:
             c += 1
-        if elif_r5(a, b, c) != temp1.if5(a, b, c):
+        if not search_answer(elif_r5(a, b, c), temp1.elif5(a, b, c)):
             flag = False
             if 5 in printing:
-                print(a, b, c)
+                print((a, b, c), elif_r5(a, b, c), temp1.elif5(a, b, c))
     print("Test 5 - Ok" if flag else "Test 5 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(1, 6)
         b = r_number(0, 10000)
-        if elif_r6(a, b) != temp1.if6(a, b):
+        if not search_answer(elif_r6(a, b), temp1.elif6(a, b)):
             flag = False
             if 6 in printing:
                 print(a, b)
@@ -521,7 +555,7 @@ def test():
     for i in range(200):
         a = r_number(1, 6)
         b = r_number(0, 10000)
-        if elif_r7(a, b) != temp1.if7(a, b):
+        if not search_answer(elif_r7(a, b), temp1.elif7(a, b)):
             flag = False
             if 7 in printing:
                 print(a, b)
@@ -531,20 +565,20 @@ def test():
     for i in range(200):
         a = r_number(1, 32)
         b = r_number(1, 13)
-        if elif_r8(a, b) != temp1.if8(a, b):
+        if not search_answer_conveyor(elif_r8(a, b), temp1.elif8(a, b)):
             flag = False
             if 8 in printing:
-                print(a, b)
+                print((a, b), elif_r8(a, b), temp1.elif8(a, b))
     print("Test 8 - Ok" if flag else "Test 8 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(1, 31)
         b = r_number(1, 13)
-        if elif_r9(a, b) != temp1.if9(a, b):
+        if not search_answer_conveyor(elif_r9(a, b), temp1.elif9(a, b)):
             flag = False
             if 9 in printing:
-                print(a, b)
+                print((a, b), elif_r9(a, b), temp1.elif9(a, b))
     print("Test 9 - Ok" if flag else "Test 9 - Fail")
 
     flag = True
@@ -553,10 +587,10 @@ def test():
         logos = (-1, 0, 1)
         a = random.choice(wegas)
         b = random.choice(logos)
-        if elif_r10(a, b) != temp1.if10(a, b):
+        if not search_answer_conveyor(elif_r10(a, b), temp1.elif10(a, b)):
             flag = False
             if 10 in printing:
-                print(a, b)
+                print((a, b), elif_r10(a, b), temp1.elif10(a, b))
     print("Test 10 - Ok" if flag else "Test 10 - Fail")
 
     flag = True
@@ -566,17 +600,17 @@ def test():
         a = random.choice(wegas)
         b = random.choice(logos)
         c = random.choice(logos)
-        if elif_r11(a, b, c) != temp1.if11(a, b, c):
+        if not search_answer_conveyor(elif_r11(a, b, c), temp1.elif11(a, b, c)):
             flag = False
             if 11 in printing:
-                print(a, b, c)
+                print((a, b, c), elif_r11(a, b, c), temp1.elif11(a, b, c))
     print("Test 11 - Ok" if flag else "Test 11 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(1, 5)
         b = r_number(0, 100)
-        if elif_r12(a, b) != temp1.if12(a, b):
+        if elif_r12(a, b) != temp2.elif12(a, b):
             flag = False
             if 12 in printing:
                 print(a, b)
@@ -586,7 +620,7 @@ def test():
     for i in range(200):
         a = r_number(1, 5)
         b = r_number(0, 100)
-        if elif_r13(a, b) != temp1.if13(a, b):
+        if elif_r13(a, b) != temp2.elif13(a, b):
             flag = False
             if 13 in printing:
                 print(a, b)
@@ -596,7 +630,7 @@ def test():
     for i in range(200):
         a = r_number(1, 5)
         b = r_number(0, 100)
-        if elif_r14(a, b) != temp1.if14(a, b):
+        if elif_r14(a, b) != temp2.elif14(a, b):
             flag = False
             if 14 in printing:
                 print(a, b)
@@ -606,7 +640,7 @@ def test():
     for i in range(200):
         a = r_number(6, 15)
         b = r_number(1, 5)
-        if elif_r15(a, b) != temp1.if15(a, b):
+        if elif_r15(a, b) != temp2.elif15(a, b):
             flag = False
             if 15 in printing:
                 print(a, b)
@@ -615,7 +649,7 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(20, 70)
-        if elif_r16(a) != temp2.if16(a):
+        if elif_r16(a) != temp2.elif16(a):
             flag = False
             if 16 in printing:
                 print(a)
@@ -624,7 +658,7 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(10, 41)
-        if elif_r17(a) != temp2.if17(a):
+        if elif_r17(a) != temp2.elif17(a):
             flag = False
             if 17 in printing:
                 print(a)
@@ -633,7 +667,7 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(100, 1000)
-        if elif_r18(a) != temp2.if18(a):
+        if elif_r18(a) != temp2.elif18(a):
             flag = False
             if 18 in printing:
                 print(a)
@@ -642,7 +676,7 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(0, 3000)
-        if elif_r19(a) != temp2.if19(a):
+        if elif_r19(a) != temp2.elif19(a):
             flag = False
             if 19 in printing:
                 print(a)
@@ -652,7 +686,7 @@ def test():
     for i in range(200):
         a = r_number(1, 32)
         b = r_number(1, 13)
-        if elif_r20(a, b) != temp2.if20(a, b):
+        if elif_r20(a, b) != temp2.elif20(a, b):
             flag = False
             if 20 in printing:
                 print(a, b)
@@ -661,3 +695,4 @@ def test():
 
 printing = (0, )
 test()
+

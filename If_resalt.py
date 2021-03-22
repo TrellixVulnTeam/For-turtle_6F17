@@ -1,7 +1,7 @@
 import random
 import math
-from z_ifs import atenyaeva1 as temp1
-from z_ifs import atenyaeva2 as temp2
+from z_ifs import begaev1 as temp1
+from z_ifs import begaev2 as temp2
 
 
 def r_number(minis=-10, maxis=10):
