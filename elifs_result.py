@@ -1,11 +1,22 @@
 import random
-from z_elifs import deduhin1 as temp1
-from z_elifs import multiple_choice_operator_2 as temp2
+from z_elifs import atenyaeva1 as temp1
+from z_elifs import atenyaevs2 as temp2
+
+
+def approx_Equal(x, y, tolerance=0.001):
+    return abs(x-y) <= 0.5 * tolerance * (x + y)
 
 
 def r_number(minis=-10, maxis=10):
     return random.randrange(minis, maxis)
 
+
+def search_answer_numeric(teacher_answer, students_answer):
+    flag = True
+    for i in range(4):
+        if not approx_Equal(teacher_answer[i], students_answer[i]):
+            flag = False
+    return flag
 
 def search_answer(teacher_answer, students_answer):
     """
@@ -334,7 +345,7 @@ def elif_r14(element, number):
         s = a**2 * 3**0.5 / 4
     elif element == 4:
         s = number
-        a = (s * 4 / 3**0.5)**2
+        a = (s * 4 / 3**0.5)**0.5
         r1 = a * 3**0.5 / 6
         r2 = r1 * 2
     else:
@@ -413,8 +424,7 @@ def elif_r18(int_number):
              'восемнадцать', 'девятнадцать')
     tens = ('десять ', 'двадцать ', 'тридцать ', 'сорок ', 'пятьдесят ', 'шестьдесят ', 'семьдесят ', 'восемьдесят ',
             'девяносто ')
-    hundreds = ('сто ', 'двести ', 'триста ', 'четыреста ', 'пятьсот ', 'шестьсот ', 'семьсот ', 'восемьсот ',
-                'девятьсот ')
+    hundreds = ('сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот')
     hundred = int_number // 100
     teen = int_number % 100
     ten = (int_number % 100) // 10
@@ -423,11 +433,14 @@ def elif_r18(int_number):
     if 1 <= hundred <= 9:
         res += hundreds[hundred - 1]
     if 10 < teen < 20:
+        res += ' '
         res += teens[teen - 11]
     else:
         if 1 <= ten <= 9:
+            res += ' '
             res += tens[ten - 1]
     if 1 <= one <= 9:
+        res += ' '
         res += ones[one - 1]
     return res
 
@@ -461,35 +474,39 @@ def elif_r20(day, month):
     «Телец» (20.4–20.5), «Близнецы» (21.5–21.6), «Рак» (22.6–22.7), «Лев» (23.7–22.8), «Дева» (23.8–22.9),
     «Весы» (23.9–22.10), «Скорпион» (23.10–22.11), «Стрелец» (23.11–21.12), «Козерог» (22.12–19.1)
     """
-    if month in range(1, 13) and day <= elif_r4(month):
+    day_control = day <= elif_r4(month)
+    if month == 2:
+        day_control = day <= elif_r4(month) + 1
+    if month in range(1, 13) and day_control:
         x = month * 100 + day
-        if x in range(101, 119):
+        if x in range(101, 120):
             return 'Козерог'
-        elif x in range(120, 218):
+        elif x in range(120, 218+1):
             return 'Водолей'
-        elif x in range(219, 320):
+        elif x in range(219, 321):
             return 'Рыбы'
-        elif x in range(321, 419):
+        elif x in range(321, 420):
             return 'Овен'
-        elif x in range(420, 520):
+        elif x in range(420, 521):
             return 'Телец'
-        elif x in range(521, 621):
+        elif x in range(521, 622):
             return 'Близнецы'
-        elif x in range(622, 722):
+        elif x in range(622, 723):
             return 'Рак'
-        elif x in range(723, 822):
+        elif x in range(723, 823):
             return 'Лев'
-        elif x in range(823, 922):
+        elif x in range(823, 923):
             return 'Дева'
-        elif x in range(923, 1022):
+        elif x in range(923, 1023):
             return 'Весы'
-        elif x in range(1023, 1122):
+        elif x in range(1023, 1123):
             return 'Скорпион'
-        elif x in range(1123, 1221):
+        elif x in range(1123, 1222):
             return 'Стрелец'
-        elif x in range(1222, 1231):
+        elif x in range(1222, 1232):
             return 'Козерог'
-
+    else:
+        return 0
 
 def test():
     flag = True
@@ -610,7 +627,7 @@ def test():
     for i in range(200):
         a = r_number(1, 5)
         b = r_number(0, 100)
-        if elif_r12(a, b) != temp2.elif12(a, b):
+        if not search_answer_conveyor(elif_r12(a, b), temp2.elif12(a, b)):
             flag = False
             if 12 in printing:
                 print(a, b)
@@ -620,36 +637,36 @@ def test():
     for i in range(200):
         a = r_number(1, 5)
         b = r_number(0, 100)
-        if elif_r13(a, b) != temp2.elif13(a, b):
+        if not search_answer_numeric(elif_r13(a, b), temp2.elif13(a, b)):
             flag = False
             if 13 in printing:
-                print(a, b)
+                print((a, b), elif_r13(a, b), temp2.elif13(a, b))
     print("Test 13 - Ok" if flag else "Test 13 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(1, 5)
         b = r_number(0, 100)
-        if elif_r14(a, b) != temp2.elif14(a, b):
+        if not search_answer_numeric(elif_r14(a, b), temp2.elif14(a, b), ):
             flag = False
             if 14 in printing:
-                print(a, b)
+                print((a, b), elif_r14(a, b), temp2.elif14(a, b))
     print("Test 14 - Ok" if flag else "Test 14 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(6, 15)
         b = r_number(1, 5)
-        if elif_r15(a, b) != temp2.elif15(a, b):
+        if not search_answer_conveyor(elif_r15(a, b), temp2.elif15(a, b)):
             flag = False
             if 15 in printing:
-                print(a, b)
+                print((a, b), elif_r15(a, b), temp2.elif15(a, b))
     print("Test 15 - Ok" if flag else "Test 15 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(20, 70)
-        if elif_r16(a) != temp2.elif16(a):
+        if not search_answer_conveyor(elif_r16(a), temp2.elif16(a)):
             flag = False
             if 16 in printing:
                 print(a)
@@ -658,7 +675,7 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(10, 41)
-        if elif_r17(a) != temp2.elif17(a):
+        if not search_answer_conveyor(elif_r17(a), temp2.elif17(a)):
             flag = False
             if 17 in printing:
                 print(a)
@@ -667,32 +684,31 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(100, 1000)
-        if elif_r18(a) != temp2.elif18(a):
+        if not search_answer_conveyor(elif_r18(a), temp2.elif18(a)):
             flag = False
             if 18 in printing:
-                print(a)
+                print((a), elif_r18(a), temp2.elif18(a))
     print("Test 18 - Ok" if flag else "Test 18 - Fail")
 
     flag = True
     for i in range(200):
-        a = r_number(0, 3000)
-        if elif_r19(a) != temp2.elif19(a):
+        a = 1984 + i
+        if not search_answer_conveyor(elif_r19(a), temp2.elif19(a)):
             flag = False
             if 19 in printing:
-                print(a)
+                print((a), elif_r19(a), temp2.elif19(a))
     print("Test 19 - Ok" if flag else "Test 19 - Fail")
 
     flag = True
     for i in range(200):
         a = r_number(1, 32)
         b = r_number(1, 13)
-        if elif_r20(a, b) != temp2.elif20(a, b):
+        if not search_answer(elif_r20(a, b), temp2.elif20(a, b)):
             flag = False
             if 20 in printing:
-                print(a, b)
+                print((a, b), elif_r20(a, b), temp2.elif20(a, b))
     print("Test 20 - Ok" if flag else "Test 20 - Fail")
 
 
 printing = (0, )
 test()
-
