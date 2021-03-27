@@ -1,96 +1,96 @@
 def elif1(int_namber):
     if int_namber==1:
-        print('Понедельник')
+        return('Понедельник')
     elif int_namber==2:
-        print('Вторник')
+        return('Вторник')
     elif int_namber==3:
-        print('Среда')
+        return('Среда')
     elif int_namber==4:
-        print('Четверг')
+        return('Четверг')
     elif int_namber==5:
-        print('Пятница')
+        return('Пятница')
     elif int_namber==6:
-        print('Суббота')
+        return('Суббота')
     elif int_namber==7:
-        print('Воскресенье')
+        return('Воскресенье')
     else:
-        print('Неправильный ввод числа')
+        return('Неправильный ввод числа')
 
 
 def elif2(k):
     if k==1:
-        print('Плохо')
+        return('Плохо')
     elif k==2:
-        print('Неудовлетворительно')
+        return('Неудовлетворительно')
     elif k==3:
-        print('Удовлетворительно')
+        return('Удовлетворительно')
     elif k==4:
-        print('Хорошо')
+        return('Хорошо')
     elif k==5:
-        print('Отлично')
+        return('Отлично')
     else:
-        print('Ошибка')
+        return('0')
 
 
 def elif3(month):
     if month in (12,1,2):
-        print('Зима')
+        return('Зима')
     elif month in (3,4,5):
-        print('Весна')
+        return('Весна')
     elif month in (6,7,8):
-        print('Лето')
+        return('Лето')
     elif month in (9,10,11):
-        print('Осень')
+        return('Осень')
     else:
-        print('Ошибка')
+        return('0')
 
 
 def elif4(month):
     if month in (1,3,5,7,8,10,12):
-        print('31')
+        return('31')
     elif month in (4,6,9,11):
-        print("30")
+        return("30")
     elif month==2:
-        print('28')
+        return('28')
 
 
 def elif5(n, a, b):
     if n==1:
-        print(a+b)
+        return(a+b)
     elif n==2:
-        print(a-b)
+        return(a-b)
     elif n==3:
-        print(a*b)
+        return(a*b)
     elif n==4:
-        print(a/b)
+        return(a/b)
     else:
-        print('Неправильный ввод числа')
+        return('Неправильный ввод числа')
 
 def elif6(number, length):
     if number==1:
-        print(length/10)
+        return(length/10)
     elif number==2:
-        print(length*1000)
+        return(length*1000)
     elif number==3:
-        print(length)
+        return(length)
     elif number==4:
-        print(length/1000)
+        return(length/1000)
     elif number==5:
-        print(length/100)
+        return(length/100)
 
 def elif7(number, mass):
     if number==1:
-        print(mass)
+        return(mass)
     elif number==2:
-        print(mass/1000000)
+        return(mass/1000000)
     elif number==3:
-        print(mass/1000)
+        return(mass/1000)
     elif number==4:
-        print(mass*1000)
+        return(mass*1000)
     elif number==5:
-        print(mass*100)
+        return(mass*100)
     else:
-        print('Ошибка')
+        return('0')
 
 
 def elif8(day,month):
@@ -113,118 +113,118 @@ def elif8(day,month):
         day=31
         month=12
     else:
-        day=month='Ошибка'
-    print(day,month)
+        day=month='0'
+    return(day,month)
 
 
 def elif9(day,month):
     if month in (1,3,5,7,8,10) and day==31:
-        print(f'day - 1, month - {month+1}')
+        return(f'day - 1, month - {month+1}')
     elif month in (4,6,9,11) and day==30:
-        print(f'day - 1, month - {month+1}')
+        return(f'day - 1, month - {month+1}')
     elif month==2 and day==28:
-        print(f'day - 1, month - {month+1}')
+        return(f'day - 1, month - {month+1}')
     elif month in (4,6,9,11) and 1<=day<30:
-        print(f'day - {day+1}, month - {month}')
+        return(f'day - {day+1}, month - {month}')
     elif month in (1,3,5,7,8,10) and 1<=day<31:
-        print(f'day - {day+1}, month - {month}')
+        return(f'day - {day+1}, month - {month}')
     elif month==2 and 1<=day<28:
-        print(f'day - {day+1}, month - {month}')
+        return(f'day - {day+1}, month - {month}')
     elif month==12 and day==31:
-        print('day - 1, month - 1')
+        return('day - 1, month - 1')
     elif month==12 and day!=31 and 1<=day:
-        print(f'day - {day+1}, month - {month}')
+        return(f'day - {day+1}, month - {month}')
     else:
-        print('Ошибка')
+        return('0')
 
 
 def elif10(symbol, int_namber):
     if int_namber==0:
-        print(symbol)
+        return(symbol)
     elif int_namber==1:
         if symbol=='С':
-            print('З')
+            return('З')
         elif symbol=='З':
-            print('Ю')
+            return('Ю')
         elif symbol=='Ю':
-            print('В')
+            return('В')
         elif symbol=='В':
-            print('С')
+            return('С')
     elif int_namber==-1:
         if symbol=='С':
-            print('В')
+            return('В')
         elif symbol=='В':
-            print('Ю')
+            return('Ю')
         elif symbol=='Ю':
-            print('З')
+            return('З')
         elif symbol=='З':
-            print('С')
+            return('С')
     else:
-        print('Ошибка')
+        return('0')
 
 def elif11(symbol, int1, int2):
     if symbol not in ('Ю','З','В','С') or int1 not in (1,-1,2) or int2 not in (1,-1,2):
-        print('Ошибка')
+        return('0')
     elif int1==2:
         if int2==1:
             if symbol=='С':
-                print('В')
+                return('В')
             elif symbol=='З':
-                print('С')
+                return('С')
             elif symbol=='Ю':
-                print('З')
+                return('З')
             elif symbol=='В':
-                print('Ю')
+                return('Ю')
         elif int2==2:
-            print(symbol)
+            return(symbol)
         elif int2==-1:
             if symbol=='С':
-                print('З')
+                return('З')
             elif symbol=='З':
-                print('Ю')
+                return('Ю')
             elif symbol=='Ю':
-                print('В')
+                return('В')
             elif symbol=='В':
-                print('С')
+                return('С')
     elif int1==1:
         if int2==1:
             if symbol=='С':
-                print('Ю')
+                return('Ю')
             elif symbol=='З':
-                print('В')
+                return('В')
             elif symbol=='Ю':
-                print('С')
+                return('С')
             elif symbol=='В':
-                print('З')
+                return('З')
         elif int2==-1:
-            print(symbol)
+            return(symbol)
         elif int2==2:
             if symbol=='С':
-                print('В')
+                return('В')
             elif symbol=='З':
-                print('С')
+                return('С')
             elif symbol=='Ю':
-                print('З')
+                return('З')
             elif symbol=='В':
-                print('Ю')            
+                return('Ю')            
     elif int1==-1:
         if int2==1:
-            print(symbol)
+            return(symbol)
         elif int2==-1:
             if symbol=='С':
-                print('Ю')
+                return('Ю')
             elif symbol=='В':
-                print('З')
+                return('З')
             elif symbol=='Ю':
-                print('С')
+                return('С')
             elif symbol=='З':
-                print('В')
+                return('В')
         elif int2==2:
             if symbol=='С':
-                print('З')
+                return('З')
             elif symbol=='В':
-                print('С')
+                return('С')
             elif symbol=='Ю':
-                print('В')
+                return('В')
             elif symbol=='З':
-                print('Ю')   
+                return('Ю')   

@@ -1,9 +1,9 @@
 import random
-from z_elifs import atenyaeva1 as temp1
-from z_elifs import atenyaevs2 as temp2
+from z_elifs import gorlov1 as temp1
+from z_elifs import gorlov2 as temp2
 
 
-def approx_Equal(x, y, tolerance=0.001):
+def approx_equal(x, y, tolerance=0.001):
     return abs(x-y) <= 0.5 * tolerance * (x + y)
 
 
@@ -13,10 +13,19 @@ def r_number(minis=-10, maxis=10):
 
 def search_answer_numeric(teacher_answer, students_answer):
     flag = True
-    for i in range(4):
-        if not approx_Equal(teacher_answer[i], students_answer[i]):
-            flag = False
+    try:
+        teacher_answer = list(teacher_answer)
+        students_answer = list(students_answer)
+        teacher_answer.sort()
+        students_answer.sort()
+        for i in range(4):
+            if not approx_equal(teacher_answer[i], students_answer[i]):
+                flag = False
+    except TypeError:
+        flag = False
+
     return flag
+
 
 def search_answer(teacher_answer, students_answer):
     """
@@ -35,8 +44,8 @@ def search_answer(teacher_answer, students_answer):
 
 
 def search_answer_conveyor(teacher_answer, students_answer):
-    students_answer = str(students_answer)
-    teacher_answer = list(map(str, teacher_answer))
+    students_answer = str(students_answer).lower()
+    teacher_answer = list(map(lambda x: str(x).lower(), teacher_answer))
 
     flag = True
     for i in teacher_answer:
@@ -335,17 +344,17 @@ def elif_r14(element, number):
         s = a**2 * 3**0.5 / 4
     elif element == 2:
         r1 = number
-        a = r1 * 6 / 3**0.5
+        a = r1 / 6 / 3**0.5
         r2 = r1 * 2
         s = a**2 * 3**0.5 / 4
     elif element == 3:
         r2 = number
         r1 = r2 / 2
-        a = r1 * 6 / 3**0.5
+        a = r1 / 6 / 3**0.5
         s = a**2 * 3**0.5 / 4
     elif element == 4:
         s = number
-        a = (s * 4 / 3**0.5)**0.5
+        a = (s / 4 / 3**0.5)**0.5
         r1 = a * 3**0.5 / 6
         r2 = r1 * 2
     else:
@@ -458,11 +467,11 @@ def elif_r19(year):
     color_oy = ('зеленой ', 'красной ', 'желтой ', 'белой ', 'черной ')
     color_ogo = ('зеленого ', 'красного ', 'желтого ', 'белого ', 'черного ')
     zoo = (year % 12 - 4) % 12
-    color = (year % 5 - 4) % 5
-    if zoo in [3, 4, 5]:
-        res += color_ogo[color]
+    color = (year % 60 - 4) % 60
+    if zoo in [2, 3, 4]:
+        res += color_ogo[color // 12]
     else:
-        res += color_oy[color]
+        res += color_oy[color // 12]
     res += zoos[zoo]
     return res
 
@@ -507,6 +516,7 @@ def elif_r20(day, month):
             return 'Козерог'
     else:
         return 0
+
 
 def test():
     flag = True
@@ -565,7 +575,7 @@ def test():
         if not search_answer(elif_r6(a, b), temp1.elif6(a, b)):
             flag = False
             if 6 in printing:
-                print(a, b)
+                print(a, b, elif_r6(a, b), temp1.elif6(a, b))
     print("Test 6 - Ok" if flag else "Test 6 - Fail")
 
     flag = True
@@ -624,19 +634,19 @@ def test():
     print("Test 11 - Ok" if flag else "Test 11 - Fail")
 
     flag = True
-    for i in range(200):
+    for i in range(1, 200):
         a = r_number(1, 5)
-        b = r_number(0, 100)
-        if not search_answer_conveyor(elif_r12(a, b), temp2.elif12(a, b)):
+        b = r_number(1, 100)
+        if not search_answer_numeric(elif_r12(a, b), temp2.elif12(a, b)):
             flag = False
             if 12 in printing:
                 print(a, b)
     print("Test 12 - Ok" if flag else "Test 12 - Fail")
 
     flag = True
-    for i in range(200):
+    for i in range(1, 200):
         a = r_number(1, 5)
-        b = r_number(0, 100)
+        b = r_number(1, 100)
         if not search_answer_numeric(elif_r13(a, b), temp2.elif13(a, b)):
             flag = False
             if 13 in printing:
@@ -646,7 +656,7 @@ def test():
     flag = True
     for i in range(200):
         a = r_number(1, 5)
-        b = r_number(0, 100)
+        b = r_number(1, 100)
         if not search_answer_numeric(elif_r14(a, b), temp2.elif14(a, b), ):
             flag = False
             if 14 in printing:
@@ -687,7 +697,7 @@ def test():
         if not search_answer_conveyor(elif_r18(a), temp2.elif18(a)):
             flag = False
             if 18 in printing:
-                print((a), elif_r18(a), temp2.elif18(a))
+                print(a, elif_r18(a), temp2.elif18(a))
     print("Test 18 - Ok" if flag else "Test 18 - Fail")
 
     flag = True
@@ -696,7 +706,7 @@ def test():
         if not search_answer_conveyor(elif_r19(a), temp2.elif19(a)):
             flag = False
             if 19 in printing:
-                print((a), elif_r19(a), temp2.elif19(a))
+                print(a, elif_r19(a), temp2.elif19(a))
     print("Test 19 - Ok" if flag else "Test 19 - Fail")
 
     flag = True

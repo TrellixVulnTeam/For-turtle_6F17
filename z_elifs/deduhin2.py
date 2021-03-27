@@ -6,21 +6,13 @@ def elif12(number, element):
     Вывести значения остальных элементов данной окружности (в том же порядке). В качестве значения π использовать 3.14.
     """
     if number == 1:
-        print('d=', 2 * element)
-        print('l=', 2 * 3.14 * element)
-        print('s=', 3.14 * (element ** 2))
+        return('d=', 2 * element,  2 * 3.14 * element, 's=', 3.14 * (element ** 2), element)
     elif number == 2:
-        print('r=', element / 2)
-        print('l=', 2 * 3.14 * (element / 2))
-        print('s=', 3.14 * ((element / 2) ** 2))
+        return('r=', element / 2,  2 * 3.14 * (element / 2), 's=', 3.14 * ((element / 2) ** 2), element)
     elif number == 3:
-        print('r=', '{:.2f}'.format(element / (2 * 3.14)))
-        print('d=', '{:.2f}'.format(2 * (element / (2 * 3.14))))
-        print('s=', '{:.2f}'.format(3.14 * ((element / (2 * 3.14)) ** 2)))
+        return(element / (2 * 3.14), 2 * (element / (2 * 3.14)), 3.14 * ((element / (2 * 3.14)) ** 2), element)
     elif number == 4:
-        print('r=', '{:.2f}'.format((element / 3.14) ** 0.5))
-        print('d=', '{:.2f}'.format(2 * ((element / 3.14) ** 0.5)))
-        print('l=', '{:.2f}'.format(2 * 3.14 * ((element / 3.14) ** 0.5)))
+        return((element / 3.14) ** 0.5, 2 * (element / 3.14) ** 0.5, 2 * 3.14 * (element / 3.14) ** 0.5, element)
 
 
 def elif13(number, element):
@@ -31,21 +23,13 @@ def elif13(number, element):
     Вывести значения остальных элементов данного треугольника (в том же порядке).
     """
     if number == 1:
-        print('c=', '{:.2f}'.format(element * (2 ** 0.5)))
-        print('h=', '{:.2f}'.format((element * (2 ** 0.5)) / 2))
-        print('s=', '{:.2f}'.format((element * (2 ** 0.5) * ((element * (2 ** 0.5)) / 2)) / 2))
+        return(element * (2 ** 0.5), (element * (2 ** 0.5)) / 2, element * (2 ** 0.5) * (element * (2 ** 0.5) / 2) / 2, element)
     elif number == 2:
-        print('a=', '{:.2f}'.format(element / (2 ** 0.5)))
-        print('h=', '{:.2f}'.format(element / 2))
-        print('s=', '{:.2f}'.format((element * (element / 2)) / 2))
+        return(element / (2 ** 0.5), element / 2, (element * (element / 2) / 2), element)
     elif number == 3:
-        print('a=', '{:.2f}'.format((2 * element) / (2 ** 0.5)))
-        print('c=', '{:.2f}'.format(2 * element))
-        print('s=', '{:.2f}'.format(element * element))
+        return((2 * element) / (2 ** 0.5), 2 * element, element * element, element)
     elif number == 4:
-        print('a=', '{:.2f}'.format((2 * (element ** 0.5)) / (2 ** 0.5)))
-        print('c=', '{:.2f}'.format(2 * (element ** 0.5)))
-        print('h=', '{:.2f}'.format(element ** 0.5))
+        return(2 * (element ** 0.5) / (2 ** 0.5), 2 * (element ** 0.5), element ** 0.5, element)
 
 
 def elif14(number, element):
@@ -57,21 +41,13 @@ def elif14(number, element):
     Вывести значения остальных элементов данного треугольника (в том же порядке).
     """
     if number == 1:
-        print('r1=', '{:.2f}'.format((element * (3 ** 0.5)) / 6))
-        print('r2=', '{:.2f}'.format(2 * ((element * (3 ** 0.5)) / 6)))
-        print('s=', '{:.2f}'.format(((element ** 2) * (3 ** 0.5)) / 4))
+        return((element * (3 ** 0.5)) / 6, 2 * ((element * (3 ** 0.5)) / 6), ((element ** 2) * (3 ** 0.5)) / 4, element)
     elif number == 2:
-        print('a=', '{:.2f}'.format((6 * element) / (3 ** 0.5)))
-        print('r2=', '{:.2f}'.format(element * 2))
-        print('s=', '{:.2f}'.format(((((6 * element) / (3 ** 0.5)) ** 2) * (3 ** 0.5)) / 4))
+        return((6 * element) / (3 ** 0.5), element * 2, ((((6 * element) / (3 ** 0.5)) ** 2) * (3 ** 0.5)) / 4, element)
     elif number == 3:
-        print('a=', '{:.2f}'.format((6 * (element / 2)) / (3 ** 0.5)))
-        print('r1=', '{:.2f}'.format(element / 2))
-        print('s=', '{:.2f}'.format(((((6 * (element / 2)) / (3 ** 0.5)) ** 2) * (3 ** 0.5)) / 4))
+        return((6 * (element / 2)) / (3 ** 0.5), element / 2, ((((6 * (element / 2)) / (3 ** 0.5)) ** 2) * (3 ** 0.5)) / 4, element)
     elif number == 4:
-        print('a=', '{:.2f}'.format(((4 * element) / (3 ** 0.5)) ** 0.5))
-        print('r1=', '{:.2f}'.format(((((4 * element) / (3 ** 0.5)) ** 0.5) * (3 ** 0.5)) / 6))
-        print('r2=', '{:.2f}'.format(2 * (((((4 * element) / (3 ** 0.5)) ** 0.5) * (3 ** 0.5)) / 6)))
+        return(((4 * element) / (3 ** 0.5)) ** 0.5, ((((4 * element) / (3 ** 0.5)) ** 0.5) * (3 ** 0.5)) / 6, 2 * (((((4 * element) / (3 ** 0.5)) ** 0.5) * (3 ** 0.5)) / 6), element)
 
 
 def elif15(n, m):
@@ -84,9 +60,9 @@ def elif15(n, m):
     a = ('шестерка', 'семерка', 'восьмерка', 'девятка', 'десятка', 'валет', 'дама', 'король', 'туз')
     b = ('пик', 'треф', 'бубен', 'червей')
     if 6<=n<=14 and 1<=m<=4:
-        print(a[n-6], b[m-1])
+        return(a[n-6], b[m-1])
     else:
-        print('неправильно введены данные')
+        return('неправильно введены данные 0')
 
 
 def elif16(years_olds):
@@ -102,15 +78,15 @@ def elif16(years_olds):
     helper1 = years_olds % 10
     if  20<=years_olds<=69:
         if years_olds%10 in (5,6,7,8,9):
-            print(a[helper-2], b[helper1-1], c[0])
+            return(a[helper-2], b[helper1-1], c[0])
         elif years_olds%10==0:
-            print(a[helper - 2], c[0])
+            return(a[helper - 2], c[0])
         elif years_olds%10 in (2,3,4):
-            print(a[helper - 2], b[helper1 - 1], c[1])
+            return(a[helper - 2], b[helper1 - 1], c[1])
         elif years_olds%10==1:
-            print(a[helper - 2], b[helper1 - 1], c[2])
+            return(a[helper - 2], b[helper1 - 1], c[2])
     else:
-        print('неправильно введены данные')
+        return('неправильно введены данные')
 
 
 def elif17(int_number):
@@ -129,17 +105,17 @@ def elif17(int_number):
     helper1 = int_number%10
     if 10<=int_number<=40:
         if int_number in range(11,20):
-            print(a[helper1-1], d[1])
+            return(a[helper1-1], d[1])
         elif int_number%10 in (5,6,7,8,9):
-            print(b[helper-1], c[helper1-1], d[1])
+            return(b[helper-1], c[helper1-1], d[1])
         elif int_number%10==0:
-            print(b[helper-1], d[1])
+            return(b[helper-1], d[1])
         elif int_number%10 in (2,3,4):
-            print(b[helper-1], c[helper1-1], d[2])
+            return(b[helper-1], c[helper1-1], d[2])
         elif int_number%10==1:
-            print(b[helper - 1], c[helper1 - 1], d[0])
+            return(b[helper - 1], c[helper1 - 1], d[0])
     else:
-        print('число не входит в заданную область')
+        return('число не входит в заданную область')
 
 def elif18(int_number):
     """
@@ -157,17 +133,18 @@ def elif18(int_number):
     helper2 = int_number%10
     if 100<=int_number<=999:
         if int_number%100 in range(11,20):
-            print(a[helper-1], d[helper2-1])
+            return(a[helper-1], d[helper2-1])
         elif helper1==0 and helper2!=0:
-            print(a[helper - 1], c[helper2-1])
+            return(a[helper - 1], c[helper2-1])
         elif int_number%100==0:
-            print(a[helper - 1])
+            return(a[helper - 1])
         elif int_number%10==0 and helper1!=0:
-            print(a[helper - 1], b[helper1 - 1])
+            return(a[helper - 1], b[helper1 - 1])
         else:
-            print(a[helper - 1], b[helper1 - 1], c[helper2-1])
+            return(a[helper - 1], b[helper1 - 1], c[helper2-1])
     else:
-        print('число не входит в заданную область')
+        return('число не входит в заданную область 0')
+
 
 
 def elif19(year):
@@ -179,7 +156,7 @@ def elif19(year):
     """
     a = ('зеленой', 'красной', 'желтой', 'белой', 'черной')
     b = ('зеленого', 'красного', 'желтого', 'белого', 'черного')
-    c = ('крысы', 'коровы', 'тигра', 'зайца', 'дракона', 'змеи', 'лошади', 'овцы', 'обязьяны', 'курицы', 'собаки', 'свиньи')
+    c = ('крысы', 'коровы', 'тигра', 'зайца', 'дракона', 'змеи', 'лошади', 'овцы', 'обезьяны', 'курицы', 'собаки', 'свиньи')
     east=year-1984
     if east>=0:
         while east>60:
@@ -189,13 +166,14 @@ def elif19(year):
             east=east+60
     east1=east//12
     east2=east%12
+    print(east1, east2)
     if east2 in (2, 3, 4):
-        print('год', b[east1], c[east2])
-        print(east)
+        return ('год', b[east1], c[east2])
     elif east2 in (0, 1, 5, 6, 7, 8, 9, 10, 11):
-        print('год', a[east1], c[east2])
-        print(east)
+        return ('год', a[east1], c[east2])
 
+for i in range(1986, 1986 + 200):
+    print(elif19(i))
 
 def elif20(day, month):
     """
@@ -219,28 +197,28 @@ def elif20(day, month):
             return 0
 
     if 120 <= helper(day,month) <= 218:
-        print('Водолей')
+        return('Водолей')
     elif 219 <= helper(day,month) <= 320:
-        print('Рыбы')
+        return('Рыбы')
     elif 321 <= helper(day, month) <= 419:
-        print('Овен')
+        return('Овен')
     elif 420 <= helper(day, month) <= 520:
-        print('Телец')
+        return('Телец')
     elif 521 <= helper(day, month) <= 621:
-        print('Близнецы')
+        return('Близнецы')
     elif 622 <= helper(day, month) <= 722:
-        print('Рак')
+        return('Рак')
     elif 723 <= helper(day, month) <= 822:
-        print('Лев')
+        return('Лев')
     elif 823 <= helper(day, month) <= 922:
-        print('Дева')
+        return('Дева')
     elif 923 <= helper(day, month) <= 1022:
-        print('Весы')
+        return('Весы')
     elif 1023 <= helper(day, month) <= 1122:
-        print('Скорпион')
+        return('Скорпион')
     elif 1123 <= helper(day, month) <= 1221:
-        print('Стрелец')
+        return('Стрелец')
     elif 1222 <= helper(day, month) <= 1231 or 101 <= helper(day, month) <= 119:
-        print('Козерог')
+        return('Козерог')
     else:
-        print('неправильная дата')
+        return('неправильная дата 0')

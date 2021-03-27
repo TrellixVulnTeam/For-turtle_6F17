@@ -10,22 +10,22 @@ def elif12(number, element):
         D = element*2
         L = π*D
         S = π*element**2
-        print(f'D = {D} L = {L} S = {S}')
+        return(f'D = {D} L = {L} S = {S}', element)
     elif number == 2:
         r = element/2
         L = 2*π*r
         S = π*r**2
-        print(f'r = {r} L = {L} S = {S}')
+        return(f'r = {r} L = {L} S = {S}', element)
     elif number == 3:
         r = element/(2*π)
         D = 2*r
         S = π*r**2
-        print(f'r = {r} D = {D} S = {S}')
+        return(f'r = {r} D = {D} S = {S}', element)
     elif number == 4:
         r = (element/π)**0.5
         D = 2*r
         L = 2*π*r
-        print(f'r = {r} D = {D} L = {L}')
+        return(f'r = {r} D = {D} L = {L}', element)
 
 
 def elif13(number, element):
@@ -40,25 +40,25 @@ def elif13(number, element):
         c = a*2**0.5
         h = c/2
         S = (c*h)/2
-        print(f'c = {c} h = {h} S = {S}')
+        return(f'c = {c} h = {h} S = {S}')
     elif number == 2:
         c = element
         a = c/2**0.5
         h = c/2
         S = (c*h)/2
-        print(f'a = {a} h = {h} S = {S}')
+        return(f'a = {a} h = {h} S = {S}')
     elif number == 3:
         h = element
         c = h*2
         a = c/2**0.5
         S = (c*h)/2
-        print(f'a = {a} c = {c} h = {h} S = {S}')
+        return(f'a = {a} c = {c} h = {h} S = {S}')
     elif number == 4:
         S = element
         c = 2*S**0.5
         h = c/2
         a = c/2**0.5
-        print(f'a = {a} c = {c} h = {h}')
+        return(f'a = {a} c = {c} h = {h}')
 
 
 def elif14(number, element):
@@ -74,25 +74,25 @@ def elif14(number, element):
         r1 = a*(3**0.5)/6
         r2 = 2*r1
         S = (a**2)*(3**0.5)/6
-        print(f'R1 = {r1} R2 = {r2} S = {S}')
+        return(f'R1 = {r1} R2 = {r2} S = {S}')
     elif number == 2:
         r1 = element
         a = r1/((3**0.5)/6)
         r2 = 2*r1
         S = (a**2)*(3**0.5)/6
-        print(f'a = {a} R2 = {r2} S = {S}')
+        return(f'a = {a} R2 = {r2} S = {S}')
     elif number == 3:
         r2 = element
         r1 = r2/2
         a = r1/((3**0.5)/6)
         S = (a**2)*(3**0.5)/6
-        print(f'a = {a} R1 = {r1} S = {S}')
+        return(f'a = {a} R1 = {r1} S = {S}')
     elif number == 4:
         S = element
         a = (S/((3**0.5)/6))**0.5
         r1 = a*(3**0.5)/6
         r2 = 2*r1
-        print(f'a = {a} R1 = {r1} R2 = {r2} ')
+        return(f'a = {a} R1 = {r1} R2 = {r2} ')
 
 
 def elif15(n, m):
@@ -105,51 +105,51 @@ def elif15(n, m):
     if 6<=n<=14 and 1<=m<=4:
         if n<11:
             if m==1:
-                print(n,'-ка пик',sep='')        
+                return(n,'-ка пики',)
             elif m==2:
-                print(n,'-ка треф',sep='')
+                return(n,'-ка треф',)
             elif m==3:
-                print(n,'-ка бубен',sep='')
+                return(n,'-ка бубен',)
             elif m==4:
-                print(n,'-ка червей ',sep='')
+                return(n,'-ка червей ',)
         elif n==11:
             if m==1:
-                print('валет пик')        
+                return('валет пик')        
             elif m==2:
-                print('валет треф')
+                return('валет треф')
             elif m==3:
-                print('валет бубен')
+                return('валет бубен')
             elif m==4:
-                print('валет червей ')
+                return('валет червей ')
         elif n==12:
             if m==1:
-                print('дама пик')        
+                return('дама пик')        
             elif m==2:
-                print('дама треф')
+                return('дама треф')
             elif m==3:
-                print('дама бубен')
+                return('дама бубен')
             elif m==4:
-                print('дама червей ')
+                return('дама червей ')
         elif n==13:
             if m==1:
-                print('король пик')        
+                return('король пик')        
             elif m==2:
-                print('король треф')
+                return('король треф')
             elif m==3:
-                print('король бубен')
+                return('король бубен')
             elif m==4:
-                print('король червей ')
+                return('король червей ')
         elif n==14:
             if m==1:
-                print('туз пик')        
+                return('туз пик')        
             elif m==2:
-                print('туз треф')
+                return('туз треф')
             elif m==3:
-                print('туз бубен')
+                return('туз бубен')
             elif m==4:
-                print('туз червей ')
+                return('туз червей ')
     else:
-        print('такой карты не существует')
+        return('такой карты не существует')
 
 
 def elif16(years_olds):
@@ -190,7 +190,7 @@ def elif16(years_olds):
         q = 'девять лет'
     elif n==0:
         q = 'лет'
-    print(Q,q)
+    return(Q,q)
 
 
 def elif17(int_number):
@@ -248,7 +248,7 @@ def elif17(int_number):
         q = 'девять учебных заданий'
     else:
         q = 'учебных заданий'
-    print(Q,q)
+    return(Q,q)
 
 
 def elif18(int_number):
@@ -258,7 +258,7 @@ def elif18(int_number):
     """
     a= ("сто","двести","триста","четыреста","пятьсот","шестьсот","семьсот","восемьсот","девятьсот")
     b= ("десять","одинадцать","двенадцать","тринадцать","четырнадцать","пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать")
-    с= ("двадцать","тридцать","сорок","пятьдесят","шестьдесят","семдесят","восемдесят","девяносто")
+    с= ("двадцать","тридцать","сорок","пятьдесят","шестьдесят","семьдесят","восемьдесят","девяносто")
     d= ("один","два","три","четыре","пять","шесть","семь","восемь","девять","")
 
     n = int_number%10
@@ -267,11 +267,11 @@ def elif18(int_number):
 
     if  1<=W<=9:
         if N==0:
-            print(a[W-1],d[n-1])
+            return(a[W-1],d[n-1])
         elif N==1:
-            print(a[W-1],b[n-1])
+            return(a[W-1],b[n-1])
         elif 2<=N<=9:
-            print(a[W-1],с[N-2], d[n-1])
+            return(a[W-1],с[N-2], d[n-1])
 
 def elif19(year):
     """
@@ -287,9 +287,9 @@ def elif19(year):
     animal=("крысы","коровы","тигра","зайца","дракона","змеи","лошади","овцы","обезьяны","курицы","собаки","свиньи")
 
     if n-1==2 or n-1==3:
-        print('год',c1[N],animal[n])
+        return('год',c1[N],animal[n])
     else:
-        print('год',c2[N],animal[n])
+        return('год',c2[N],animal[n])
 
 
 def elif20(day, month):
@@ -320,28 +320,28 @@ def elif20(day, month):
     w=day
 
     if 201<=qwadrat(q,w)<=218:
-        print('водолей')
+        return('водолей')
     elif 219<=qwadrat(q,w)<=320:
-        print('рыбы')
+        return('рыбы')
     elif 321<=qwadrat(q,w)<=419:
-        print('овен')
+        return('овен')
     elif 420<=qwadrat(q,w)<=520:
-        print('телец')
+        return('телец')
     elif 521<=qwadrat(q,w)<=621:
-        print('близнецы')
+        return('близнецы')
     elif 622<=qwadrat(q,w)<=722:
-        print('рак')
+        return('рак')
     elif 723<=qwadrat(q,w)<=822:
-        print('лев')
+        return('лев')
     elif 823<=qwadrat(q,w)<=922:
-        print('дева')
+        return('дева')
     elif 923<=qwadrat(q,w)<=1022:
-        print('весы')
+        return('весы')
     elif 1023<=qwadrat(q,w)<=1122:
-        print('скорпион')
+        return('скорпион')
     elif 1123<=qwadrat(q,w)<=1221:
-        print('стрелец')
+        return('стрелец')
     elif 1222<=qwadrat(q,w)<=1231 or 0<=qwadrat(q,w)<=191 :
-        print('козерог')
+        return('козерог')
     else:
-        print('нет такой даты')
+        return('нет такой даты')

@@ -11,24 +11,24 @@ def elif12(number, element):
             d=element*2
             l=element*2*pi
             s=(element**2)*pi
-            print(d,l,s)
+            return(d,l,s, element)
         elif number==2:
             r=element/2
             l=(element/2)*2*pi
             s=((element/2)**2)*pi
-            print(r,l,s)
+            return(r,l,s, element)
         elif number==3:
             r=element/(2*pi)
             d=(element/(2*pi))*2
             s=((element/(2*pi))**2)*pi
-            print(r,d,s)
+            return(r,d,s, element)
         elif number==4:
             r=(element/pi)**0.5
             d=((element/pi)**0.5)*2
             l=((element/pi)**0.5)*2*pi
-            print(r,d,l)
+            return(r,d,l, element)
     else:
-        print('Такой команды нет')
+        return('Такой команды 0')
 
 
 def elif13(number, element):
@@ -43,24 +43,24 @@ def elif13(number, element):
             c=element*(2**0.5)
             h=(element*(2**0.5))/2
             s=((element*(2**0.5))*((element*(2**0.5))/2))/2
-            print(c,h,s)
+            return(c,h,s, element)
         elif number==2:
             a=element/(2**0.5)
             h=element/2
             s=(element*(element/2))/2
-            print(a,h,s)
+            return(a,h,s,element)
         elif number==3:
             a=(element*2)/(2**0.5)
             c=element*2
             s=((element*2)*element)/2
-            print(a,c,s)
+            return(a,c,s, element)
         elif number==4:
             a=(element*2)**0.5
             c=((element*2)**0.5)*(2**0.5)
             h=(((element*2)**0.5)*(2**0.5))/2
-            print(a,c,h)
+            return(a,c,h, element)
     else:
-        print('Такой команды нет')
+        return('Такой команды 0')
 
 
 def elif14(number, element):
@@ -76,24 +76,24 @@ def elif14(number, element):
             r1=(element*(3**0.5))/6
             r2=2*((element*(3**0.5))/6)
             s=((element**2)*(3**0.5))/4
-            print(r1,r2,s)
+            return(r1,r2,s, element)
         elif number==2:
             a=element/((3**0.5)*6)
             r2=element*2
             s=(((element/((3**0.5)*6))**2)*(3**0.5))/4
-            print(a,r2,s)
+            return(a,r2,s, element)
         elif number==3:
             a=(2/element)/((3**0.5)*6)
             r1=2/element
             s=(((2/element)/((3**0.5)*6)**2)*(3**0.5))/4
-            print(a,r1,s)
+            return(a,r1,s, element)
         elif number==4:
             a=(element/((3**0.5)/4))**0.5
             r1=(((element/((3**0.5)/4))**0.5)*(3**0.5))/6
             r2=((((element/((3**0.5)/4))**0.5)*(3**0.5))/6)*2
-            print(a,r1,r2)
+            return(a,r1,r2,element)
     else:
-        print('Такой команды нет')
+        return('Такой команды 0')
 
 
 def elif15(n, m):
@@ -107,84 +107,84 @@ def elif15(n, m):
         if 6<=n<=14:
             if m==1:
                 if n==6:
-                    print('Шестерка пик')
+                    return('шестерка пики')
                 elif n==7:
-                    print('Семёрка пик')
+                    return('семсрка пики')
                 elif n==8:
-                    print('Восьмёрка пик')
+                    return('восьмерка пики')
                 elif n==9:
-                    print('Девятка пик')
+                    return('девятка пики')
                 elif n==10:
-                    print('Десятка пик')
+                    return('десятка пики')
                 elif n==11:
-                    print('Валет пик')
+                    return('валет пики')
                 elif n==12:
-                    print('Дама пик')
+                    return('дама пики')
                 elif n==13:
-                    print('Король пик')
+                    return('король пики')
                 elif n==14:
-                    print('Туз пик')
+                    return('туз пики')
             elif m==2:
                 if n==6:
-                    print('Шестерка треф')
+                    return('шестерка треф')
                 elif n==7:
-                    print('Семёрка треф')
+                    return('семсрка треф')
                 elif n==8:
-                    print('Восьмёрка треф')
+                    return('восьмерка треф')
                 elif n==9:
-                    print('Девятка треф')
+                    return('девятка треф')
                 elif n==10:
-                    print('Десятка треф')
+                    return('десятка треф')
                 elif n==11:
-                    print('Валет треф')
+                    return('валет треф')
                 elif n==12:
-                    print('Дама треф')
+                    return('дама треф')
                 elif n==13:
-                    print('Король треф')
+                    return('король треф')
                 elif n==14:
-                    print('Туз треф')
+                    return('туз треф')
             elif m==3:
                 if n==6:
-                    print('Шестерка бубен')
+                    return('шестерка бубен')
                 elif n==7:
-                    print('Семёрка бубен')
+                    return('семсрка бубен')
                 elif n==8:
-                    print('Восьмёрка бубен')
+                    return('восьмерка бубен')
                 elif n==9:
-                    print('Девятка бубен')
+                    return('девятка бубен')
                 elif n==10:
-                    print('Десятка бубен')
+                    return('десятка бубен')
                 elif n==11:
-                    print('Валет бубен')
+                    return('валет бубен')
                 elif n==12:
-                    print('Дама бубен')
+                    return('дама бубен')
                 elif n==13:
-                    print('Король бубен')
+                    return('король бубен')
                 elif n==14:
-                    print('Туз бубен')
+                    return('туз бубен')
             elif m==4:
                 if n==6:
-                    print('Шестерка червей')
+                    return('шестерка червей')
                 elif n==7:
-                    print('Семёрка червей')
+                    return('семсрка червей')
                 elif n==8:
-                    print('Восьмёрка червей')
+                    return('восьмерка червей')
                 elif n==9:
-                    print('Девятка червей')
+                    return('девятка червей')
                 elif n==10:
-                    print('Десятка червей')
+                    return('десятка червей')
                 elif n==11:
-                    print('Валет червей')
+                    return('валет червей')
                 elif n==12:
-                    print('Дама червей')
+                    return('дама червей')
                 elif n==13:
-                    print('Король червей')
+                    return('король червей')
                 elif n==14:
-                    print('Туз червей')
+                    return('туз червей')
         else:
-            print('Такого значения нет')
+            return('Такого значения нет 0')
     else:
-        print('Такой масти нет')
+        return('Такой масти нет 0')
 
 
 def elif16(years_olds):
@@ -194,7 +194,7 @@ def elif16(years_olds):
     например: 20 - «двадцать лет», 32 - «тридцать два года», 41 - «сорок один год».
     """
     if 20<=years_olds<=69:
-        des=('Двадцать','Тридцать','Сорок','Пятьдесят','Шестьдесят')
+        des=('двадцать','тридцать','сорок','пятьдесят','шестьдесят')
         ed=('лет',
             'один год',
             'два года',
@@ -205,9 +205,9 @@ def elif16(years_olds):
             'семь лет',
             'восемь лет',
             'девять лет')
-        print(des[years_olds//10-2],ed[years_olds%10])
+        return(des[years_olds//10-2],ed[years_olds%10])
     else:
-        print('Неверный возраст')
+        return('Неверный возраст')
 
 
 def elif17(int_number):
@@ -219,13 +219,13 @@ def elif17(int_number):
    """
     if 10<=int_number<=40:
         if int_number==10:
-            print('Десять учебных заданий')
+            return('десять учебных заданий')
         elif 11<=int_number<=19:
             ed=('надцать учебных заданий')
-            des=('Один','Две','Три',
-                 'Четыр','Пят','Шест',
-                 'Сем','Восем','Девят')
-            print(des[int_number%10-1],ed,sep='')
+            des=('один','Две','Три',
+                 'четыр','Пят','Шест',
+                 'сем','восем','Девят')
+            return(des[int_number%10-1],ed)
         elif 20<=int_number<=40:
             des=('Двадцать','Тридцать','Сорок','Пятьдесят','Шестьдесят')
             ed=('учебных заданий',
@@ -238,9 +238,9 @@ def elif17(int_number):
                 'семь учебных заданий',
                 'восемь учебных заданий',
                 'девять учебных заданий')
-            print(des[int_number//10-2],ed[int_number%10])
+            return(des[int_number//10-2],ed[int_number%10])
     else:
-        print('Неверное число')
+        return('Неверное число')
 
 
 def elif18(int_number):
@@ -258,12 +258,12 @@ def elif18(int_number):
                    'пятнадцать','шестнадцать',
                    'семнадцать','восемнадцать',
                    'девятнадцать')
-            print(sot[int_number//100-1],desed[int_number%10-1])
+            return(sot[int_number//100-1],desed[int_number%10-1])
         elif int_number%100==0:
             sot=('Сто','Двести','Триста',
                  'Четыреста','Пятьсот','Шестьсот',
                  'Семьсот','Восемьсот','Девятьсот')
-            print(sot[int_number//100-1])
+            return(sot[int_number//100-1])
         elif int_number%100//10==0:
             sot=('Сто','Двести','Триста',
                  'Четыреста','Пятьсот','Шестьсот',
@@ -271,7 +271,7 @@ def elif18(int_number):
             ed=('один','два','три',
                 'четыре','пять','шесть',
                 'семь','восемь','девять')
-            print(sot[int_number//100-1],ed[int_number%10-1])
+            return(sot[int_number//100-1],ed[int_number%10-1])
         elif int_number%10==0:
             sot=('Сто','Двести','Триста',
                  'Четыреста','Пятьсот','Шестьсот',
@@ -279,7 +279,7 @@ def elif18(int_number):
             des=('десять','двадцать','тридцать',
                  'сорок','пятьдесят','шестьдесят',
                  'семьдесят','восемьдесят','девяносто')
-            print(sot[int_number//100-1],des[int_number%100//10-1])
+            return(sot[int_number//100-1],des[int_number%100//10-1])
         elif 1<=int_number%10<=9:
             sot=('Сто','Двести','Триста',
                  'Четыреста','Пятьсот','Шестьсот',
@@ -290,9 +290,9 @@ def elif18(int_number):
             ed=('один','два','три',
                 'четыре','пять','шесть',
                 'семь','восемь','девять')
-            print(sot[int_number//100-1],des[int_number%100//10-1],ed[int_number%10-1])
+            return(sot[int_number//100-1],des[int_number%100//10-1],ed[int_number%10-1])
     else:
-        print('Неверное число')
+        return('Неверное число')
 
 def elif19(year):
     """
@@ -314,80 +314,80 @@ def elif20(day, month):
     if 1<=month<=2:
         if month==1 and 1<=day<=31:
             if 20<=day<=31:
-                print('Водолей')
+                return('Водолей')
             else:
-                print('Козерог')
+                return('Козерог')
         elif month==2 and 1<=day<=29:
             if day<=18:
-                print('Водолей')
+                return('Водолей')
             else:
-                print('Рыбы')
+                return('Рыбы')
         else:
-            print('Неверная дата')
+            return('0 дата')
     elif 3<=month<=4:
         if month==3 and 1<=day<=31:
             if day<=20:
-                print('Рыбы')
+                return('Рыбы')
             else:
-                print('Овен')
+                return('Овен')
         elif month==4 and 1<=day<=30:
             if day<=19:
-                print('Овен')
+                return('Овен')
             else:
-                print('Телец')
+                return('Телец')
         else:
-            print('Неверная дата')
+            return('0 дата')
     elif 5<=month<=6:
         if month==5 and 1<=day<=31:
             if day<=20:
-                print('Телец')
+                return('Телец')
             else:
-                print('Близнецы')
+                return('Близнецы')
         elif month==6 and 1<=day<=30:
             if day<=21:
-                print('Близнецы')
+                return('Близнецы')
             else:
-                print('Рак')
+                return('Рак')
         else:
-            print('Неверная дата')
+            return('0 дата')
     elif 7<=month<=8:
         if month==7 and 1<=day<=31:
             if day<=22:
-                print('Рак')
+                return('Рак')
             else:
-                print('Лев')
+                return('Лев')
         elif month==8 and 1<=day<=31:
             if day<=22:
-                print('Лев')
+                return('Лев')
             else:
-                print('Дева')
+                return('Дева')
         else:
-            print('Неверная дата')
+            return('0 дата')
     elif 9<=month<=10:
         if month==9 and 1<=day<=30:
             if day<=22:
-                print('Дева')
+                return('Дева')
             else:
-                print('Весы')
+                return('Весы')
         elif month==10 and 1<=day<=31:
             if day<=22:
-                print('Весы')
+                return('Весы')
             else:
-                print('Скорпион')
+                return('Скорпион')
         else:
-            print('Неверная дата')
+            return('0 дата')
     elif 11<=month<=12:
         if month==11 and 1<=day<=30:
             if day<=22:
-                print('Скорпион')
+                return('Скорпион')
             else:
-                print('Стрелец')
+                return('Стрелец')
         elif month==12 and 1<=day<=31:
             if day<=21:
-                print('Стрелец')
+                return('Стрелец')
             else:
-                print('Козерог')
+                return('Козерог')
         else:
-            print('Неверная дата')
+            return('0 дата')
     else:
-        print('Неверная дата')
+        return('0 дата')

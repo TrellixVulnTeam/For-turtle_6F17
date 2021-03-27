@@ -136,40 +136,31 @@ def elif8(day, month):
     if month in (1,3,5,7,8,10,12):
         if day==1:
             if month==1:
-                return('day-', 31)
-                return('month-', 12)
+                return('day-', 31, 'month-', 12)
             elif month==3:
-                return('day-', 28)
-                return('month-', 2)
+                return('day-', 28, 'month-', 2)
             elif month==8:
-                return('day-', 31)
-                return('month-', 7)
+                return('day-', 31, 'month-', 7)
             else:
-                return('day-', 30)
-                return('month-', month-1)
+                return('day-', 30, 'month-', month-1)
         elif day!=1 and day<=31:
-            return('day-', day-1)
-            return('month-', month)
+            return('day-', day-1, 'month-', month)
         else:
-            return('неправильная дата')
+            return('неправильная дата 0')
     elif month==2:
         if day==1:
-            return('day-', 31)
-            return('month-', 1)
+            return('day-', 31, 'month-', 1)
         elif day!=1 and day<=28:
-            return('day-', day-1)
-            return('month-', month)
+            return('day-', day-1, 'month-', month)
         else:
-            return('неправильная дата')
+            return('неправильная дата 0')
     elif month in (4,6,9,11):
         if day==1:
-            return('day-', 31)
-            return('month-', month-1)
+            return('day-', 31, 'month-', month-1)
         elif day!=1 and day<=30:
-            return('day-', day-1)
-            return('month-', month)
+            return('day-', day-1, 'month-', month)
         else:
-            return('неправильная дата')
+            return('неправильная дата 0')
 
 
 def elif9(day, month):
@@ -180,34 +171,27 @@ def elif9(day, month):
     if month in (1,3,5,7,8,10,12):
         if day==31:
             if month==12:
-                return('day-', 1)
-                return('month-', 1)
+                return('day-', 1, 'month-', 1)
             else:
-                return('day-', 1)
-                return('month-', month+1)
+                return('day-', 1, 'month-', month+1)
         elif day!=31 and day<31:
-            return('day-', day+1)
-            return('month-', month)
+            return('day-', day+1, 'month-', month)
         else:
-            return('неправильная дата')
+            return('неправильная дата 0')
     elif month==2:
         if day==28:
-            return('day-', 1)
-            return('month-', 3)
+            return('day-', 1, 'month-', 3)
         elif day!=28 and day<28:
-            return('day-', day+1)
-            return('month-', month)
+            return('day-', day+1, 'month-', month)
         else:
-            return('неправильная дата')
+            return('неправильная дата 0')
     elif month in (4,6,9,11):
         if day==30:
-            return('day-', 1)
-            return('month-', month+1)
+            return('day-', 1, 'month-', month+1)
         elif day!=30 and day<30:
-            return('day-', day+1)
-            return('month-', month)
+            return('day-', day+1, 'month-', month)
         else:
-            return('неправильная дата')
+            return('неправильная дата 0')
 
 
 def elif10(symbol, int_namber):

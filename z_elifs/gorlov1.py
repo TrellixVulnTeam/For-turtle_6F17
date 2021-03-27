@@ -4,39 +4,39 @@ def elif1(int_namber):
     соответствующее данному числу (1 - «понедельник», 2 - «вторник» и т. д.).
     """
     if int_namber==1:
-        print('пн')
+        return('пн')
     elif int_namber==2:
-        print('вт')
+        return('вт')
     elif int_namber==3:
-        print('ср')
+        return('ср')
     elif int_namber==4:
-        print('чт')
+        return('чт')
     elif int_namber==5:
-        print('пт')
+        return('пт')
     elif int_namber==6:
-        print('сб')
+        return('сб')
     elif int_namber==7:
-        print('вс')
+        return('вс')
 
 
 def elif2(k):
     """
     Elif2. Дано целое число k. Вывести строку-описание оценки, соответствующей числу k
     (1 - «плохо», 2 - «неудовлетворительно», 3 - «удовлетворительно», 4 - «хорошо», 5 - «отлично»).
-    Если K не лежит в диапазоне 1–5, то вывести строку «ошибка».
+    Если K не лежит в диапазоне 1–5, то вывести строку «0».
     """
     if k==1:
-    print('плохо')
+        return('плохо')
     elif k==2:
-        print('неудовлетворитльно')
+        return('неудовлетворитльно')
     elif k==3:
-        print('удовлетворительно')
+        return('удовлетворительно')
     elif k==4:
-        print('хорошо')
+        return('хорошо')
     elif k==5:
-        print('отлично')
+        return('отлично')
     else:
-        print('ошибка')
+        return('0')
 
 
 
@@ -46,13 +46,13 @@ def elif3(month):
     Вывести название соответствующего времени года («зима», «весна», «лето», «осень»).
     """
     if month  in(1,2,12):
-        print('зима')
+        return('зима')
     elif month in(3,4,5):
-        print('весна')
+        return('весна')
     elif month in(6,7,8):
-        print('лето')
+        return('лето')
     elif month in(9,10,11):
-        print('осень')
+        return('осень')
 
 
 def elif4(month):
@@ -61,11 +61,11 @@ def elif4(month):
     Определить количество дней в этом месяце для невисокосного года.
     """
     if month in(1,3,5,7,9,11):
-        print('31')
+        return(31)
     elif month in(4,6,8,10,12):
-        print('30')
+        return(30)
     elif month == 2:
-        print('28')
+        return(28)
 
 
 def elif5(n, a, b):
@@ -75,8 +75,9 @@ def elif5(n, a, b):
     Дан номер действия n (целое число в диапазоне 1–4) и вещественные числа a и b (b не равно 0).
     Выполнить над числами указанное действие и вывести результат.
     """
+    mat=0
     if b==0:
-        print('b не равно 0!')
+        return('b не равно 0!')
     elif n == 1:
         mat=a+b
     elif n == 2:
@@ -85,20 +86,21 @@ def elif5(n, a, b):
         mat=a*b
     elif n == 4:
         mat=a/b
-    print(mat)
+    return(mat)
     
 
-def elif6(number, length):
+def elif6(length, number):
     """
     Elif6. Единицы длины пронумерованы следующим образом:
     1 - дециметр, 2 - кило-метр, 3 - метр, 4 - миллиметр, 5 - сантиметр.
     Дан номер единицы длины (целое число в диапазоне 1–5) и длина отрезка в этих единицах (вещественное число).
     Найти длину отрезка в метрах.
     """
+    m = 0
     if length<0:
-    print('ошибка')
+        return('0')
     elif length == 0:
-        print(0)
+        return(0)
     elif length == 1:
         m = number/10
     elif length == 2:
@@ -109,20 +111,21 @@ def elif6(number, length):
         m = number/1000
     elif length == 5:
         m = number/100
-    print(m)
+    return(m)
 
 
-def elif7(number, mass):
+def elif7(mass, number):
     """
     Elif7. Единицы массы пронумерованы следующим образом:
     1 - килограмм, 2 - милли-грамм, 3 - грамм, 4 - тонна, 5 - центнер.
     Дан номер единицы массы (целое число в диапазоне 1–5) и масса тела в этих единицах (вещественное число).
     Найти массу тела в килограммах.
     """
+    m = None
     if mass<0:
-    print('ошибка')
+        return('0')
     elif mass == 0:
-        print(0)
+        return(0)
     elif mass == 1:
         m = number
     elif mass == 2:
@@ -133,7 +136,7 @@ def elif7(number, mass):
         m = number*1000
     elif mass == 5:
         m = number*100
-    print(m)
+    return(m)
 
 
 def elif8(day, month):
@@ -142,24 +145,24 @@ def elif8(day, month):
     Вывести значения day и month для даты, предшествующей указанной.
     """
     if month==2 and day>=29:
-        print('ошибка')
+        return('0')
     elif month in(1,5,7,9,11): 
         if day>1:
-            print(f'month = {month} day = {day-1}')
+            return(f'month = {month} day = {day-1}')
         elif day==1:
-            print(f'month = {month-1} day = {30}')
+            return(f'month = {month-1} day = {30}')
     elif month in(2,4,6,8,10,12):
         if 1<day<31:
-            print(f'month = {month} day = {day-1}')
+            return(f'month = {month} day = {day-1}')
         elif day==1:
-            print(f'month = {month-1} day = {31}')
+            return(f'month = {month-1} day = {31}')
         elif day>=31:
-            print('ошибка')
+            return('0')
     elif month == 3:   
         if day>1:
-            print(f'month = {month} day = {day-1}')
+            return(f'month = {month} day = {day-1}')
         elif day==1:
-            print(f'month = {month-1} day = {28}')
+            return(f'month = {month-1} day = {28}')
 
 
 def elif9(day, month):
@@ -168,24 +171,24 @@ def elif9(day, month):
     Вывести значения day и month для даты, следующей за указанной.
     """
     if month==2 and day>=29:
-        print('ошибка')
+        return('0')
     elif month in(1,3,5,7,9,11): 
         if day<31:
-            print(f'month = {month} day = {day+1}')
+            return(f'month = {month} day = {day+1}')
         elif day==31:
-            print(f'month = {month+1} day = {1}')
+            return(f'month = {month+1} day = {1}')
     elif month in(4,6,8,10,12):
         if 1<day<30:
-            print(f'month = {month} day = {day+1}')
+            return(f'month = {month} day = {day+1}')
         elif day==30:
-            print(f'month = {month+1} day = {1}')
+            return(f'month = {month+1} day = {1}')
         elif day>=31:
-            print('ошибка')
+            return('0')
     elif month==2:   
         if day<28:
-            print(f'month = {month} day = {day+1}')
+            return(f'month = {month} day = {day+1}')
         elif day==28:
-            print(f'month = {month+1} day = {1}')
+            return(f'month = {month+1} day = {1}')
 
 
 def elif10(symbol, int_namber):
@@ -196,25 +199,25 @@ def elif10(symbol, int_namber):
     Вывести направление робота после выполнения полученной команды.
     """
     if int_namber==0:
-        print(symbol)
+        return(symbol)
     elif int_namber==1:
         if symbol=='С':
-            print('З')
+            return('З')
         elif symbol=='З':
-            print('Ю')
+            return('Ю')
         elif symbol=='Ю':
-            print('В')
+            return('В')
         elif symbol=='В':
-            print('С')
+            return('С')
     elif int_namber==-1:
         if symbol=='С':
-            print('В')
+            return('В')
         elif symbol=='В':
-            print('Ю')
+            return('Ю')
         elif symbol=='Ю':
-            print('З')
+            return('З')
         elif symbol=='З':
-            print('С')
+            return('С')
 
 
 def elif11(symbol, int1, int2):
@@ -234,10 +237,10 @@ def elif11(symbol, int1, int2):
         s=2
     V=s+int1+int2
     if V==0 or V==4:
-        print('Север')
+        return('С')
     elif V==1:
-        print('Запад')
+        return('З')
     elif V==-1 or V==3:
-        print('Восток')
+        return('В')
     elif V==2 or V==-2:
-        print('Юг')
+        return('Ю')
