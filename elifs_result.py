@@ -1,6 +1,6 @@
 import random
-from z_elifs import gorlov1 as temp1
-from z_elifs import gorlov2 as temp2
+from z_elifs import kulishova1 as temp1
+from z_elifs import kulishova2 as temp2
 
 
 def approx_equal(x, y, tolerance=0.001):
@@ -525,7 +525,7 @@ def test():
         if not search_answer(elif_r1(a), temp1.elif1(a)):
             flag = False
             if 1 in printing:
-                print(a)
+                print(a, elif_r1(a), temp1.elif1(a))
     print("Test 1 - Ok" if flag else "Test 1 - Fail")
 
     flag = True

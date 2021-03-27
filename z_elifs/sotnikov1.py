@@ -3,23 +3,23 @@ def elif1(int_namber):
     Elif1. Дано целое число в диапазоне 1–7. Вывести строку - название дня недели,
     соответствующее данному числу (1 - «понедельник», 2 - «вторник» и т. д.).
     """
-    if int_namber==1:
-         return(' понедельник ')
-    elif  int_namber==2 :
-         return(' вторник ')
-    elif  int_namber==3 :
-         return( ' среда ')
-    elif  int_namber==4 :
-         return(' четверг ')
-    elif  int_namber==5 :
-         return(' пятница ')
-    elif  int_namber==6 :
-         return(' суббота ')
-    elif  int_namber==7 :
-         return(' воскресенье ')
+def elif1(int_number):
+    if int_number == 1:
+        return("понедельник")
+    elif int_number == 2:
+        return("вторник")
+    elif int_number == 3:
+        return("среда")
+    elif int_number == 4:
+        return("четверг")
+    elif int_number == 5:
+        return("пятница")
+    elif int_number == 6:
+        return("суббота")
+    elif int_number == 7:
+        return("воскресенье")
     else:
-         return(' неверно ')
- 
+        return 0
 
 
 def elif2(k):
@@ -28,56 +28,53 @@ def elif2(k):
     (1 - «плохо», 2 - «неудовлетворительно», 3 - «удовлетворительно», 4 - «хорошо», 5 - «отлично»).
     Если K не лежит в диапазоне 1–5, то вывести строку «ошибка».
     """
-    if k==1:
-        return( ' плохо ' )
-    elif k==2:
-        return( 'неудовлетворительно' )
-    elif k==3:
-        return( ' удовлетворительно ' )
-    elif k==4:
-        return( ' хорошо ' )
-    elif k==5:
-        return( ' отлично ' )
+def elif2(k):
+     if k==1:
+          return('плохо')
+     elif k==2:
+        return('неудовлетворительно')
+     elif k==3:
+        return('удовлетворительно')
+     elif k==4:
+        return('хорошо')
+     elif k==5:
+        return('отлично')
+     else:
+        return('ошибка')
 
-
-def elif3(month):
+def elif3(x):
     """
     Elif3. Дан номер месяца - целое число в диапазоне 1–12 (1 - январь, 2 - февраль и т. д.).
     Вывести название соответствующего времени года («зима», «весна», «лето», «осень»).
     """
-    
-    month_winter=(12,1,2)
-    month_spring=(3,4,5)
-    month_summer=(6,7,8)
-    month_autmn=(9,10,11)
+def elif3(x):
+    if 1<=x<=12 and (x==12 or x==1 or x==2):
+        return('зима')
+    elif  1<=x<=12 and (x==3 or x==4 or x==5):
+        return('весна')
+    elif  1<=x<=12 and  (x==6 or x==7 or x==8):
+        return('лето')
+    elif 1<=x<=12 and (x==9 or x==10 or x==11):
+        return('осень')
+   
 
-    if month in month_winter  :
-        return(' зима ')
-    elif month in month_spring  :
-        return(' весна ')
-    elif month in month_summer  :
-        return(' лето ')
-    elif month in month_autmn  :
-        return(' осень ' )
-    else:
-        return(' нет ')
-
-def elif4(month):
+def elif4(x):
     """
     Elif4. Дан номер месяца - целое число в диапазоне 1–12 (1 - январь, 2 - февраль и т. д.).
     Определить количество дней в этом месяце для невисокосного года.
     """
-    month_long=(1,3,5,7,8,10,12)
-    month_short=(4,6,9,11)
-    month_feb=(2,)
-    if month in month_long :
-        return( 31 )
-    elif month in month_short :
-        return( 30 )
-    elif month in month_feb :
-        return( 28 )
-    else:
-        return(0)
+def elif4(x):
+    if  1<=x<=12 and (x==1 or x==3 or x==5 or x==7 or x==8 or x==10 or x==12):
+        y=31
+        return(y,'дней')
+    elif 1<=x<=12 and (x==4 or x==6 or x==9 or x==11):
+        y=30
+        return(y,'дней')
+    elif  1<=x<=12 and x==2:
+        y=28
+        return(y,'дней')
+        
+
 
 
 def elif5(n, a, b):
@@ -87,108 +84,159 @@ def elif5(n, a, b):
     Дан номер действия n (целое число в диапазоне 1–4) и вещественные числа a и b (b не равно 0).
     Выполнить над числами указанное действие и вывести результат.
     """
-    сложение=(1,)
-    вычитание=(2,)
-    умножение=(3,)
-    деление=(4,)
-    if b==0:
-        return(' b не равно 0 ')
-    elif n in сложение:
-        return( a+b )
-    elif n in вычитание:
-        return( a-b )
-    elif n in умножение:
-        return( a*b )
-    elif n in деление:
-        return( a/b )
-    else:
-        return(' действия не существует ')
+def elif5(n, a, b):
+    if b!=0 and n==1:
+        x=a+b
+        return(x)
+    elif  b!=0 and n==2:
+        x=a-b
+        return(x)
+    elif  b!=0 and n==3:
+        x=a*b
+        return(x)
+    elif b!=0 and n==4:
+        x=a/b
+        return(x)
+  
 
 
-def elif6(number, length):
+def elif6(x, y):
     """
     Elif6. Единицы длины пронумерованы следующим образом:
     1 - дециметр, 2 - кило-метр, 3 - метр, 4 - миллиметр, 5 - сантиметр.
     Дан номер единицы длины (целое число в диапазоне 1–5) и длина отрезка в этих единицах (вещественное число).
     Найти длину отрезка в метрах.
     """
-    дециметр=(1,)
-    километр=(2,)
-    метр=(3,)
-    миллиметр=(4,)
-    сантиметр=(5,)
-    if number in дециметр :
-        return( length/10 )
-    elif number in километр :
-        return( length*1000 )
-    elif number in метр :
-        return(length*1  )
-    elif number in миллиметр:
-        return( length*0.001  )
-    elif number in сантиметр :
-        return( length*0.01 ) 
-    else:
-        return(' такой единицы не существует ')
+def elif6(x, y):
+    if x==1:
+        a=y/10
+        return(a)
+    elif x==2:
+        a=y*1000
+        return(a)
+    elif x==3:
+        a=y
+        return(a)
+    elif x==4:
+        a=y/1000
+        return(a)
+    elif x==5:
+        a=y/100
+        return(a)
+    
 
 
-def elif7(number, mass):
+def elif7(x, y):
     """
     Elif7. Единицы массы пронумерованы следующим образом:
     1 - килограмм, 2 - милли-грамм, 3 - грамм, 4 - тонна, 5 - центнер.
     Дан номер единицы массы (целое число в диапазоне 1–5) и масса тела в этих единицах (вещественное число).
     Найти массу тела в килограммах.
     """
-    килограмм=(1,)
-    миллиграмм=(2,)
-    грамм=(3,)
-    тонна=(4,)
-    центнер=(5,)
-    if number in килограмм  :
-        return( mass*1 )
-    elif number in миллиграмм :
-        return( mass/1000000 )
-    elif number in грамм :
-        return( mass*0.001 )
-    elif number in тонна:
-        return( mass*1000 )
-    elif number in центнер :
-        return(mass*100 ) 
-    else:
-        return(' такой единицы не существует')
+def elif7(x, y):
+    if x==1:
+        a=y
+        return(a)
+    elif x==2:
+        a=y/1000000
+        return(a)
+    elif x==3:
+        a=y/1000
+        return(a)
+    elif x==4:
+        a=y*1000
+        return(a)
+    elif x==5:
+        a=y*100
+        return(a)
+    
 
 
-
-def elif8(day, month):
+def elif8(x, y):
     """
     Elif8. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, предшествующей указанной.
     """
-    pass
+def elif8(a, y):
+
+    a2={1: 31,2: 28,3: 31,4: 30,5: 31,6: 30,7: 31,8: 31,9: 30,10: 31,11: 30,12: 31}
+    if a> 1:
+        a-= 1
+    else:
+        if y== 1:
+             y= 12
+        else:
+            y-=1
+        a=y
+        return('Предыдущая дата')
+        return("Месяц: {0}. День: {1}".format(y,a))
 
 
-def elif9(day, month):
+
+
+def elif9(x, y):
     """
     Elif9. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, следующей за указанной.
     """
-    pass
+def elif9(a, y):
+
+    if a> 1:
+        a+= 1
+    else:
+        a=1
+        if y== 1:
+             y= 12
+        else:
+            y+=1
+        a=y
+        return('Следуйщая дата')
+        return("Месяц: {0}. День: {1}".format(y,a))
+    
+    
 
 
-def elif10(symbol, int_namber):
+def elif10(x, y):
     """
     Elif10. Робот может перемещаться в четырех направлениях («С» - север, «З» - запад, «Ю» - юг, «В» - восток)
     и принимать три цифровые команды: 0 - продолжать движение, 1 - поворот налево, −1 - поворот направо.
     Дан символ symbol - исходное направление робота и целое число int_namber - посланная ему команда.
     Вывести направление робота после выполнения полученной команды.
     """
-    pass
+def elif10(x, y):
+    d = {'С' : 'Север', 'З' : 'Запад', 'Ю' : 'Юг', 'B' : 'Восток'}
+    r = {-1 : 'поворот направо', 0 : 'продолжать движение', 1 : 'поворот налево'}
+    d1 = {0 : 'С', 1: 'З',  2 : 'Ю', 3 : 'B'}
+    if  y== -1:
+        if i == 0:
+            i = 3
+        elif i == 3:
+            i = 2
+        elif i == 2:
+            i = 1
+        elif i == 1:
+            i == 0
+    elif y == 1:
+        if i == 0:
+            i = 1
+        elif i == 1:
+            i = 2
+        elif i == 2:
+            i = 3
+        elif i == 3:
+            d1 = 0
+    x= d[d1[i]]
+    return(x)
 
 
-def elif11(symbol, int1, int2):
+def elif11(x, a, b):
     """
     Elif11. Локатор ориентирован на одну из сторон света («С» - север, «З» - запад, «Ю» - юг, «В» - восток)
     и может принимать три цифровые команды поворота: 1 - поворот налево, −1 - поворот направо, 2 - поворот на 180.
     Дан символ symbol - исходная ориентация локатора и целые числа int1 и int2 - две посланные команды.
     Вывести ориентацию локатора после выполнения этих команд.
     """
-    pass
+def elif11(x, a, b):
+    d = ['Север', 'Запад', 'Юг', 'Восток']
+    r = {-1 : 'поворот направо', 1 : 'поворот налево', 2 : 'поворот на 180 градусов'}
+

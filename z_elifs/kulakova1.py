@@ -3,20 +3,20 @@ def elif1(int_namber):
     Elif1. Дано целое число в диапазоне 1–7. Вывести строку - название дня недели,
     соответствующее данному числу (1 - «понедельник», 2 - «вторник» и т. д.).
     """
-    if int_number == 1:
-        print("понедельник")
-    elif int_number == 2:
-        print("вторник")
-    elif int_number == 3:
-        print("среда")
-    elif int_number == 4:
-        print("четверг")
-    elif int_number == 5:
-        print("пятница")
-    elif int_number == 6:
-        print("суббота")
-    elif int_number == 7:
-        print("воскресенье")
+    if int_namber == 1:
+        return("понедельник")
+    elif int_namber == 2:
+        return("вторник")
+    elif int_namber == 3:
+        return("среда")
+    elif int_namber == 4:
+        return("четверг")
+    elif int_namber == 5:
+        return("пятница")
+    elif int_namber == 6:
+        return("суббота")
+    elif int_namber == 7:
+        return("воскресенье")
 
 
 def elif2(k):
@@ -26,17 +26,17 @@ def elif2(k):
     Если K не лежит в диапазоне 1–5, то вывести строку «ошибка».
     """
     if k == 1:
-        print("плохо")
+        return("плохо")
     elif k == 2:
-        print("неудовлетворительно")
+        return("неудовлетворительно")
     elif k == 3:
-        print("удовлетворительно")
+        return("удовлетворительно")
     elif k == 4:
-        print("хорошо")
+        return("хорошо")
     elif k == 5:
-        print("отлично")
+        return("отлично")
     else:
-        print("ошибка")
+        return("ошибка")
 
 
 def elif3(month):
@@ -45,15 +45,15 @@ def elif3(month):
     Вывести название соответствующего времени года («зима», «весна», «лето», «осень»).
     """
     if  3<=month<=5:
-        print("весна")
+        return("весна")
     elif 6<=month<=8:
-        print("лето")
+        return("лето")
     elif 9<=month<=11:
-        print("осень")
+        return("осень")
     elif month==12 or month==1 or month==2:
-        print("зима")
+        return("зима")
     else:
-        print("ошибка")    
+        return("ошибка")    
 
 
 def elif4(month):
@@ -62,13 +62,13 @@ def elif4(month):
     Определить количество дней в этом месяце для невисокосного года.
     """
     if month==2:
-        print("28")
+        return("28")
     elif month==4 or month==6 or month==9 or month==11:
-        print("30")
+        return("30")
     elif month==1 or month==3 or month==5 or month==7 or month==8 or month==10 or month==12:
-        print("31")
+        return("31")
     else:
-        print("ошибка")
+        return("ошибка")
 
 def elif5(n, a, b):
     """
@@ -78,13 +78,13 @@ def elif5(n, a, b):
     Выполнить над числами указанное действие и вывести результат.
     """
     if n==1:
-        print(a+b)
+        return(a+b)
     elif n==2:
-        print(a-b)
+        return(a-b)
     elif n==3:
-        print(a*b)
+        return(a*b)
     elif n==4:
-        print(a/b)
+        return(a/b)
 
 
 def elif6(number, length):
@@ -95,15 +95,15 @@ def elif6(number, length):
     Найти длину отрезка в метрах.
     """
     if number==1:
-        print(length*10)
+        return(length*10)
     elif number==2:
-        print(length/1000)
+        return(length/1000)
     elif number==3:
-        print(length)
+        return(length)
     elif number==4:
-        print(length*1000)
+        return(length*1000)
     elif number==5:
-        print(length*100)
+        return(length*100)
 
 
 def elif7(number, mass):
@@ -114,49 +114,49 @@ def elif7(number, mass):
     Найти массу тела в килограммах.
     """
     if number==1:
-        print(mass)
+        return(mass)
     elif number==2:
-        print(mass/1000000)
+        return(mass/1000000)
     elif number==3:
-        print(mass/1000)
+        return(mass/1000)
     elif number==4:
-        print(mass*1000)
+        return(mass*1000)
     elif number==5:
-        print(mass*100)
+        return(mass*100)
 
 def elif8(day, month):
     """
     Elif8. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, предшествующей указанной.
     """
-    month("декабрь","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь")
+    month1=(12,1,2,3,4,5,6,7,8,9,10,11,12)
     if 2<=day<=28:
-        print(day-1,"   ",month)
+        return(day-1,month)
         
     elif day==1 and month==3:
-        print(28,"   ",month==2)
+        return(28,month==2)
         
     elif day==31 and month!=3 and month!=8:
-        print(30,"   ",[month-1])
+        return(30,month1[month-1])
     elif day==30 or (month==8 and day==31):
-        print(31,"   ",[month-1])
+        return(31,month1[month-1])
 
 def elif9(day, month):
     """
     Elif9. Даны два целых числа: day (день) и month (месяц), определяющие правильную дату невисокосного года.
     Вывести значения day и month для даты, следующей за указанной.
     """
-    month("декабрь","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь")
+    month1=(12,1,2,3,4,5,6,7,8,9,10,11,12)
     if 1<=day<=27:
-        print(day+1,"   ",month)
+        return(day+1,month)
         
     elif day==31 and month!=2 and month!=7:
-        print(30,"   ",[month+1])
+        return(30,month1[month+1])
         
     elif day==30 or(day==28 and month==2):
-        print(30,"   ",[month+1])
+        return(30,month1[month+1])
     elif day==31 and month!=1 or (month==7 and day==31):
-        print(31,"   ",[month+1])
+        return(31,month1[month+1])
 
 def elif10(symbol, int_namber):
     """
@@ -166,29 +166,29 @@ def elif10(symbol, int_namber):
     Вывести направление робота после выполнения полученной команды.
     """
     if symbol=="С" and int_namber==0:
-        print("С")
+        return("С")
     elif symbol=="С" and int_namber==1:
-        print("З")
+        return("З")
     elif symbol=="С" and int_namber==-1:
-        print("В")
+        return("В")
     elif symbol=="З" and int_namber==0:
-        print("З")
+        return("З")
     elif symbol=="З" and int_namber==1:
-        print("Ю")
+        return("Ю")
     elif symbol=="З" and int_namber==-1:
-        print("С")
+        return("С")
     elif symbol=="Ю" and int_namber==0:
-        print("Ю")
+        return("Ю")
     elif symbol=="Ю" and int_namber==1:
-        print("В")
+        return("В")
     elif symbol=="Ю" and int_namber==-1:
-        print("З")
+        return("З")
     elif symbol=="В" and int_namber==0:
-        print("В")
+        return("В")
     elif symbol=="В" and int_namber==1:
-        print("С")
+        return("С")
     elif symbol=="В" and int_namber==-1:
-        print("Ю")
+        return("Ю")
 
 def elif11(symbol, int1, int2):
     """
@@ -198,34 +198,34 @@ def elif11(symbol, int1, int2):
     Вывести ориентацию локатора после выполнения этих команд.
     """
     if int1==int2==2:
-        print(symbol)
+        return(symbol)
     elif (int1==1 and int2==-1) or (int1==-1 and int2==1):
-        print(symbol)
+        return(symbol)
         
     elif (int1==int2==1 or int1==int2==-1) and symbol=="С" :
-        print("Ю")
+        return("Ю")
     elif (int1==int2==1 or int1==int2==-1) and symbol=="З":
-        print("В")
+        return("В")
     elif (int1==int2==1 or int1==int2==-1) and symbol=="Ю":
-        print("С")
+        return("С")
     elif (int1==int2==1 or int1==int2==-1) and symbol=="В":
-        print("З")
+        return("З")
 
         
     elif symbol=="С" and ((int1==2 and int2==1) or(int1==1 and int2==2)):
-        print("В")
+        return("В")
     elif symbol=="З" and ((int1==2 and int2==1) or(int1==1 and int2==2)):
-        print("С")
+        return("С")
     elif symbol=="Ю" and ((int1==2 and int2==1) or(int1==1 and int2==2)):
-        print("З")
+        return("З")
     elif symbol=="В" and ((int1==2 and int2==1) or(int1==1 and int2==2)):
-        print("Ю")
+        return("Ю")
         
     elif symbol=="С" and ((int1==2 and int2==-1) or(int1==-1 and int2==2)):
-        print("З")
+        return("З")
     elif symbol=="З" and ((int1==2 and int2==-1) or(int1==-1 and int2==2)):
-        print("Ю")
+        return("Ю")
     elif symbol=="Ю" and ((int1==2 and int2==-1) or(int1==-1 and int2==2)):
-        print("В")
+        return("В")
     elif symbol=="В" and ((int1==2 and int2==-1) or(int1==-1 and int2==2)):
-        print("С")
+        return("С")

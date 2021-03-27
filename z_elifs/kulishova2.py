@@ -10,32 +10,24 @@ def elif12(number, element):
         d=2*element
         l=2*p*element
         s=p*element**2
-        print('d=',d)
-        print('l=',l)
-        print('s=',s)
+        return(d, l, s, element)
     elif number==2:
         r=element/2
         l=2*p*r
         s=p*r**2
-        print('r=',r)
-        print('l=',l)
-        print('s=',s)
+        return(r, l, s, element)
     elif number==3:
         d=element/p
         r=d/2
         s=p*r**2
-        print('r=',r)
-        print('d=',d)
-        print('s=',s)
+        return(d, r, s, element)
     elif number==4:
         r=(element/p)**0.5
         d=2*r
         l=p*d
-        print('r=',r)
-        print('d=',d)
-        print('l=',l)
+        return(d, l, r, element)
     else:
-        print('Ошибка')
+        return(0)
 
 
 def elif13(number, element):
@@ -49,32 +41,24 @@ def elif13(number, element):
         c=element*(2**0.5)
         h=c/2
         S=c*h/2
-        print('c=',c)
-        print('h=',h)
-        print('S=',S)
+        return('c=',c, 'h=',h, 'S=',S, element)
     elif number==2:
         a=element/(2**0.5)
         h=element/2
         S=element*h/2
-        print('a=',a)
-        print('h=',h)
-        print('S=',S)
+        return('c=',a, 'h=',h, 'S=',S, element)
     elif number==3:
         a=element*(2**0.5)
         c=a**(2**0.5)
         S=c*element/2
-        print('a=',a)
-        print('c=',c)
-        print('S=',S)
+        return('c=',c, 'h=',a, 'S=',S, element)
     elif number==4:
         a=(2*element)**0.5
         c=a*(2**0.5)
         h=c/2
-        print('a=',a)
-        print('c=',c)
-        print('h=',h)
+        return('c=',c, 'h=',h, 'S=',a, element)
     else:
-        print('Ошибка')
+        return('Ошибка')
 
 
 def elif14(number, element):
@@ -89,32 +73,32 @@ def elif14(number, element):
         R1=element*3**0.5/6
         R2=2*R1
         S=element*element*3**0.5/4
-        print('R1=',R1)
-        print('R2=',R2)
-        print('S=',S)
+        return('R1=',R1)
+        return('R2=',R2)
+        return('S=',S)
     elif number==2:
         a=2*(3**0.5)*element
         R2=2*element
         S=a*a*(3**0.5)/4
-        print('a=',a)
-        print('R2=',R2)
-        print('S=',S)
+        return('a=',a)
+        return('R2=',R2)
+        return('S=',S)
     elif number==3:
         R1=element/2
         a=2*3**0.5*R1
         S=a*a*3**0.5/4
-        print('a=',a)
-        print('R1=',R1)
-        print('S=',S)
+        return('a=',a)
+        return('R1=',R1)
+        return('S=',S)
     elif number==4:
         a=2*(element/3**0.5)**0.5
         R1=element*3**0.5/6
         R2=2*R1
-        print('a=',a)
-        print('R1=',R1)
-        print('R2=',R2)
+        return('a=',a)
+        return('R1=',R1)
+        return('R2=',R2)
     else:
-        print('Ошибка')
+        return('Ошибка')
 
 
 def elif15(n, m):
@@ -125,11 +109,11 @@ def elif15(n, m):
     Вывести название соответствующей карты вида «шестерка бубен», «дама червей», «туз треф» и т. п.
     """
     if n==6:
-    Str='Шестёрка'
+        Str='Шестерка'
     elif n==7:
-        Str='Семёрка'
+        Str='Семерка'
     elif n==8:
-        Str='Восьмёрка'
+        Str='Восьмерка'
     elif n==9:
         Str='Девятка'
     elif n==10:
@@ -147,17 +131,17 @@ def elif15(n, m):
     
     if n!=-1:
         if m==1:
-            print(Str,' пики')
+            return(Str,' пики')
         elif m==2:
-            print(Str,' треф')
+            return(Str,' треф')
         elif m==3:
-            print(Str,' бубен')
+            return(Str,' бубен')
         elif m==4:
-            print(Str,' червей')
+            return(Str,' червей')
         else:
-            print('Ошибка')
+            return('Ошибка')
     else:
-        print('Ошибка')
+        return('Ошибка')
 
 
 def elif16(years_olds):
@@ -183,27 +167,27 @@ def elif16(years_olds):
         x=-1
         
     if x==0:
-        print(years_olds_str,'лет')
+        return(years_olds_str,'лет')
     elif x==1:
-        print(years_olds_str,'один год')
+        return(years_olds_str,'один год')
     elif x==2:
-        print(years_olds_str,'два года')
+        return(years_olds_str,'два года')
     elif x==3:
-        print(years_olds_str,'три года')
+        return(years_olds_str,'три года')
     elif x==4:
-        print(years_olds_str,'четыре года')
+        return(years_olds_str,'четыре года')
     elif x==5:
-        print(years_olds_str,'пять лет')
+        return(years_olds_str,'пять лет')
     elif x==6:
-        print(years_olds_str,'шесть лет')
+        return(years_olds_str,'шесть лет')
     elif x==7:
-        print(years_olds_str,'семь лет')
+        return(years_olds_str,'семь лет')
     elif x==8:
-        print(years_olds_str,'восемь лет')
+        return(years_olds_str,'восемь лет')
     elif x==9:
-        print(years_olds_str,' девять лет')
+        return(years_olds_str,' девять лет')
     elif x==-1:
-        print('Введено не верное значение')
+        return('Введено не 0 0')
 
 
 def elif17(int_number):
@@ -271,9 +255,9 @@ def elif17(int_number):
         elif int_number==21 or int_number==31:
             Str+=' учебное задание'
         
-        print(Str)
+        return(Str)
     else:
-        print('Ошибка')
+        return('Ошибка')
 
 
 def elif18(int_number):
@@ -282,11 +266,11 @@ def elif18(int_number):
     например: 256 - «двести пятьдесят шесть», 814 - «восемьсот четырнадцать».
     """
     X=int_number//100
-    print(X)
+
     Y=int_number//10%10
-    print(Y)
+
     Z=int_number%10
-    print(Z)
+
     
     if X==1:
         Str='Сто'
@@ -369,9 +353,9 @@ def elif18(int_number):
                 Str+=' восемь'
             elif Z==9:
                 Str+=' девять'
-        print(Str)
+        return(Str)
     else:
-        print('Ошибка ввода')
+        return('0 ввода')
 
 def elif19(year):
     """
@@ -389,7 +373,7 @@ def elif19(year):
     Cl=(year-1)%10+1
     Cl=(Cl-1)//2+1
     if Cl==1:
-        Str+='зелёно'
+        Str+='зелено'
     elif Cl==2:
         Str+='красно'
     elif Cl==3:
@@ -430,7 +414,7 @@ def elif19(year):
     elif A==12:
         Str+=' свиньи'
     
-    print(Str)
+    return(Str)
 
 
 def elif20(day, month):
@@ -442,61 +426,61 @@ def elif20(day, month):
     """
     if month==1:
         if day>20:
-            print('Водолей')
+            return('Водолей')
         else:
-            print('Козерог')
+            return('Козерог')
     elif month==2:
         if day<19:
-            print('Водолей')
+            return('Водолей')
         else:
-            print('Рыбы')
+            return('Рыбы')
     elif month==3:
         if day<21:
-            print('Рыбы')
+            return('Рыбы')
         else:
-            print('Овен')
+            return('Овен')
     elif month==4:
         if day<20:
-            print('Овен')
+            return('Овен')
         else:
-            print('Телец')
+            return('Телец')
     elif month==5:
         if day<21:
-            print('Телец')
+            return('Телец')
         else:
-            print('Близнецы')
+            return('Близнецы')
     elif month==6:
         if day<22:
-            print('Близнецы')
+            return('Близнецы')
         else:
-            print('Рак')
+            return('Рак')
     elif month==7:
         if day<23:
-            print('Рак')
+            return('Рак')
         else:
-            print('Лев')
+            return('Лев')
     elif month==8:
         if day<23:
-            print('Лев')
+            return('Лев')
         else:
-            print('Дева')
+            return('Дева')
     elif month==9:
         if day>23:
-            print('Дева')
+            return('Дева')
         else:
-            print('Весы')
+            return('Весы')
     elif month==10:
         if day<23:
-            print('Весы')
+            return('Весы')
         else:
-            print('Скорпион')
+            return('Скорпион')
     elif month==11:
         if day<23:
-            print('Скорпион')
+            return('Скорпион')
         else:
-            print('Стрелец')
+            return('Стрелец')
     elif month==12:
         if day<22:
-            print('Стрелец')
+            return('Стрелец')
         else:
-            print('Козерог')
+            return('Козерог')
