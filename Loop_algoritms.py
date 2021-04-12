@@ -190,7 +190,7 @@ def ex10():
 
 def ex11():
     a = 100
-    n = 3
+    n = 4
     angle = 90 / (n + 1)
     turtle.left(angle)
 
@@ -205,7 +205,7 @@ def ex11():
 
 def ex12():
     a = 150
-    n = 3
+    n = 4
     angle = 90 / n
     turtle.left(angle)
 
