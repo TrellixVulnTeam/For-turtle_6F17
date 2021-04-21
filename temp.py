@@ -1,5 +1,10 @@
-import numpy as np
-import matplotlib.pyplot as plt
-x = np.arange(-10, 10.01, 0.01)
-plt.plot(x, x**2)
-plt.show()
+def marteshka(n):
+    if n != 1:
+        print(f'Верх {n} мартёшки')
+        marteshka(n-1)
+        print(f'Низ {n} матрёшки')
+    else:
+        print('Матрёшечка')
+
+
+marteshka(5)
