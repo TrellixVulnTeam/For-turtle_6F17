@@ -1,10 +1,15 @@
-def marteshka(n):
-    if n != 1:
-        print(f'Верх {n} мартёшки')
-        marteshka(n-1)
-        print(f'Низ {n} матрёшки')
-    else:
-        print('Матрёшечка')
+import time
 
 
-marteshka(5)
+def isPrime ( n ):
+  k = 2
+  while k*k <= n and n % k != 0:
+    k += 1
+  return (k*k > n)
+
+t0 = time.time()
+
+print(isPrime(100000000000))
+
+t1 = time.time() - t0
+print("Time elapsed: ", t1)
