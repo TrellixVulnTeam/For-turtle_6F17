@@ -6,16 +6,15 @@ def elif12(number, element):
     Вывести значения остальных элементов данной окружности (в том же порядке). В качестве значения π использовать 3.14.
     """
     if element == 1:
-        print("r=", number, "\n", "d=", number * 2, "\n", "l=", number * 6.28, "\n", "s=", 3.14 * number ** 2)
+        return(number, number * 2, number * 6.28, 3.14 * number ** 2)
     elif element == 2:
-        print("r=", number / 2, "\n", "d=", number, "\n", "l=", number / 2 * 6.28, "\n", "s=",
-              3.14 * ((number / 2) ** 2))
+        return(number / 2, number, number / 2 * 6.28, 3.14 * ((number / 2) ** 2))
     elif element == 3:
         l3 = number / 6.28
-        print("r=", l3, "\n", "d=", l3 * 2, "\n", "l=", number, "\n", "s=", 3.14 * l3 ** 2)
+        return( l3,  l3 * 2,  number, 3.14 * l3 ** 2)
     elif element == 4:
         s4 = (number / 3.14) ** 0.5
-        print("r=", s4, "\n", "d=", s4 * 2, "\n", "l=", s4 * 6.28, "\n", "s=", number)
+        return( s4, s4 * 2,  s4 * 6.28, number)
 
 
 def elif13(number, element):
@@ -27,17 +26,14 @@ def elif13(number, element):
     """
     if element == 1:
         c1 = number * (2 ** 0.5)
-        print(" катет=", number, "\n", "гипотенуза=", c1, "\n", "высота=", c1 / 2, "\n", "площадь=", c1 * (c1 / 4))
+        return( number,  c1,  c1 / 2,  c1 * (c1 / 4))
     elif element == 2:
-        print(" катет=", number / (2 ** 0.5), "\n", "гипотенуза=", number, "\n", "высота=", number / 2, "\n",
-              "площадь=", number * (number / 4))
+        return( number / (2 ** 0.5),  number,  number / 2,  number * (number / 4))
     elif element == 3:
-        print(" катет=", (2 * number) / (2 ** 0.5), "\n", "гипотенуза=", 2 * number, "\n", "высота=", number, "\n",
-              "площадь=", 2 * number * (number / 2))
+        return( (2 * number) / (2 ** 0.5),  2 * number,  number,  2 * number * (number / 2))
     elif element == 4:
         gipotenusa = (number * 4) ** 0.5
-        print(" катет=", gipotenusa / (2 ** 0.5), "\n", "гипотенуза=", gipotenusa, "\n", "высота=", gipotenusa / 2,
-              "\n", "площадь=", number)
+        return( gipotenusa / (2 ** 0.5),  gipotenusa,  gipotenusa / 2,  number)
 
 
 def elif14(number, element):
@@ -47,21 +43,18 @@ def elif14(number, element):
     3 - радиус r2 описанной окружности (r2 = 2 * r1), 4 - площадь s = a**2 * 3**0.5 / 4.
     Дан номер одного из этих элементов и его значение.
     Вывести значения остальных элементов данного треугольника (в том же порядке)"""
-    if element == 1:
-        print(" сторона=", number, "\n", "радиус r1 =", number * (3 ** 0.5 / 6), "\n", "радиус r2=",
-              2 * number * (3 ** 0.5 / 6), "\n", "площадь=", (number ** 2) * (3 ** 0.5 / 4))
-    elif element == 2:
-        r1 = number / (3 ** 0.5 / 6)
-        print(" сторона=", r1, "\n", "радиус r1 =", number, "\n", "радиус r2=", 2 * number, "\n", "площадь=",
-              r1 ** 2 * (3 ** 0.5 / 4))
-    elif element == 3:
-        r11 = (number / 2) / (3 ** 0.5 / 6)
-        print(" сторона=", r11, "\n", "радиус r1 =", number / 2, "\n", "радиус r2=", number, "\n", "площадь=",
-              r11 * (3 ** 0.5 / 4))
-    elif element == 4:
-        a = (number / (3 ** 0.5 / 4)) ** 0.5
-        print(" сторона=", a, "\n", "радиус r1 =", a * (3 ** 0.5 / 6), "\n", "радиус r2=", 2 * a * (3 ** 0.5 / 6), "\n",
-              "площадь=", number)
+
+    if element==1:
+	    return (number,number*(3**0.5/6),2*number*(3**0.5/6),(number**2)*(3**0.5/4))
+    elif element==2:
+        r1=number/(3**0.5/6)
+        return (r1,number,2*number,r1**2*(3**0.5/4))
+    elif element==3:
+        r11=(number/2)/(3**0.5/6)
+        return (r11,number/2,number,r11*(3**0.5/4))
+    elif element==4:
+        a=(number/(3**0.5/4))**0.5
+        return (a,a*(3**0.5/6),2*a*(3**0.5/6),number)
 
 
 def elif15(n, m):
@@ -72,32 +65,33 @@ def elif15(n, m):
     Вывести название соответствующей карты вида «шестерка бубен», «дама червей», «туз треф» и т. п.
     """
     if n == 6:
-        print("шестёрка", end=" ")
+        q = "шестерка "
     elif n == 7:
-        print("семёрка", end=" ")
+        q = "семерка "
     elif n == 8:
-        print("восьмёрка", end=" ")
+        q = "восьмерка "
     elif n == 9:
-        print("девятка", end=" ")
+        q = "девятка "
     elif n == 10:
-        print("десятка", end=" ")
+        q = "десятка "
     elif n == 11:
-        print("валет", end=" ")
+        q = "валет "
     elif n == 12:
-        print("дама", end=" ")
+        q = "дама "
     elif n == 13:
-        print("король", end=" ")
+        q = "король "
     elif n == 14:
-        print("туз", end=" ")
+        q = "туз "
 
     if m == 1:
-        print("пик")
+        w = "пики"
     elif m == 2:
-        print("треф")
+        w = "треф"
     elif m == 3:
-        print("бубен")
+        w = "бубен"
     elif m == 4:
-        print("червей")
+        w = "червей"
+    return q + w
 
 
 def elif16(years_olds):
@@ -107,36 +101,37 @@ def elif16(years_olds):
     например: 20 - «двадцать лет», 32 - «тридцать два года», 41 - «сорок один год».
     """
     if years_olds // 10 == 2:
-        print("двадцать", end=" ")
+       q = "двадцать "
     elif years_olds // 10 == 3:
-        print("тридцать", end=" ")
+       q = "тридцать "
     elif years_olds // 10 == 4:
-        print("сорок", end=" ")
+       q = "сорок "
     elif years_olds // 10 == 5:
-        print("пятьдесят", end=" ")
+       q = "пятьдесят "
     elif years_olds // 10 == 6:
-        print("шестьдесят", end=" ")
+       q = "шестьдесят "
 
     if years_olds % 10 == 0:
-        print("лет")
+       q += "лет "
     elif years_olds % 10 == 1:
-        print("один год")
+       q += "один год "
     elif years_olds % 10 == 2:
-        print("два года")
+       q += "два года "
     elif years_olds % 10 == 3:
-        print("три года")
+       q += "три года "
     elif years_olds % 10 == 4:
-        print("четыре года")
+       q += "четыре года "
     elif years_olds % 10 == 5:
-        print("пять лет")
+       q += "пять лет "
     elif years_olds % 10 == 6:
-        print("шесть лет")
+       q += "шесть лет "
     elif years_olds % 10 == 7:
-        print("семь лет")
+       q += "семь лет "
     elif years_olds % 10 == 8:
-        print("восемь лет")
+       q += "восемь лет "
     elif years_olds % 10 == 9:
-        print("девять лет")
+       q += "девять лет "
+    return q
 
 
 def elif17(int_number):
@@ -146,57 +141,59 @@ def elif17(int_number):
     «учебное задание», например: 18 - «восемнадцать учебных заданий», 23 - «двадцать три учебных задания»,
     31 - «тридцать одно учебное задание».
    """
+    q = ""
     if int_number == 10:
-        print("десять", end=" ")
+       q = "десять"
     elif int_number == 11:
-        print("одиннадцать", end=" ")
+       q = "одиннадцать"
     elif int_number == 12:
-        print("двенадцать", end=" ")
+       q = "двенадцать"
     elif int_number == 13:
-        print("тринадцать", end=" ")
+       q = "тринадцать"
     elif int_number == 14:
-        print("четырнадцать", end=" ")
+       q = "четырнадцать"
     elif int_number == 15:
-        print("пятнадцать", end=" ")
+       q = "пятнадцать"
     elif int_number == 16:
-        print("шестнадцать", end=" ")
+       q = "шестнадцать"
     elif int_number == 17:
-        print("семнадцать", end=" ")
+       q = "семнадцать"
     elif int_number == 18:
-        print("восемнадцать", end=" ")
+       q = "восемнадцать"
     elif int_number == 19:
-        print("девятнадцать", end=" ")
-
+       q = "девятнадцать"
+    w = ""
     if int_number // 10 == 2:
-        print("двадцать", end=" ")
+       w = " двадцать"
     elif int_number // 10 == 3:
-        print("тридцать", end=" ")
+       w = " тридцать"
     elif int_number // 10 == 4:
-        print("сорок", end=" ")
-
+       w = " сорок"
+    e = ""
     if int_number // 10 == 1:
-        print("учебных заданий")
+       e = " учебных заданий"
     elif int_number % 10 == 1:
-        print("одно учебное задание")
+       e = " одно учебное задание"
     elif int_number % 10 == 2:
-        print("два учебных заданий")
+       e = " два учебных заданий"
     elif int_number % 10 == 3:
-        print("три учебных заданий")
+       e = " три учебных заданий"
     elif int_number % 10 == 4:
-        print("четыре учебных заданий")
+       e = " четыре учебных заданий"
     elif int_number % 10 == 5:
-        print("пять учебных заданий")
+       e = " пять учебных заданий"
     elif int_number % 10 == 6:
-        print("шесть учебных заданий")
+       e = " шесть учебных заданий"
     elif int_number % 10 == 7:
-        print("семь учебных заданий")
+       e = " семь учебных заданий"
     elif int_number % 10 == 8:
-        print("восемь учебных заданий")
+       e = " восемь учебных заданий"
     elif int_number % 10 == 9:
-        print("девять учебных заданий")
+       e = " девять учебных заданий"
     elif int_number % 10 == 0:
-        print("учебных заданий")
-
+       e = " учебных заданий"
+    print(q + w + e)
+    return q + w + e
 
 def elif18(int_number):
     """
@@ -204,84 +201,85 @@ def elif18(int_number):
     например: 256 - «двести пятьдесят шесть», 814 - «восемьсот четырнадцать».
     """
     if int_number // 100 == 1:
-        print("сто", end=" ")
+       q = "сто"
     elif int_number // 100 == 2:
-        print("двести", end=" ")
+       q = "двести"
     elif int_number // 100 == 3:
-        print("триста", end=" ")
+       q = "триста"
     elif int_number // 100 == 4:
-        print("четыреста", end=" ")
+       q = "четыреста"
     elif int_number // 100 == 5:
-        print("пятьсот", end=" ")
+       q = "пятьсот"
     elif int_number // 100 == 6:
-        print("шестьсот", end=" ")
+       q = "шестьсот"
     elif int_number // 100 == 7:
-        print("семьсот", end=" ")
+       q = "семьсот"
     elif int_number // 100 == 8:
-        print("восемьсот", end=" ")
+       q = "восемьсот"
     elif int_number // 100 == 9:
-        print("девятьсот", end=" ")
+       q = "девятьсот"
 
     if int_number % 100 // 10 == 0:
-        print(end="")
+        q +=""
     elif int_number % 100 // 10 == 2:
-        print("двадцать", end=" ")
+       q += "двадцать"
     elif int_number % 100 // 10 == 3:
-        print("тридцать", end=" ")
+       q += "тридцать"
     elif int_number % 100 // 10 == 4:
-        print("сорок", end=" ")
+       q += "сорок"
     elif int_number % 100 // 10 == 5:
-        print("пятьдесят", end=" ")
+       q += "пятьдесят"
     elif int_number % 100 // 10 == 6:
-        print("шестьдесят", end=" ")
+       q += "шестьдесят"
     elif int_number % 100 // 10 == 7:
-        print("семьдесят", end=" ")
+       q += "семьдесят"
     elif int_number % 100 // 10 == 8:
-        print("восемдесят", end=" ")
+       q += "восемдесят"
     elif int_number % 100 // 10 == 9:
-        print("девяносто", end=" ")
+       q += "девяносто"
 
     elif int_number % 100 == 10:
-        print("десять", end=" ")
+       q += "десять"
     elif int_number % 100 == 11:
-        print("одиннадцать", end=" ")
+       q += "одиннадцать"
     elif int_number % 100 == 12:
-        print("двенадцать", end=" ")
+       q += "двенадцать"
     elif int_number % 100 == 13:
-        print("тринадцать", end=" ")
+       q += "тринадцать"
     elif int_number % 100 == 14:
-        print("четырнадцать", end=" ")
+       q += "четырнадцать"
     elif int_number % 100 == 15:
-        print("пятнадцать", end=" ")
+       q += "пятнадцать"
     elif int_number % 100 == 16:
-        print("шестнадцать", end=" ")
+       q += "шестнадцать"
     elif int_number % 100 == 17:
-        print("семнадцать", end=" ")
+       q += "семнадцать"
     elif int_number % 100 == 18:
-        print("восемнадцать", end=" ")
+       q += "восемнадцать"
     elif int_number % 100 == 19:
-        print("девятнадцать", end=" ")
+       q += "девятнадцать"
 
     if int_number % 10 == 0 and int_number % 100 // 10 != 1:
-        print(end="")
+        q += ""
     elif int_number % 10 == 1 and int_number % 100 // 10 != 1:
-        print("один")
+       q += "один"
     elif int_number % 10 == 2 and int_number % 100 // 10 != 1:
-        print("два")
+       q += "два"
     elif int_number % 10 == 3 and int_number % 100 // 10 != 1:
-        print("три")
+       q += "три"
     elif int_number % 10 == 4 and int_number % 100 // 10 != 1:
-        print("четыре")
+       q += "четыре"
     elif int_number % 10 == 5 and int_number % 100 // 10 != 1:
-        print("пять")
+       q += "пять"
     elif int_number % 10 == 6 and int_number % 100 // 10 != 1:
-        print("шесть")
+       q += "шесть"
     elif int_number % 10 == 7 and int_number % 100 // 10 != 1:
-        print("семь")
+       q += "семь"
     elif int_number % 10 == 8 and int_number % 100 // 10 != 1:
-        print("восемь")
+       q += "восемь"
     elif int_number % 10 == 9 and int_number % 100 // 10 != 1:
-        print("девять")
+       q += "девять"
+    return q
 
 
 def elif19(year):
@@ -292,40 +290,40 @@ def elif19(year):
     По номеру года определить его название, если 1984 год - начало цикла: «год зеленой крысы».
     """
     if year % 10 == 0 or year % 10 == 1:
-        print("год бело", end="")
+       q = "год бело"
     elif year % 10 == 2 or year % 10 == 3:
-        print("год голубо", end="")
+       q = "год голубо"
     if year % 10 == 4 or year % 10 == 5:
-        print("год зелёно", end="")
+       q = "год зелено"
     if year % 10 == 6 or year % 10 == 7:
-        print("год красно", end="")
+       q = "год красно"
     if year % 10 == 8 or year % 10 == 9:
-        print("год жёлто", end="")
+       q = "год желто"
 
     if year % 12 == 0:
-        print("й обезьяны")
+       q += "й обезьяны"
     elif year % 12 == 1:
-        print("го петуха")
+       q += "го петуха"
     elif year % 12 == 2:
-        print("й собаки")
+       q += "й собаки"
     elif year % 12 == 3:
-        print("й свиньи")
+       q += "й свиньи"
     elif year % 12 == 4:
-        print("й крысы")
+       q += "й крысы"
     elif year % 12 == 5:
-        print("го быка")
+       q += "го быка"
     elif year % 12 == 6:
-        print("го тигра")
+       q += "го тигра"
     elif year % 12 == 7:
-        print("го кролика")
+       q += "го кролика"
     elif year % 12 == 8:
-        print("го дракона")
+       q += "го дракона"
     elif year % 12 == 9:
-        print("й змеи")
+       q += "й змеи"
     elif year % 12 == 10:
-        print("й лошади")
+       q += "й лошади"
     elif year % 12 == 10:
-        print("й овцы")
+       q += "й овцы"
 
 
 def elif20(day, month):
@@ -337,28 +335,29 @@ def elif20(day, month):
     """
     index = month * 100 + day
     if 120 <= index <= 218:
-        print("Водолей")
+       q = "Водолей"
     elif 219 <= index <= 320:
-        print("Рыбы")
+       q = "Рыбы"
     elif 321 <= index <= 419:
-        print("Овен")
+       q = "Овен"
     elif 420 <= index <= 520:
-        print("Телец")
+       q = "Телец"
     elif 521 <= index <= 621:
-        print("Близнецы")
+       q = "Близнецы"
     elif 622 <= index <= 722:
-        print("Рак")
+       q = "Рак"
     elif 723 <= index <= 822:
-        print("Лев")
+       q = "Лев"
     elif 823 <= index <= 922:
-        print("Дева")
+       q = "Дева"
     elif 923 <= index <= 1022:
-        print("Весы")
+       q = "Весы"
     elif 1023 <= index <= 1122:
-        print("Скорпион")
+       q = "Скорпион"
     elif 1123 <= index <= 1221:
-        print("Стрелец")
+       q = "Стрелец"
     elif 1222 <= index <= 1231 or 101 <= index <= 129:
-        print("Козерог")
+       q = "Козерог"
     else:
-        print("неверная дата или месяц")
+       q = 0
+    return q

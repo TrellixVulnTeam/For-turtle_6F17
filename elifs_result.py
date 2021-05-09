@@ -1,6 +1,6 @@
 import random
-from z_elifs import kulishova1 as temp1
-from z_elifs import kulishova2 as temp2
+from z_elifs import deduhin1 as temp1
+from z_elifs import kulakova2 as temp2
 
 
 def approx_equal(x, y, tolerance=0.001):
@@ -720,5 +720,5 @@ def test():
     print("Test 20 - Ok" if flag else "Test 20 - Fail")
 
 
-printing = (0, )
+printing = (17, )
 test()
