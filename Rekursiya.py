@@ -16,6 +16,7 @@ def pascal_tree(x, a):
         turtle.left(45)
     turtle.backward(a)
 
+
 turtle.left(90)
 n = 10
 size = 300
