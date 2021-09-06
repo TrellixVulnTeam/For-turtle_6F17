@@ -1,0 +1,8 @@
+http://pythonworld.ru/osnovy/obektno-orientirovannoe-programmirovanie-obshhee-predstavlenie.html
+http://pythonworld.ru/osnovy/formatirovanie-strok-metod-format.html
+http://pythonworld.ru/moduli/modul-time.html
+http://pythonworld.ru/moduli/modul-os.html
+http://www.ibm.com/developerworks/ru/library/l-python5/#h4
+http://www.ibm.com/developerworks/ru/views/linux/libraryview.jsp?topic_by=All+topics+and+related
+http://www.ibm.com/developerworks/ru/library/l-python_part_10/index.html
+http://habrahabr.ru/post/61905/

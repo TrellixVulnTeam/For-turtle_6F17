@@ -1,0 +1,6 @@
+from random import *
+def clrandom():
+    a = lambda: randint(0,255)
+    color='#%02X%02X%02X' % (a(),a(),a())
+    return color
+#РљР°Рє РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ: РЅР°РїСЂРёРјРµСЂ, fill=clrandom()
