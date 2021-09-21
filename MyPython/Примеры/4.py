@@ -32,9 +32,9 @@ from math import *
 #    print(i+1, "ФИО")
 #print("Конец")
     
-#n = int(input("Количество слогаемых "))
+#num = int(input("Количество слогаемых "))
 #summ = 0
-#for i in range(n):
+#for i in range(num):
 #    summ=summ+int(input(str(i+1)+"-е число = "))
 #print ("Сумма = ", summ)
 

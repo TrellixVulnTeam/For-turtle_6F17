@@ -24,5 +24,6 @@ def sierpinski(n,size):
 
 
 t.speed(0)
-sierpinski(4, 200)
+t.hideturtle()
+sierpinski(6, 600)
 t.done()
