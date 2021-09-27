@@ -18,7 +18,7 @@ if country in Capitals:
     # Если есть - выведем ее столицу
     print('Столица вашей страны - ', Capitals[country])
 else:
-    # Запросим название столицы и добавив его в словарь
+    # Запросим название столицы и добавив его в dictionary
     city = input('Как называется столица этой страны: ')
     Capitals[country] = city
     print('Добавили... ', country,Capitals[country])
