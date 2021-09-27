@@ -7,6 +7,6 @@ button1 = Button(text="Оперетта", bg = 'Green')
 
 lab1.grid()
 
-button1.grid(sticky='n')
+button1.grid(sticky='num')
 root.mainloop()
 # добавьте в программу еще три кнопки и два виджета Label

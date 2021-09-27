@@ -39,10 +39,11 @@ left(90)
 
 x = 0
 y = -400
-size = 150
+size = 200
 
 setposition(x, y)
 
 
 n = int(input("Число уровней дерева Пифагора "))
 kv(size, n)
+done()

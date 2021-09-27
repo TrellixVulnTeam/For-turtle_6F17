@@ -8,6 +8,6 @@ for i in range(n):
 #if k%2==0:
 #    print(k)
 #else:
-#    print(n-k)
+#    print(num-k)
 
 print(abs(n*(k%2)-k))    
