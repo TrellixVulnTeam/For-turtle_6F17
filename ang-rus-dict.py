@@ -1,5 +1,5 @@
 def dict_write(aux):
-    dict_file = open("словарь.txt", "w")
+    dict_file = open("dictionary_refactoring.lib", "w", encoding="utf-8")
     for key, val in aux.items():
         dict_file.write(f'{key}***{val}')
     dict_file.close()
@@ -7,7 +7,7 @@ def dict_write(aux):
 
 def dict_read():
     aux = {}
-    dict_file = open("словарь.txt", "r")
+    dict_file = open("dictionary_refactoring.lib", "r", encoding="utf-8")
     for line in dict_file:
         if line == '\n':
             continue
@@ -26,6 +26,7 @@ def dict_print(aux):
 
 def word_fine(aux):
     word = input("Введите английское слово ")
+
     while word == "":
         word = input("Введите английское слово ")
         
