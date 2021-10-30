@@ -11,7 +11,7 @@ def s(size, n=0):
     if n == 0:
         forward (size)
     else:
-        for j in (60,-120,60):
+        for j in [60,-120,60]:
             s(size / 3, n - 1)
             left (j)
         s(size / 3, n - 1)
