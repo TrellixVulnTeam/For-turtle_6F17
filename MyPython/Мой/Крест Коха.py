@@ -36,3 +36,4 @@ def koh (size, n):
 
 q = int(input("Число вложений "))
 koh (size, q)
+done()

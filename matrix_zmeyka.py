@@ -1,7 +1,7 @@
 def create_matrix_zero(x, y):
     aux = []
     for i in range(x):
-        aux.append([0]*y)
+        aux.append([0] * y)
     return aux
 
 
@@ -20,7 +20,7 @@ def col_down(matrix, col_number, n=0):
 
 def col_up(matrix, col_number, n):
     x = len(matrix)
-    for i in range(x-1, -1, -1):
+    for i in range(x - 1, -1, -1):
         n += 1
         matrix[i][col_number] = n
     return matrix, n

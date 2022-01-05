@@ -28,7 +28,7 @@ def pascal_tree(x, a):
 
 
 turtle.left(90)
-n = 5
+n = 10
 size = 200
 turtle.sety(-300)
 turtle.speed(0)
@@ -36,3 +36,4 @@ pascal_tree(n, size)
 
 
 turtle.done()
+

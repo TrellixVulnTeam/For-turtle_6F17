@@ -5,13 +5,13 @@ from pyrob.api import *
 
 @task(delay=0.01)
 def task_9_3():
-    k=1
+    count=1
     while not wall_is_beneath():
         move_down()
-        k+=1
-    r(k-2)
-    move_down(k//2)
-    move_left(k//2)
+        count+=1
+    r(count - 2)
+    move_down(count // 2)
+    move_left(count // 2)
     
 def r(n):
     if n<1:
