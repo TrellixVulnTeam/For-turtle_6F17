@@ -2,7 +2,6 @@ from datetime import date
 
 
 def ext_25_3(mm, dd):
-
     try:
         d = date(2018, mm, dd)
         d1 = date(2019, 1, 1)
@@ -17,6 +16,7 @@ def ext_25_3(mm, dd):
             print("Осталось", a, "дней до Нового Года")
     except ValueError:
         print('Некорректная дата')
+
 
 def uses_25_3(mm, dd):
     c = 365 - dd + 1
@@ -58,6 +58,7 @@ def uses_25_3(mm, dd):
     else:
         print('Некорректная дата')
 
+
 def print_ansk(c):
     if (c % 100 > 10) and (c % 100 < 20):
         print('До нового года осталось ', c, ' дней')
@@ -68,7 +69,6 @@ def print_ansk(c):
     elif c % 10 in (0, 5, 6, 7, 8, 9):
         print('До нового года осталось ', c, ' дней')
 
+
 for i in (12, 25), (1, 1), (2, 31):
     uses_25_3(*i)
-
-

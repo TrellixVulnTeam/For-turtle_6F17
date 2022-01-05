@@ -1,23 +1,29 @@
-file = open('26-59.txt', 'r')
-aux = file.readline()
-matrix = []
-for string in file:
-    matrix.append(tuple(map(int, string.split())))
-file.close()
+from random import choice
+from random import randint
 
-dic = dict.fromkeys(sorted(set([i[0] for i in matrix]), reverse=True))
-for i in matrix:
-    if dic[i[0]] == None:
-        dic[i[0]] = [i[1]]
-    else:
-        dic[i[0]] = sorted(dic[i[0]] + [i[1]])
 
-flag = False
-for row, seats in dic.items():
-    for i in range(len(seats) - 1):
-        if seats[i + 1] - seats[i] == 3:
-            print(row, seats[i] + 1)
-            flag = True
-            break
-    if flag == True:
-        break
+def qsort(a):
+    if len(a) <= 1:
+        return a
+    aux = choice(a)
+    b1 = [temp for temp in a if temp < aux]
+    bx = [temp for temp in a if temp == aux]
+    b2 = [temp for temp in a if temp > aux]
+    return qsort(b1) + bx + qsort(b2)
+
+
+def sum_digit_in_number(i): # Сумма цифр в числе
+    return sum(int(a) for a in str(i))
+
+n = 10
+x = [randint(10, 20) for i in range(n)]
+print(x)
+b = qsort(x[:len(x) // 2]) + qsort(x[len(x) // 2:])
+print(b)
+
+print(sorted(x, key=sum_digit_in_number))
+
+X = [0] * 6
+for k in range(6):
+    X[k] = 11 - 3 * k
+print(X)
