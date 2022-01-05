@@ -99,7 +99,47 @@ def ex24():
 
 
 def ex25():
+    def spiral(start_line, start):
+        '''
 
+        :param start_line:
+        :param start:
+        :return:
+        '''
+        while start_line >= start:
+            turtle.forward(start_line)
+            turtle.left(90)
+            start_line = start_line - 2 * start
+        turtle.forward(2 * start)
+        while start_line < a - 2 * start:
+            start_line = start_line + 2 * start
+            turtle.left(-90)
+            turtle.forward(start_line)
+
+    n = 4  # Число витков
+    a = 500  # сторона квадрата
+    turtle.speed(0)  # Скорость черепахи
+
+    for i in range(4):
+        turtle.forward(a)
+        turtle.left(90)
+
+    start = a / (2 ** (n + 1))
+    start_line = start * (2 ** (n + 1) - 2)
+    # стартовая позиция для 1-й спирали
+    turtle.left(90)
+    turtle.forward(start)
+    turtle.left(-90)
+
+    spiral(start_line, start)
+    # стартовая позиция для 2-й спирали
+    turtle.left(-90)
+    turtle.forward(a - start)
+    turtle.left(-90)
+    turtle.forward(start)
+    turtle.left(-90)
+
+    spiral(start_line, start)
 
 
 def control(ex):
@@ -155,6 +195,7 @@ def control(ex):
         ex24()
     elif ex == 25:
         ex25()
+
 
 if __name__ == "__main__":
     quiz = int(input("""Выберите задание:
