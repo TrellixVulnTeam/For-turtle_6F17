@@ -18,4 +18,4 @@ def ext23_3(age_anton, age_boris, age_victor):
 tests = ((3, 2, 1), (2, 3, 2), (1, 1, 2), (2, 2, 1), (1, 2, 2), (2, 1, 2), (3, 3, 3))
 
 for q in tests:
-    ext23_3(50, 20, 10)
+    ext23_3(*q)

@@ -1,4 +1,4 @@
-f = open('merfi.txt','r')
+f = open('merfi.txt', 'r')
 line = f.readline()
 print(line, end='')
 i = 2

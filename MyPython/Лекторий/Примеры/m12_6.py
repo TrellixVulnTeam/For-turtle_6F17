@@ -1,5 +1,5 @@
-f = open('shop_1.txt','r')
-e = open('shop_1a.txt','w')
+f = open('shop_1.txt', 'r')
+e = open('shop_1a.txt', 'w')
 n,m = 0,0
 a = b ='чего-чего?'
 while True:

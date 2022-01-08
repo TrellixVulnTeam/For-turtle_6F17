@@ -1,4 +1,4 @@
-f = open('nums2.txt','w')
+f = open('nums2.txt', 'w')
 a = ''
 n = 0
 while a!='*':

@@ -2,7 +2,7 @@
 строка = input("Введи строку")
 k=0
 for i in строка:
-    if i in [" "]:
+    if i in " ":
         k+=1
 if k==0:
     print(0)
