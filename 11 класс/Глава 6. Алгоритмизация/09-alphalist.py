@@ -15,7 +15,7 @@ Fin.close()
 
 Fout = open ( "output_list.txt", "w" )
 for k in sorted(D.keys()):
-  Fout.write ( "{}: {}\n".format(k, D[k]) )
+  Fout.write ( f"{k}: {D[k]}\n" )
 Fout.close()
 
 print ( "Данные записаны в файл output_list.txt." )
