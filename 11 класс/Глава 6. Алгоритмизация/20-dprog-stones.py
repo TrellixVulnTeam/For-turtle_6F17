@@ -17,7 +17,7 @@ for w in range(P[0],WMAX+1):
   T[0][w] = P[0]
 
 def showTable ( P, T ):
-  print ( "   ", end="");
+  print ( "   ", end="")
   for w in range(WMAX+1):
     print ( "{:3d}".format(w), end="")
   print("\n---", end="")
@@ -25,7 +25,7 @@ def showTable ( P, T ):
     print("---", end="")
   print()
   for i in range(NStones):
-    print( "{:2d}:".format(P[i]), end="");
+    print( "{:2d}:".format(P[i]), end="")
     for w in range(WMAX+1):
       print( "{:3d}".format(T[i][w]), end="" )
     print()
@@ -43,7 +43,7 @@ for i in range(1,NStones):
 showTable(P, T)
 
 print("Оптимальное решение: w =", T[NStones-1][WMAX] )
-print("Берем камни: ");
+print("Берем камни: ")
 i = NStones-1
 w = WMAX
 w0 = T[NStones-1][WMAX]
@@ -52,8 +52,8 @@ while w0 > 0:
     i -= 1
   if i < 0:
     print ( w0 )
-    break;
-  print ( P[i+1], ' ', end="");
+    break
+  print ( P[i+1], ' ', end="")
   w0 -= P[i+1]
   w = w0
 

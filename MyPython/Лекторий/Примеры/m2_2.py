@@ -9,4 +9,6 @@ from time import *
 холст.pack() # вывести холст
 
 холст.create_rectangle(100,20,300,240,fill="lightgreen") # прямоугольник
-холст.create_rectangle(120,40,280,220,outline="gray",width=6,fill="lightblue") 
+холст.create_rectangle(120,40,280,220,outline="gray",width=6,fill="lightblue")
+
+холст.mainloop()
