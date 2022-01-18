@@ -36,7 +36,6 @@ def NOK(a, b):
 
 file = open('4429.txt', 'r')
 
-
 temp = file.readline()
 matrix = []
 
