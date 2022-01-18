@@ -56,7 +56,7 @@ while True:
   print ( "Введите сумму для размена (1..", 
            WMAX, "): ", sep="" );
   N = int(input())
-  if 1 <= N and N <= WMAX: break
+  if 1 <= N <= WMAX: break
 
 for i in range(P[0],N+1):
   T[0][i] = 1

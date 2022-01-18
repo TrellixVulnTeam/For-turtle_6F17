@@ -17,12 +17,12 @@ import time
 
 N = 35
 
-print("Вычисляется F({:d}) ...".format(N))
+print(f"Вычисляется F({N:d}) ...")
 t0 = time.perf_counter()
 FN = Fib(N)
 dt = time.perf_counter() - t0
 print("Рекурсивная функция:")
-print("  F({0}) = {1}, время {2:0.3f} c".format(N, FN, dt))
+print(f"  F({N}) = {FN}, время {dt:0.8f} c")
 
 t0 = time.perf_counter()
 F = [1] * (N + 1)
@@ -31,7 +31,7 @@ for i in range(3, N + 1):
 FN = F[N]
 dt = time.perf_counter() - t0
 print("Итерация с хранением данных в массиве:")
-print("  F({0}) = {1}, время {2:0.7f} c".format(N, FN, dt))
+print(f"  F({N}) = {FN}, время {dt:0.8f} c")
 
 t0 = time.perf_counter()
 f2 = f1 = fN = 1
@@ -41,4 +41,4 @@ for i in range(3, N + 1):
     f1 = fN
 dt = time.perf_counter() - t0
 print("Итерация без массива:")
-print("  F({0}) = {1}, время {2:0.7f} c".format(N, FN, dt))
+print(f"  F({N}) = {FN}, время {dt:0.8f} c")
