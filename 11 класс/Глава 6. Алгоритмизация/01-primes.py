@@ -21,7 +21,7 @@ while k*k <= N:
       i += k      
   k += 1
 
-print ( "Простые числа от 2 до", N );
+print ( "Простые числа от 2 до", N )
 for i in range(2,N+1): 
   if A[i]:
     print ( i, " ", end="", sep="" )

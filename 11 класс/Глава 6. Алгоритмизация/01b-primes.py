@@ -21,7 +21,7 @@ def primes(N):
 
 N = 100
 
-print ( "Простые числа от 2 до", N );
+print ( "Простые числа от 2 до", N )
 for x in primes(N): 
   print ( x, " ", end="", sep="" )
 print()
