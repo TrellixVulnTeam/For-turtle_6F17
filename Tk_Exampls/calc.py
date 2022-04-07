@@ -13,11 +13,24 @@ def newNode(d):
     return node
 
 
+def makeTree(s):
+    k = lastOp(s)
+    if k < 0:  # создать лист
+        Tree = newNode(s)
+    else:  # создать узел-операцию
+        Tree = newNode(s[k])
+        Tree.left = makeTree(s[:k])
+        Tree.right = makeTree(s[k + 1:])
+    return Tree
+
+
 def priority(op):
     if op in "+-":
         return 1
     if op in "*/":
         return 2
+    if op in '^':
+        return 3
     return 100
 
 
@@ -31,20 +44,12 @@ def lastOp(s):
     return k
 
 
-def makeTree(s):
-    k = lastOp(s)
-    if k < 0:  # создать лист
-        Tree = newNode(s)
-    else:  # создать узел-операцию
-        Tree = newNode(s[k])
-        Tree.left = makeTree(s[:k])
-        Tree.right = makeTree(s[k + 1:])
-    return Tree
-
-
 def calcTree(Tree):
     if Tree.left == None:
-        return int(Tree.data)
+        try:
+            return int(Tree.data)
+        except:
+            return float(Tree.data)
     else:
         n1 = calcTree(Tree.left)
         n2 = calcTree(Tree.right)
@@ -54,6 +59,8 @@ def calcTree(Tree):
             res = n1 - n2
         elif Tree.data == "*":
             res = n1 * n2
+        elif Tree.data == "^":
+            res = n1 ** n2
         else:
             res = n1 // n2
         return res
@@ -66,23 +73,30 @@ def calculation():
     answer.insert(1.0, f'{s} = {str(calcTree(t))} \n')
 
 
+def del_answer():
+    answer.delete(0.1, 'end')
+
+
 window = tk.Tk()
-frame1 = tk.LabelFrame(window, text='Вопрос')
+frame1 = tk.LabelFrame(window, text='Пример')
 frame2 = tk.LabelFrame(window, text='Решение')
 
-question = tk.Entry(frame1, width=40)
-calculate = tk.Button(frame1, width=10, text='Вычислить', command=calculation)
+question = tk.Entry(frame1, width=40, font=('Arial', 20))
+calculate = tk.Button(frame1, width=10, text='Вычислить', command=calculation, font=('Arial', 20))
 
 frame1.pack(ipadx=5, ipady=5)
 question.pack(pady=5, padx=5)
 calculate.pack()
 
-answer = tk.Text(frame2, width=30, height=10)
+answer = tk.Text(frame2, width=39, height=10, font=('Arial', 20))
 scroll_y = tk.Scrollbar(frame2, command=answer.yview, orient='vertical')
 answer.config(yscrollcommand=scroll_y.set)
+
+delete = tk.Button(width=10, text='Очистить', command=del_answer, font=('Arial', 20))
 
 frame2.pack()
 answer.pack(side='left', pady=5, padx=5)
 scroll_y.pack(side='left', fill='y')
+delete.pack()
 
 window.mainloop()
