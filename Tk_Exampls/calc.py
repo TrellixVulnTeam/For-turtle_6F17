@@ -51,30 +51,67 @@ def calcTree(Tree):
         except:
             return float(Tree.data)
     else:
-        n1 = calcTree(Tree.left)
-        n2 = calcTree(Tree.right)
-        if Tree.data == "+":
-            res = n1 + n2
-        elif Tree.data == "-":
-            res = n1 - n2
-        elif Tree.data == "*":
-            res = n1 * n2
-        elif Tree.data == "^":
-            res = n1 ** n2
+        if calcTree(Tree.left) == 'Ошибка' or calcTree(Tree.right) == 'Ошибка':
+            return 'Ошибка'
         else:
-            res = n1 // n2
-        return res
+            n1 = calcTree(Tree.left)
+            n2 = calcTree(Tree.right)
+            if Tree.data == "+":
+                res = n1 + n2
+            elif Tree.data == "-":
+                res = n1 - n2
+            elif Tree.data == "*":
+                res = n1 * n2
+            elif Tree.data == "^":
+                res = n1 ** n2
+            else:
+                try:
+                    res = n1 // n2
+                except:
+                    res = 'Ошибка'
+            return res
 
 
 def calculation():
-    s = question.get()
-    t = makeTree(s)
-    question.delete(0, 'end')
-    answer.insert(1.0, f'{s} = {str(calcTree(t))} \n')
+    if question.get() != '':
+        s = segment(question.get())
+        t = makeTree(s)
+        answer.insert(1.0, f'{question.get()} = {str(calcTree(t))} \n')
+        question.delete(0, 'end')
+    else:
+        answer.insert(1.0, 'Пустая строка\n')
+
+
+def segment(s):
+    l = len(s)
+    c = []
+    while s.find(')') != -1:
+        for i in range(l-1, -1, -1):
+            if s[i] == ')':
+                c.append(i)
+            if s[i] == '(':
+                last = c.pop()
+
+
+                end = s[last+1:]
+                seg = makeTree(s[i:last+1][1:-1])
+
+                l = len(s[i:last+1])
+
+                print('seg = ', s[i:last+1][1:-1])
+                begin = s[:i]
+                middle = str(calcTree(seg))
+                s = begin + str(calcTree(seg)) + end
+                print('s=', s)
+
+                for g in range(len(c)):
+                    c[g] = c[g] - l + len(middle)
+    return s
 
 
 def del_answer():
     answer.delete(0.1, 'end')
+    question.delete(0, 'end')
 
 
 window = tk.Tk()
@@ -97,6 +134,6 @@ delete = tk.Button(width=10, text='Очистить', command=del_answer, font=(
 frame2.pack()
 answer.pack(side='left', pady=5, padx=5)
 scroll_y.pack(side='left', fill='y')
-delete.pack()
+delete.pack(pady=5, padx=5)
 
 window.mainloop()
