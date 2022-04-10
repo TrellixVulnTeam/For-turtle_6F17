@@ -72,7 +72,7 @@ def calcTree(Tree):
             return res
 
 
-def calculation():
+def calculation(event=0):
     if question.get() != '':
         s = segment(question.get())
         t = makeTree(s)
@@ -83,30 +83,60 @@ def calculation():
 
 
 def segment(s):
-    l = len(s)
-    c = []
-    while s.find(')') != -1:
-        for i in range(l-1, -1, -1):
-            if s[i] == ')':
-                c.append(i)
-            if s[i] == '(':
-                last = c.pop()
+   if not valid(s):
+        l = len(s)
+        c = []
+        while s.find(')') != -1:
+            for i in range(l-1, -1, -1):
+                if s[i] == ')':
+                    c.append(i)
+                if s[i] == '(':
+                    last = c.pop()
+                    end = s[last+1:]
+                    seg = makeTree(s[i:last+1][1:-1])
+                    l = len(s[i:last+1])
+
+                    print('seg = ', s[i:last+1][1:-1])
+
+                    begin = s[:i]
+                    middle = str(calcTree(seg))
+                    s = begin + str(calcTree(seg)) + end
+
+                    print('s=', s)
+
+                    for g in range(len(c)):
+                        c[g] = c[g] - l + len(middle)
+        return s
+   else:
+       return '1/0'
 
 
-                end = s[last+1:]
-                seg = makeTree(s[i:last+1][1:-1])
+def valid(s):
+    L = "("
+    R = ")"
 
-                l = len(s[i:last+1])
+    stack = []
+    err = False
 
-                print('seg = ', s[i:last+1][1:-1])
-                begin = s[:i]
-                middle = str(calcTree(seg))
-                s = begin + str(calcTree(seg)) + end
-                print('s=', s)
+    for c in s:
+        p = L.find(c)
+        if p >= 0:
+            stack.append(c)
+        p = R.find(c)
+        if p >= 0:
+            if len(stack) == 0:
+                err = True
+            else:
+                top = stack.pop()
+                if p != L.find(top):
+                    err = True
+        if err:
+            break
 
-                for g in range(len(c)):
-                    c[g] = c[g] - l + len(middle)
-    return s
+    if len(stack) > 0:
+        err = True
+
+    return err
 
 
 def del_answer():
@@ -136,4 +166,5 @@ answer.pack(side='left', pady=5, padx=5)
 scroll_y.pack(side='left', fill='y')
 delete.pack(pady=5, padx=5)
 
+window.bind('<Return>', calculation)
 window.mainloop()
