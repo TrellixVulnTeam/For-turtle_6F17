@@ -20,7 +20,7 @@ def makeTree(s):
     else:  # создать узел-операцию
         Tree = newNode(s[k])
         Tree.left = makeTree(s[:k])
-        Tree.right = makeTree(s[k + 1:])
+        Tree.right = makeTree(s[k+1:])
     return Tree
 
 
@@ -49,7 +49,10 @@ def calcTree(Tree):
         try:
             return int(Tree.data)
         except:
-            return float(Tree.data)
+            try:
+                return float(Tree.data)
+            except:
+                return 0
     else:
         if calcTree(Tree.left) == 'Ошибка' or calcTree(Tree.right) == 'Ошибка':
             return 'Ошибка'
@@ -66,7 +69,7 @@ def calcTree(Tree):
                 res = n1 ** n2
             else:
                 try:
-                    res = n1 // n2
+                    res = n1 / n2
                 except:
                     res = 'Ошибка'
             return res
@@ -76,7 +79,7 @@ def calculation(event=0):
     if question.get() != '':
         s = segment(question.get())
         t = makeTree(s)
-        answer.insert(1.0, f'{question.get()} = {str(calcTree(t))} \n')
+        answer.insert(1.0, f'{question.get()} = {calcTree(t)} \n')
         question.delete(0, 'end')
     else:
         answer.insert(1.0, 'Пустая строка\n')
@@ -91,11 +94,15 @@ def segment(s):
             aux, s = segment(s)
             n_s = n_s + aux
         elif temp == ')':
+            n_s = n_s.replace('--', '+')
+            n_s = n_s.replace('-+', '-')
             tree = makeTree(n_s)
             res = calcTree(tree)
             return str(res), s
         else:
             n_s += temp
+    n_s = n_s.replace('--', '+')
+    n_s = n_s.replace('+-', '-')
     return n_s
 
 
