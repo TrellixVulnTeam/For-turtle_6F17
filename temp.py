@@ -1,3 +1,4 @@
+
 file = open('26-57.txt', 'r')
 aux, lenght = map(int, file.readline().split())
 del aux
@@ -23,3 +24,4 @@ while sum(count) >= lenght:
                 slick += 1
                 count.append(aux_count + count.pop(i) - lenght)
 print(slick)
+
