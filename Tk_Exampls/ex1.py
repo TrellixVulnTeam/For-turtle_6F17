@@ -14,7 +14,7 @@ ent = Entry(width=20)
 but = Button(text="Преобразовать")
 lab = Label(width=20, bg='black', fg='white')
 
-but.bind('<Button-1>', str_to_sort_list)
+but.bind('<Button-Для уроков (составитель тестов)>', str_to_sort_list)
 
 ent.pack()
 but.pack()

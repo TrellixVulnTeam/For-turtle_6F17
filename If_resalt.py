@@ -330,7 +330,7 @@ def test():
             flag = False
             if 1 in printing:
                 print(a)
-    print("Test 1 - Ok" if flag else "Test 1 - Fail")
+    print("Test Для уроков (составитель тестов) - Ok" if flag else "Test Для уроков (составитель тестов) - Fail")
 
     flag = True
     for i in range(200):

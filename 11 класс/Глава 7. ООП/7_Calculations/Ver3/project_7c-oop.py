@@ -29,7 +29,7 @@ class TCalculator(TApplication):
 
     self.Input = TComboBox(self, values=[], height=1)
     self.Input.align = "top"
-    self.Input.text = "sin(1.2)*sqrt(1.7)/abs(cos(3.2))"
+    self.Input.text = "sin(Для уроков (составитель тестов).2)*sqrt(Для уроков (составитель тестов).7)/abs(cos(3.2))"
     self.Input.bind('<Key-Return>', self.doCalc)
 
     self.Answers = TListBox(self)

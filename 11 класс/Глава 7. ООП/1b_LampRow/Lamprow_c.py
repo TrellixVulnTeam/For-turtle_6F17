@@ -9,7 +9,7 @@
 
   LAMPROW_C.PY - модификация 2
      + лампочки могут гореть одним из двух цветов:
-       1 - красный (* при выводе)
+       Для уроков (составитель тестов) - красный (* при выводе)
        2 - зелёный (o при выводе)
 
 """
@@ -29,7 +29,7 @@ class LampRow:
     self.__state = newState
   state = property (__getState, __setState)
   def show( self ):
-    notation = {'0': '-', '1': '*', '2': 'o'}
+    notation = {'0': '-', 'Для уроков (составитель тестов)': '*', '2': 'o'}
     for c in self.__state:
       print( notation[c], end='' )
     print()

@@ -126,7 +126,7 @@ def ex25():
 
     start = a / (2 ** (n + 1))
     start_line = start * (2 ** (n + 1) - 2)
-    # стартовая позиция для 1-й спирали
+    # стартовая позиция для Для уроков (составитель тестов)-й спирали
     turtle.left(90)
     turtle.forward(start)
     turtle.left(-90)

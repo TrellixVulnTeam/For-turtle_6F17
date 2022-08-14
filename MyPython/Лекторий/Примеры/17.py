@@ -1,4 +1,4 @@
-файл = open("C:/Users/user205/Desktop/Pyton/1.txt", "r")
+файл = open("C:/Users/user205/Desktop/Pyton/Для уроков (составитель тестов).txt", "r")
 сумма = 0
 for строка in файл:
     print(строка, end="")

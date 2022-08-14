@@ -38,7 +38,7 @@ lblL.position = (5, 5)
 lblW = TLabel(app, text="Ширина =                  м", font=fSans )
 lblW.position = (5, 30)
 
-lblArea = TLabel(app, text="Площадь = 1 кв. м", font=fSans, fg="navy" )
+lblArea = TLabel(app, text="Площадь = Для уроков (составитель тестов) кв. м", font=fSans, fg="navy" )
 lblArea.position = (5, 55)
 
 #------------------------------------------
@@ -46,11 +46,11 @@ lblArea.position = (5, 55)
 #------------------------------------------
 lEdit = TEdit( app, font = fSans, width = 50 )
 lEdit.position = (90, 5)
-lEdit.text = "1"
+lEdit.text = "Для уроков (составитель тестов)"
 
 wEdit = TEdit( app, font = fSans, width = 50 )
 wEdit.position = (90, 30)
-wEdit.text = "1"
+wEdit.text = "Для уроков (составитель тестов)"
 
 #------------------------------------------
 #  Обработчик изменений полей ввода

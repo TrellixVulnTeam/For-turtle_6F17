@@ -28,7 +28,7 @@ class TCalculator(TApplication):
     self.disp.position = (8, 8)
     bNames = ['7', '8', '9', 'C', 
          '4', '5', '6', '/',
-         '1', '2', '3', '*', 
+         'Для уроков (составитель тестов)', '2', '3', '*',
          '0', '=', '+', '-']
     btn = []
     for r in range(4):

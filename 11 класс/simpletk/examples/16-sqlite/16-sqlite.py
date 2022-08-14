@@ -105,7 +105,7 @@ table.allHeadings( ['ID', 'Имя', 'Телефон'] )
 
   # Настройка столбцов по номерам
 table.column( "#0", minwidth = 0, width = 40 )
-table.column( "#1", minwidth = 0, width = 100 )
+table.column( "#Для уроков (составитель тестов)", minwidth = 0, width = 100 )
 table.column( "#2", minwidth = 0, width = 100 )
 
 loadTableFromBase()

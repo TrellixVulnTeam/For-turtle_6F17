@@ -19,7 +19,7 @@ def deleteText(event):
   except: pass
 
 def copyText(event):
-  text = memo.get(1.0, END)  # 1.0 - строка 1 (первая), столбец 0 (первый)
+  text = memo.get(1.0, END)  # Для уроков (составитель тестов).0 - строка Для уроков (составитель тестов) (первая), столбец 0 (первый)
   saveMemo.text = text
   print(saveMemo.getLine(1))
 
@@ -77,11 +77,11 @@ lineEdit2 = TEdit( savePanel, font = fSans, width = 120 )
 lineEdit2.position = (5, 5)
 lineEdit2.text = "Вася"
 
-insBtn2 = TButton( savePanel, width = 50, text = "Ins line 1" )
+insBtn2 = TButton( savePanel, width = 50, text = "Ins line Для уроков (составитель тестов)" )
 insBtn2.position = (140, 5)
 insBtn2.onClick = insertLine
 
-delBtn2 = TButton( savePanel, width = 50, text = "Del line 1" )
+delBtn2 = TButton( savePanel, width = 50, text = "Del line Для уроков (составитель тестов)" )
 delBtn2.position = (200, 5)
 delBtn2.onClick = deleteLine
 

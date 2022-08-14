@@ -14,5 +14,5 @@ def segment(s):
                 s = begin + 'N' + end
                 print('s=',s)
 
-s = '(1+(2+3))-(4+5)'
+s = '(Для уроков (составитель тестов)+(2+3))-(4+5)'
 print(segment(s))

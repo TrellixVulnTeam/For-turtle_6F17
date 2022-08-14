@@ -45,7 +45,7 @@ lblH.position = (5, 55)
 lblR = TLabel(app, text="В рулоне                  кв. м", font=fSans )
 lblR.position = (5, 80)
 
-lblArea = TLabel(app, text="Площадь стен = 1 кв. м", font=fSans, fg="navy" )
+lblArea = TLabel(app, text="Площадь стен = Для уроков (составитель тестов) кв. м", font=fSans, fg="navy" )
 lblArea.position = (5, 105)
 
 lblN = TLabel(app, text="Нужно ? рулона (ов)", font=fSans, fg="navy" )

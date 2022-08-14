@@ -8,7 +8,7 @@ answer = 1
 
 while answer != 4:
     print("""Меню словаря:
-    1. Найти слово в словаре
+    Для уроков (составитель тестов). Найти слово в словаре
     2. Добавить слово в словарь
     3. Напечатать словарь
     4. Выход""")
@@ -16,7 +16,7 @@ while answer != 4:
     answer = input("Что будем делать? ")
     if answer == "":
         continue
-    if answer == "1":
+    if answer == "Для уроков (составитель тестов)":
         fine_dictionary.fine_word(dictionary)
     elif answer == "2":
         add_dictionary.add_word(dictionary)

@@ -9,7 +9,7 @@ def keys(event):
 button1=Button(root, text='Нажми')
 button1.pack()
 # отловили левую клавишу мыши
-button1.bind('<Button-1>', leftclick)
+button1.bind('<Button-Для уроков (составитель тестов)>', leftclick)
 # отловили правую клавишу мыши
 button1.bind('<Button-3>', rightclick)
 # отловили нажатие клавиши Z на клавиатуре

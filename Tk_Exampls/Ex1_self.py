@@ -30,10 +30,10 @@ but_div = Button(text="/", width=10)
 
 lab = Label(width=20)
 
-but_add.bind('<Button-1>', calc_add)
-but_sub.bind('<Button-1>', calc_sub)
-but_mul.bind('<Button-1>', calc_mul)
-but_div.bind('<Button-1>', calc_div)
+but_add.bind('<Button-Для уроков (составитель тестов)>', calc_add)
+but_sub.bind('<Button-Для уроков (составитель тестов)>', calc_sub)
+but_mul.bind('<Button-Для уроков (составитель тестов)>', calc_mul)
+but_div.bind('<Button-Для уроков (составитель тестов)>', calc_div)
 
 
 

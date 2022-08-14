@@ -38,7 +38,7 @@ class LampRow:
     self.__state = int(newState, 3)
   state = property (__getState, __setState)
   def show( self ):
-    notation = {'0': '-', '1': '*', '2': 'o'}
+    notation = {'0': '-', 'Для уроков (составитель тестов)': '*', '2': 'o'}
     s = int2Trinary(self.__state, self.count)
     for c in s:
       print( notation[c], end='' )

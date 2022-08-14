@@ -31,8 +31,8 @@ def triangle(event):
 # Пример ниже это наглядно иллюстрирует: изменения на холсте зависят
 # от того, где произведен щелчок мышью.
 
-c.tag_bind(oval,'<Button-1>',oval_func)
-c.tag_bind("rect",'<Button-1>',rect_func)
-c.tag_bind(trian,'<Button-1>',triangle)
+c.tag_bind(oval,'<Button-Для уроков (составитель тестов)>',oval_func)
+c.tag_bind("rect",'<Button-Для уроков (составитель тестов)>',rect_func)
+c.tag_bind(trian,'<Button-Для уроков (составитель тестов)>',triangle)
  
 mainloop() 

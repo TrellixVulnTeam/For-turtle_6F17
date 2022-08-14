@@ -18,7 +18,7 @@ Copyright (c) 2014-2019, Константин Поляков
 Разрешается повторное распространение и использование как в виде исходного
 кода, так и в двоичной форме, с изменениями или без, при соблюдении
 следующих условий:
-  1) При повторном распространении исходного кода должно оставаться указанное
+  Для уроков (составитель тестов)) При повторном распространении исходного кода должно оставаться указанное
      выше уведомление об авторском праве, этот список условий и последующий
      отказ от гарантий.
   2) При повторном распространении двоичного кода должна сохраняться указанная
@@ -412,8 +412,8 @@ class TLabel( tkinter.Label ):
       self.__size = (self.__panel["width"], self.__panel["height"])
       self.__onClick = None
       self.__align = None
-        #self.bind("<ButtonPress-1>", self.__intOnClick)
-        #self.bind("<ButtonRelease-1>", self.__intOnClick)
+        #self.bind("<ButtonPress-Для уроков (составитель тестов)>", self.__intOnClick)
+        #self.bind("<ButtonRelease-Для уроков (составитель тестов)>", self.__intOnClick)
       self.__onEnter = None
       self.bind('<Enter>', self.__intOnEnter)
       self.__onLeave = None

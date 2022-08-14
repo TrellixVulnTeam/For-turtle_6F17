@@ -28,19 +28,19 @@ from math import *
 #    print("Вам",aux - роджён, "лет")
 #
 #print("Начало")
-#for i in range(0,20,1):
-#    print(i+1, "ФИО")
+#for i in range(0,20,Для уроков (составитель тестов)):
+#    print(i+Для уроков (составитель тестов), "ФИО")
 #print("Конец")
     
 #n = int(input("Количество слогаемых "))
 #summ = 0
 #for i in range(n):
-#    summ=summ+int(input(str(i+1)+"-е число = "))
+#    summ=summ+int(input(str(i+Для уроков (составитель тестов))+"-е число = "))
 #print ("Сумма = ", summ)
 
 n = int(input("Количество точек "))
-x= float(input("Координата Х точки 1"))
-y= float(input("Кощрдината У точеи 1"))
+x= float(input("Координата Х точки Для уроков (составитель тестов)"))
+y= float(input("Кощрдината У точеи Для уроков (составитель тестов)"))
 
 a,b=x,y
 m=sqrt(x*x+y*y)

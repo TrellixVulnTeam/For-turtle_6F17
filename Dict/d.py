@@ -1,4 +1,4 @@
-files = open('dictionary-1.lib', 'r', encoding="utf-8")
+files = open('dictionary-Для уроков (составитель тестов).lib', 'r', encoding="utf-8")
 files_refactoring = open('dictionary_refactoring.lib', 'w', encoding="utf-8")
 temp = '\n'
 for lines in files:

@@ -22,7 +22,7 @@ app.size = (300, 150)
 
 Input = TComboBox(app, values=[], height=25)
 Input.align = "top"
-Input.text = "sin(1.2)*sqrt(1.7)/abs(cos(3.2))"
+Input.text = "sin(Для уроков (составитель тестов).2)*sqrt(Для уроков (составитель тестов).7)/abs(cos(3.2))"
 
 Answers = TListBox(app, values=[])
 Answers.align = "client"

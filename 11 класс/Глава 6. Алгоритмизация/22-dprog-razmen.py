@@ -53,7 +53,7 @@ for i in range(MMAX):
     print( " руб." )
 
 while True:
-  print ( "Введите сумму для размена (1..", 
+  print ( "Введите сумму для размена (Для уроков (составитель тестов)..",
            WMAX, "): ", sep="" );
   N = int(input())
   if 1 <= N <= WMAX: break

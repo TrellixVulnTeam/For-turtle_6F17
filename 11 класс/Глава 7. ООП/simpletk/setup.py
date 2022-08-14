@@ -2,7 +2,7 @@
 from distutils.core import setup
 setup(
     name='simpletk',
-    version='0.1',
+    version='0.Для уроков (составитель тестов)',
     py_modules=['simpletk'],
     requires = ["tkinter"],
     description = "SimpkleTk - simplified tkinter-based framework for GUI design",

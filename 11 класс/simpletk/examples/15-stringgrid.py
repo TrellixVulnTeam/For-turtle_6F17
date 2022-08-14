@@ -21,7 +21,7 @@ table.align = "client"
 
   # Заголовки столбцов по одному
 table.heading( '#0', 'Name' )
-table.heading( 'A', 'Apple' )    # или table.heading( '#1', 'Apple' )
+table.heading( 'A', 'Apple' )    # или table.heading( '#Для уроков (составитель тестов)', 'Apple' )
 table.heading( 'B', 'Samsung' )  # или table.heading( '#2', 'Samsung' )
 table.heading( 'C', 'Nokia' )    # или table.heading( '#2', 'Nokia' )
 
@@ -30,7 +30,7 @@ table.allHeadings( ['Фамилия', 'Имя', 'Отчество', 'Телеф�
 
   # Настройка столбцов по номерам
 table.column( "#0", minwidth = 0, width = 100, stretch = NO )
-table.column( "#1", minwidth = 0, width = 100, stretch = NO )
+table.column( "#Для уроков (составитель тестов)", minwidth = 0, width = 100, stretch = NO )
 table.column( "#2", minwidth = 0, width = 100 )
 table.column( "#3", minwidth = 0, width = 100 )
 
