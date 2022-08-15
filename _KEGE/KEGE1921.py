@@ -33,16 +33,16 @@ def do2(go):
 
 
 def f19(x, y, p=1):
-    if x + y >= 259 and p == 3: return True
-    if x + y < 259 and p == 3: return False
+    if x + y >= wins and p == 3: return True
+    if x + y < wins and p == 3: return False
 
     return f19(do1(x), y, p + 1) or f19(do2(x), y, p + 1) or f19(x, do1(y), p + 1) or f19(x, do2(y), p + 1)
 
 
 def f20(x, y, p=1):
-    if x + y >= 259 and p == 4: return True
-    if x + y < 259 and p == 4: return False
-    if x + y >= 259: return False
+    if x + y >= wins and p == 4: return True
+    if x + y < wins and p == 4: return False
+    if x + y >= wins: return False
 
     if p % 2 == 0:
         return f20(do1(x), y, p + 1) and f20(do2(x), y, p + 1) and f20(x, do1(y), p + 1) and f20(x, do2(y), p + 1)
@@ -51,9 +51,9 @@ def f20(x, y, p=1):
 
 
 def f21(x, y, p=1):
-    if x + y >= 259 and (p == 3 or p == 5): return True
-    if x + y < 259 and p == 5: return False
-    if x + y >= 259: return False
+    if x + y >= wins and (p == 3 or p == 5): return True
+    if x + y < wins and p == 5: return False
+    if x + y >= wins: return False
 
     if p % 2 == 1:
         return f21(do1(x), y, p + 1) and f21(do2(x), y, p + 1) and f21(x, do1(y), p + 1) and f21(x, do2(y), p + 1)
@@ -62,9 +62,9 @@ def f21(x, y, p=1):
 
 
 def f21m(x, y, p=1):
-    if x >= 259 and p == 3: return True
-    if x < 259 and p == 3: return False
-    if x >= 259: return False
+    if x >= wins and p == 3: return True
+    if x < wins and p == 3: return False
+    if x >= wins: return False
 
     if p % 2 == 1:
         return f21m(do1(x), y, p + 1) and f21m(do2(x), y, p + 1) and f21m(x, do1(y), p + 1) and f21m(x, do2(y), p + 1)
@@ -75,29 +75,30 @@ def f21m(x, y, p=1):
 # Условия
 start = 1
 hip1 = 17
-wins = 242
+stop = 242
+wins = 259
 
 # Q19
 print('-' * 10 + 'Q19' + '-' * 10)
-for s in range(start, wins):
+for s in range(start, stop):
     if f19(hip1, s):
         print(s)
         break
 
 # Q20
 print('-' * 10 + 'Q20' + '-' * 10)
-for s in range(start, wins):
+for s in range(start, stop):
     if f20(hip1, s):
         print(s)
 
 # Q21
 print('-' * 10 + 'Q21' + '-' * 10)
-for s in range(start, wins):
+for s in range(start, stop):
     if f21(hip1, s):
         print(s)
 
 print()
 
-for s in range(start, wins):
+for s in range(start, stop):
     if f21m(hip1, s):
         print(s)
