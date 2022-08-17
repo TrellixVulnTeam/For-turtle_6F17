@@ -1,4 +1,4 @@
-'''
+"""
 № 4429 (Е. Драчева)
 Набор данных состоит из групп натуральных чисел, каждая группа записана в отдельной строке.
 В любой группе содержится не менее двух чисел. Из каждой группы выбрали два числа и нашли
@@ -22,7 +22,7 @@
 Значением искомой суммы должно быть число 110 (24+14+30+42).
 В ответе укажите два числа: сначала искомое значение для файла А, затем для файла B.
 
-'''
+"""
 from itertools import combinations
 
 
@@ -33,20 +33,20 @@ def nod(a, b):
         return nod(b, a % b)
 
 
-def NOK(a, b):
+def nok(a, b):
     return (a * b) // nod(a, b)
 
 
 def summing(a: list, b: set):
-    aux = [0]*35
-    for i in a:
+    auxiliary = [0] * 35
+    for k in a:
         for j in b:
-            if aux[(i + j) % 35] < i + j:
-                aux[(i + j) % 35] = i + j
-    return aux
+            if auxiliary[(k + j) % 35] < k + j:
+                auxiliary[(k + j) % 35] = k + j
+    return auxiliary
 
 
-file = open('27-77a.txt', 'r')
+file = open('27-77b.txt', 'r')
 
 temp = file.readline()
 matrix = []
@@ -60,13 +60,12 @@ for j in matrix:
     aux = [i for i in combinations(j, 2)]
     temp = []
     for i in aux:
-        temp.append(NOK(i[0], i[1]))
+        temp.append(nok(i[0], i[1]))
     noks.append(set(temp))
 
 temp = [0]
 for i in noks:
     temp = summing(temp, i)
-
 
 temp = sorted(temp, reverse=True)
 for i in temp:

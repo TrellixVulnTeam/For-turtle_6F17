@@ -10,4 +10,4 @@ def g(n):
     else:
         return f(n-1) - 2 * g(n - 1)
 
-print(sum([int(x) for x in str(f(18))]))
+print(sum(map(int, str(f(18)))))
