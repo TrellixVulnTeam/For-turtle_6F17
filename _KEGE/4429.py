@@ -24,6 +24,7 @@
 
 """
 from itertools import combinations
+from itertools import starmap
 
 
 def nod(a, b):
@@ -40,9 +41,9 @@ def nok(a, b):
 def summing(a: list, b: set):
     auxiliary = [0] * 35
     for k in a:
-        for j in b:
-            if auxiliary[(k + j) % 35] < k + j:
-                auxiliary[(k + j) % 35] = k + j
+        for x in b:
+            if auxiliary[(k + x) % 35] < k + x:
+                auxiliary[(k + x) % 35] = k + x
     return auxiliary
 
 
@@ -52,18 +53,16 @@ temp = file.readline()
 matrix = []
 
 for i in file:
-    aux = [int(j) for j in i.split()]
-    matrix.append([aux[i] for i in range(1, len(aux))])
+    aux = list(map(int, i.split()[1:]))
+    matrix.append(aux)
 
 noks = []
+temp = [0]
+
 for j in matrix:
     aux = [i for i in combinations(j, 2)]
-    temp = []
-    for i in aux:
-        temp.append(nok(i[0], i[1]))
-    noks.append(set(temp))
+    noks.append(set(list(starmap(nok, aux))))
 
-temp = [0]
 for i in noks:
     temp = summing(temp, i)
 
