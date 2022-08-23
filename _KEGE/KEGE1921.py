@@ -75,9 +75,8 @@ def f21m(x, y, p=1):
 # Условия
 start = 1
 hip1 = 17
-stop = 242
 wins = 259
-
+stop = wins - hip1
 # Q19
 print('-' * 10 + 'Q19' + '-' * 10)
 for s in range(start, stop):
