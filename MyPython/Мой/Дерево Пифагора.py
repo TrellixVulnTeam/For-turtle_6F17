@@ -45,3 +45,4 @@ def kv (size, n=0):
 
 n = int(input("Число уровней дерева Пифагора "))
 kv(size, n)
+done()

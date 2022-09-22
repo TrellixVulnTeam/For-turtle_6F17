@@ -26,3 +26,5 @@ def kv (size, n=0):
 
 
 kv(size, 10)
+
+done()
